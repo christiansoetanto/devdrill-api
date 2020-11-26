@@ -79,14 +79,24 @@ namespace DevDrillAPI.Services
 
         public async Task InsertThread(int userId, int discussionId, string topic, string detail)
         {
-            await dbContext.Threads.AddAsync(new Thread()
+            var add = await dbContext.Threads.AddAsync(new Thread()
             {
                 Topic = topic,
                 Upvote = 0,
                 DiscussionId = discussionId,
                 InsertDate = DateTime.Now,
-                UserId = userId,
+                UserId = userId
             });
+
+            await dbContext.Replies.AddAsync(new Reply()
+            {
+                Detail = detail,
+                Upvote = 0,
+                InsertDate = add.Entity.InsertDate,
+                ThreadId = add.Entity.ThreadId,
+                UserId = userId
+            });
+
             await dbContext.SaveChangesAsync();
         }
 
