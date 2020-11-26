@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DevDrillAPI.Migrations
 {
     [DbContext(typeof(DevDrillDbContext))]
-    [Migration("20201126102644_init")]
+    [Migration("20201126124926_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,8 +25,7 @@ namespace DevDrillAPI.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Detail")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(4000);
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime");
@@ -35,12 +34,10 @@ namespace DevDrillAPI.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50);
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("PhotoUrl")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50);
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("TrackId")
                         .HasColumnType("INTEGER");
@@ -58,7 +55,7 @@ namespace DevDrillAPI.Migrations
                         {
                             CourseId = 1,
                             Detail = "Dalam kursus ini, kalian akan diajarkan Typescript dari dasar hingga fitur-fitur penting dari Typescript sampai di titik kalian dapa",
-                            InsertDate = new DateTime(2020, 11, 26, 17, 26, 43, 879, DateTimeKind.Local).AddTicks(2308),
+                            InsertDate = new DateTime(2020, 11, 26, 19, 49, 26, 152, DateTimeKind.Local).AddTicks(2032),
                             InstructorId = 1,
                             Name = "Introduction to TS",
                             PhotoUrl = "course1.jpg",
@@ -76,9 +73,7 @@ namespace DevDrillAPI.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50);
+                        .HasColumnType("TEXT");
 
                     b.HasKey("DiscussionId");
 
@@ -120,14 +115,10 @@ namespace DevDrillAPI.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50);
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("PhotoUrl")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50);
+                        .HasColumnType("TEXT");
 
                     b.HasKey("DiscussionGroupId");
 
@@ -155,14 +146,10 @@ namespace DevDrillAPI.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("CompanyName")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("UserId")
                         .HasColumnType("INTEGER");
@@ -191,8 +178,7 @@ namespace DevDrillAPI.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Detail")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(4000);
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("EndDateTime")
                         .HasColumnType("datetime");
@@ -202,19 +188,16 @@ namespace DevDrillAPI.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50);
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("StartDateTime")
                         .HasColumnType("datetime");
 
                     b.Property<string>("ThumbnailUrl")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50);
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("VideoUrl")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50);
+                        .HasColumnType("TEXT");
 
                     b.HasKey("LessonId");
 
@@ -227,10 +210,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 1,
                             Detail = "ini adalah lesson hello world in ts",
-                            EndDateTime = new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(5583),
+                            EndDateTime = new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(4093),
                             LessonGroupId = 1,
                             Name = "Hello world in ts",
-                            StartDateTime = new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(5535),
+                            StartDateTime = new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(4039),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -238,10 +221,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 2,
                             Detail = "ini adlaah selection n loop control",
-                            EndDateTime = new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6567),
+                            EndDateTime = new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5200),
                             LessonGroupId = 1,
                             Name = "selection n loop control",
-                            StartDateTime = new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6560),
+                            StartDateTime = new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5195),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -249,10 +232,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 3,
                             Detail = "ini adlah creating a basic calculator",
-                            EndDateTime = new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6587),
+                            EndDateTime = new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5223),
                             LessonGroupId = 1,
                             Name = "creating a basic calculator",
-                            StartDateTime = new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6586),
+                            StartDateTime = new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5222),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -260,10 +243,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 4,
                             Detail = "ini adalah definig a cufntioni",
-                            EndDateTime = new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6589),
+                            EndDateTime = new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5226),
                             LessonGroupId = 2,
                             Name = "Defining a function",
-                            StartDateTime = new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6588),
+                            StartDateTime = new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5225),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -271,10 +254,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 5,
                             Detail = "this is class n object ",
-                            EndDateTime = new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6591),
+                            EndDateTime = new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5228),
                             LessonGroupId = 2,
                             Name = "class n object ",
-                            StartDateTime = new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6590),
+                            StartDateTime = new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5227),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -282,10 +265,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 6,
                             Detail = "ini dalah detail darti making a basci tdiyr pogmra",
-                            EndDateTime = new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6594),
+                            EndDateTime = new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5231),
                             LessonGroupId = 2,
                             Name = "making a basci tdiyr pogmra",
-                            StartDateTime = new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6593),
+                            StartDateTime = new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5230),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         });
@@ -302,8 +285,7 @@ namespace DevDrillAPI.Migrations
 
                     b.Property<string>("LessonGroupName")
                         .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50);
+                        .HasColumnType("TEXT");
 
                     b.HasKey("LessonGroupId");
 
@@ -352,7 +334,7 @@ namespace DevDrillAPI.Migrations
                         {
                             CourseId = 1,
                             UserId = 1,
-                            Progress = 2
+                            Progress = 5
                         });
                 });
 
@@ -393,13 +375,15 @@ namespace DevDrillAPI.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Detail")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(4000);
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime");
 
                     b.Property<int>("ThreadId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Upvote")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("UserId")
@@ -418,40 +402,45 @@ namespace DevDrillAPI.Migrations
                         {
                             ReplyId = 1,
                             Detail = "how to make this into this i dont know pleaseeeee help meeeee",
-                            InsertDate = new DateTime(2020, 11, 26, 17, 26, 43, 891, DateTimeKind.Local).AddTicks(8508),
+                            InsertDate = new DateTime(2020, 11, 26, 19, 49, 26, 167, DateTimeKind.Local).AddTicks(8430),
                             ThreadId = 1,
+                            Upvote = 6,
                             UserId = 1
                         },
                         new
                         {
                             ReplyId = 2,
                             Detail = "okay so this is how you do this....",
-                            InsertDate = new DateTime(2020, 11, 26, 17, 26, 43, 891, DateTimeKind.Local).AddTicks(9676),
+                            InsertDate = new DateTime(2020, 11, 26, 19, 49, 26, 167, DateTimeKind.Local).AddTicks(9328),
                             ThreadId = 1,
+                            Upvote = 3,
                             UserId = 2
                         },
                         new
                         {
                             ReplyId = 3,
                             Detail = "hey guys i got error 500 cna somebody help me?",
-                            InsertDate = new DateTime(2020, 11, 26, 17, 26, 43, 891, DateTimeKind.Local).AddTicks(9704),
+                            InsertDate = new DateTime(2020, 11, 26, 19, 49, 26, 167, DateTimeKind.Local).AddTicks(9388),
                             ThreadId = 2,
+                            Upvote = 6,
                             UserId = 1
                         },
                         new
                         {
                             ReplyId = 4,
                             Detail = "no we cant",
-                            InsertDate = new DateTime(2020, 11, 26, 17, 26, 43, 891, DateTimeKind.Local).AddTicks(9706),
+                            InsertDate = new DateTime(2020, 11, 26, 19, 49, 26, 167, DateTimeKind.Local).AddTicks(9409),
                             ThreadId = 2,
+                            Upvote = 3,
                             UserId = 2
                         },
                         new
                         {
                             ReplyId = 5,
                             Detail = "You want to find this topic but HTTP404 Not Found...",
-                            InsertDate = new DateTime(2020, 11, 26, 17, 26, 43, 891, DateTimeKind.Local).AddTicks(9707),
+                            InsertDate = new DateTime(2020, 11, 26, 19, 49, 26, 167, DateTimeKind.Local).AddTicks(9429),
                             ThreadId = 3,
+                            Upvote = 5,
                             UserId = 2
                         });
                 });
@@ -470,9 +459,7 @@ namespace DevDrillAPI.Migrations
 
                     b.Property<string>("Topic")
                         .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("Upvote")
                         .HasColumnType("INTEGER");
@@ -493,27 +480,27 @@ namespace DevDrillAPI.Migrations
                         {
                             ThreadId = 1,
                             DiscussionId = 1,
-                            InsertDate = new DateTime(2020, 11, 26, 17, 26, 43, 893, DateTimeKind.Local).AddTicks(1746),
+                            InsertDate = new DateTime(2020, 11, 26, 19, 49, 26, 168, DateTimeKind.Local).AddTicks(9538),
                             Topic = "How to make this into",
-                            Upvote = 453,
+                            Upvote = 419,
                             UserId = 1
                         },
                         new
                         {
                             ThreadId = 2,
                             DiscussionId = 1,
-                            InsertDate = new DateTime(2020, 11, 26, 17, 26, 43, 893, DateTimeKind.Local).AddTicks(2631),
+                            InsertDate = new DateTime(2020, 11, 26, 19, 49, 26, 169, DateTimeKind.Local).AddTicks(465),
                             Topic = "Error 500",
-                            Upvote = 79,
+                            Upvote = 184,
                             UserId = 1
                         },
                         new
                         {
                             ThreadId = 3,
                             DiscussionId = 3,
-                            InsertDate = new DateTime(2020, 11, 26, 17, 26, 43, 893, DateTimeKind.Local).AddTicks(2694),
+                            InsertDate = new DateTime(2020, 11, 26, 19, 49, 26, 169, DateTimeKind.Local).AddTicks(708),
                             Topic = "HTTP404 Not Found",
-                            Upvote = 221,
+                            Upvote = 385,
                             UserId = 2
                         });
                 });
@@ -525,16 +512,13 @@ namespace DevDrillAPI.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Detail")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(4000);
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50);
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("PhotoUrl")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50);
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("TrackGroupId")
                         .HasColumnType("INTEGER");
@@ -564,9 +548,7 @@ namespace DevDrillAPI.Migrations
 
                     b.Property<string>("TrackGroupName")
                         .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
+                        .HasColumnType("TEXT");
 
                     b.HasKey("TrackGroupId");
 
@@ -586,31 +568,27 @@ namespace DevDrillAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
                     b.Property<byte>("IsInstructor")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT")
-                        .HasMaxLength(50)
                         .IsUnicode(false);
 
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("TEXT")
-                        .HasMaxLength(255)
                         .IsUnicode(false);
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("PhotoUrl")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
-
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(50)
-                        .IsUnicode(false);
+                        .HasColumnType("TEXT");
 
                     b.HasKey("UserId");
 
@@ -620,20 +598,22 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             UserId = 1,
+                            Email = "user1@email.com",
                             IsInstructor = (byte)0,
                             Name = "user biasa",
                             Password = "user1",
-                            PhotoUrl = "photo1.jpg",
-                            Username = "user1"
+                            PhoneNumber = "0812121212112",
+                            PhotoUrl = "photo1.jpg"
                         },
                         new
                         {
                             UserId = 2,
+                            Email = "user2@email.com",
                             IsInstructor = (byte)1,
                             Name = "instructor",
                             Password = "user2",
-                            PhotoUrl = "photo2.jpg",
-                            Username = "user2"
+                            PhoneNumber = "08777777",
+                            PhotoUrl = "photo2.jpg"
                         });
                 });
 

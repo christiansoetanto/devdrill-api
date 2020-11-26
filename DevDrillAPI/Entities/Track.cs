@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DevDrillAPI.Entities
@@ -21,9 +20,6 @@ namespace DevDrillAPI.Entities
         public void Configure(EntityTypeBuilder<Track> entity)
         {
             entity.HasKey(e => e.TrackId);
-            entity.Property(e => e.PhotoUrl).HasMaxLength(50);
-            entity.Property(e => e.Name).HasMaxLength(50);
-            entity.Property(e => e.Detail).HasMaxLength(4000);
             entity.HasData(new
             {
                 TrackId = 1,

@@ -23,10 +23,7 @@ namespace DevDrillAPI.Entities
         public void Configure(EntityTypeBuilder<Lesson> entity)
         {
             entity.HasKey(e => e.LessonId);
-            entity.Property(e => e.Name).HasMaxLength(50).IsRequired();
-            entity.Property(e => e.VideoUrl).HasMaxLength(50);
-            entity.Property(e => e.ThumbnailUrl).HasMaxLength(50);
-            entity.Property(e => e.Detail).HasMaxLength(4000);
+            entity.Property(e => e.Name).IsRequired();
             entity.Property(e => e.StartDateTime).HasColumnType("datetime");
             entity.Property(e => e.EndDateTime).HasColumnType("datetime");
             entity.HasData(

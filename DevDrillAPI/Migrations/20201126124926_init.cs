@@ -13,8 +13,8 @@ namespace DevDrillAPI.Migrations
                 {
                     DiscussionGroupId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(maxLength: 50, nullable: false),
-                    PhotoUrl = table.Column<string>(maxLength: 50, nullable: false)
+                    Name = table.Column<string>(nullable: true),
+                    PhotoUrl = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -27,7 +27,7 @@ namespace DevDrillAPI.Migrations
                 {
                     TrackGroupId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    TrackGroupName = table.Column<string>(unicode: false, maxLength: 50, nullable: false)
+                    TrackGroupName = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -40,10 +40,11 @@ namespace DevDrillAPI.Migrations
                 {
                     UserId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Username = table.Column<string>(unicode: false, maxLength: 50, nullable: false),
-                    Password = table.Column<string>(unicode: false, maxLength: 255, nullable: false),
-                    Name = table.Column<string>(unicode: false, maxLength: 50, nullable: false),
-                    PhotoUrl = table.Column<string>(unicode: false, maxLength: 50, nullable: true),
+                    Password = table.Column<string>(unicode: false, nullable: false),
+                    Name = table.Column<string>(unicode: false, nullable: false),
+                    PhotoUrl = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    PhoneNumber = table.Column<string>(nullable: true),
                     IsInstructor = table.Column<byte>(nullable: false)
                 },
                 constraints: table =>
@@ -57,7 +58,7 @@ namespace DevDrillAPI.Migrations
                 {
                     DiscussionId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    Name = table.Column<string>(nullable: true),
                     DiscussionGroupId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -77,9 +78,9 @@ namespace DevDrillAPI.Migrations
                 {
                     TrackId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    PhotoUrl = table.Column<string>(maxLength: 50, nullable: true),
-                    Name = table.Column<string>(maxLength: 50, nullable: true),
-                    Detail = table.Column<string>(maxLength: 4000, nullable: true),
+                    PhotoUrl = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    Detail = table.Column<string>(nullable: true),
                     TrackGroupId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -100,8 +101,8 @@ namespace DevDrillAPI.Migrations
                     InstructorId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     UserId = table.Column<int>(nullable: false),
-                    Title = table.Column<string>(unicode: false, maxLength: 50, nullable: true),
-                    CompanyName = table.Column<string>(unicode: false, maxLength: 50, nullable: true)
+                    Title = table.Column<string>(nullable: true),
+                    CompanyName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -121,7 +122,7 @@ namespace DevDrillAPI.Migrations
                     ThreadId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     InsertDate = table.Column<DateTime>(type: "datetime", nullable: false),
-                    Topic = table.Column<string>(unicode: false, maxLength: 50, nullable: false),
+                    Topic = table.Column<string>(nullable: false),
                     UserId = table.Column<int>(nullable: false),
                     Upvote = table.Column<int>(nullable: false),
                     DiscussionId = table.Column<int>(nullable: false)
@@ -174,9 +175,9 @@ namespace DevDrillAPI.Migrations
                 {
                     CourseId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    PhotoUrl = table.Column<string>(maxLength: 50, nullable: true),
-                    Name = table.Column<string>(maxLength: 50, nullable: true),
-                    Detail = table.Column<string>(maxLength: 4000, nullable: true),
+                    PhotoUrl = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    Detail = table.Column<string>(nullable: true),
                     InsertDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     TrackId = table.Column<int>(nullable: false),
                     InstructorId = table.Column<int>(nullable: false)
@@ -205,8 +206,9 @@ namespace DevDrillAPI.Migrations
                     ReplyId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     InsertDate = table.Column<DateTime>(type: "datetime", nullable: false),
-                    Detail = table.Column<string>(maxLength: 4000, nullable: true),
+                    Detail = table.Column<string>(nullable: true),
                     ThreadId = table.Column<int>(nullable: false),
+                    Upvote = table.Column<int>(nullable: false),
                     UserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -232,7 +234,7 @@ namespace DevDrillAPI.Migrations
                 {
                     LessonGroupId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    LessonGroupName = table.Column<string>(maxLength: 50, nullable: false),
+                    LessonGroupName = table.Column<string>(nullable: false),
                     CourseId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -277,12 +279,12 @@ namespace DevDrillAPI.Migrations
                 {
                     LessonId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(maxLength: 50, nullable: false),
-                    Detail = table.Column<string>(maxLength: 4000, nullable: true),
+                    Name = table.Column<string>(nullable: false),
+                    Detail = table.Column<string>(nullable: true),
                     StartDateTime = table.Column<DateTime>(type: "datetime", nullable: false),
                     EndDateTime = table.Column<DateTime>(type: "datetime", nullable: false),
-                    VideoUrl = table.Column<string>(maxLength: 50, nullable: true),
-                    ThumbnailUrl = table.Column<string>(maxLength: 50, nullable: true),
+                    VideoUrl = table.Column<string>(nullable: true),
+                    ThumbnailUrl = table.Column<string>(nullable: true),
                     LessonGroupId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -313,13 +315,13 @@ namespace DevDrillAPI.Migrations
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "UserId", "IsInstructor", "Name", "Password", "PhotoUrl", "Username" },
-                values: new object[] { 1, (byte)0, "user biasa", "user1", "photo1.jpg", "user1" });
+                columns: new[] { "UserId", "Email", "IsInstructor", "Name", "Password", "PhoneNumber", "PhotoUrl" },
+                values: new object[] { 1, "user1@email.com", (byte)0, "user biasa", "user1", "0812121212112", "photo1.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "UserId", "IsInstructor", "Name", "Password", "PhotoUrl", "Username" },
-                values: new object[] { 2, (byte)1, "instructor", "user2", "photo2.jpg", "user2" });
+                columns: new[] { "UserId", "Email", "IsInstructor", "Name", "Password", "PhoneNumber", "PhotoUrl" },
+                values: new object[] { 2, "user2@email.com", (byte)1, "instructor", "user2", "08777777", "photo2.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Discussions",
@@ -354,7 +356,7 @@ namespace DevDrillAPI.Migrations
             migrationBuilder.InsertData(
                 table: "Courses",
                 columns: new[] { "CourseId", "Detail", "InsertDate", "InstructorId", "Name", "PhotoUrl", "TrackId" },
-                values: new object[] { 1, "Dalam kursus ini, kalian akan diajarkan Typescript dari dasar hingga fitur-fitur penting dari Typescript sampai di titik kalian dapa", new DateTime(2020, 11, 26, 17, 26, 43, 879, DateTimeKind.Local).AddTicks(2308), 1, "Introduction to TS", "course1.jpg", 1 });
+                values: new object[] { 1, "Dalam kursus ini, kalian akan diajarkan Typescript dari dasar hingga fitur-fitur penting dari Typescript sampai di titik kalian dapa", new DateTime(2020, 11, 26, 19, 49, 26, 152, DateTimeKind.Local).AddTicks(2032), 1, "Introduction to TS", "course1.jpg", 1 });
 
             migrationBuilder.InsertData(
                 table: "MappingUserTracks",
@@ -364,17 +366,17 @@ namespace DevDrillAPI.Migrations
             migrationBuilder.InsertData(
                 table: "Threads",
                 columns: new[] { "ThreadId", "DiscussionId", "InsertDate", "Topic", "Upvote", "UserId" },
-                values: new object[] { 1, 1, new DateTime(2020, 11, 26, 17, 26, 43, 893, DateTimeKind.Local).AddTicks(1746), "How to make this into", 453, 1 });
+                values: new object[] { 1, 1, new DateTime(2020, 11, 26, 19, 49, 26, 168, DateTimeKind.Local).AddTicks(9538), "How to make this into", 419, 1 });
 
             migrationBuilder.InsertData(
                 table: "Threads",
                 columns: new[] { "ThreadId", "DiscussionId", "InsertDate", "Topic", "Upvote", "UserId" },
-                values: new object[] { 2, 1, new DateTime(2020, 11, 26, 17, 26, 43, 893, DateTimeKind.Local).AddTicks(2631), "Error 500", 79, 1 });
+                values: new object[] { 2, 1, new DateTime(2020, 11, 26, 19, 49, 26, 169, DateTimeKind.Local).AddTicks(465), "Error 500", 184, 1 });
 
             migrationBuilder.InsertData(
                 table: "Threads",
                 columns: new[] { "ThreadId", "DiscussionId", "InsertDate", "Topic", "Upvote", "UserId" },
-                values: new object[] { 3, 3, new DateTime(2020, 11, 26, 17, 26, 43, 893, DateTimeKind.Local).AddTicks(2694), "HTTP404 Not Found", 221, 2 });
+                values: new object[] { 3, 3, new DateTime(2020, 11, 26, 19, 49, 26, 169, DateTimeKind.Local).AddTicks(708), "HTTP404 Not Found", 385, 2 });
 
             migrationBuilder.InsertData(
                 table: "LessonGroups",
@@ -389,62 +391,62 @@ namespace DevDrillAPI.Migrations
             migrationBuilder.InsertData(
                 table: "MappingUserCourses",
                 columns: new[] { "CourseId", "UserId", "Progress" },
-                values: new object[] { 1, 1, 2 });
+                values: new object[] { 1, 1, 5 });
 
             migrationBuilder.InsertData(
                 table: "Replies",
-                columns: new[] { "ReplyId", "Detail", "InsertDate", "ThreadId", "UserId" },
-                values: new object[] { 1, "how to make this into this i dont know pleaseeeee help meeeee", new DateTime(2020, 11, 26, 17, 26, 43, 891, DateTimeKind.Local).AddTicks(8508), 1, 1 });
+                columns: new[] { "ReplyId", "Detail", "InsertDate", "ThreadId", "Upvote", "UserId" },
+                values: new object[] { 1, "how to make this into this i dont know pleaseeeee help meeeee", new DateTime(2020, 11, 26, 19, 49, 26, 167, DateTimeKind.Local).AddTicks(8430), 1, 6, 1 });
 
             migrationBuilder.InsertData(
                 table: "Replies",
-                columns: new[] { "ReplyId", "Detail", "InsertDate", "ThreadId", "UserId" },
-                values: new object[] { 2, "okay so this is how you do this....", new DateTime(2020, 11, 26, 17, 26, 43, 891, DateTimeKind.Local).AddTicks(9676), 1, 2 });
+                columns: new[] { "ReplyId", "Detail", "InsertDate", "ThreadId", "Upvote", "UserId" },
+                values: new object[] { 2, "okay so this is how you do this....", new DateTime(2020, 11, 26, 19, 49, 26, 167, DateTimeKind.Local).AddTicks(9328), 1, 3, 2 });
 
             migrationBuilder.InsertData(
                 table: "Replies",
-                columns: new[] { "ReplyId", "Detail", "InsertDate", "ThreadId", "UserId" },
-                values: new object[] { 3, "hey guys i got error 500 cna somebody help me?", new DateTime(2020, 11, 26, 17, 26, 43, 891, DateTimeKind.Local).AddTicks(9704), 2, 1 });
+                columns: new[] { "ReplyId", "Detail", "InsertDate", "ThreadId", "Upvote", "UserId" },
+                values: new object[] { 3, "hey guys i got error 500 cna somebody help me?", new DateTime(2020, 11, 26, 19, 49, 26, 167, DateTimeKind.Local).AddTicks(9388), 2, 6, 1 });
 
             migrationBuilder.InsertData(
                 table: "Replies",
-                columns: new[] { "ReplyId", "Detail", "InsertDate", "ThreadId", "UserId" },
-                values: new object[] { 4, "no we cant", new DateTime(2020, 11, 26, 17, 26, 43, 891, DateTimeKind.Local).AddTicks(9706), 2, 2 });
+                columns: new[] { "ReplyId", "Detail", "InsertDate", "ThreadId", "Upvote", "UserId" },
+                values: new object[] { 4, "no we cant", new DateTime(2020, 11, 26, 19, 49, 26, 167, DateTimeKind.Local).AddTicks(9409), 2, 3, 2 });
 
             migrationBuilder.InsertData(
                 table: "Replies",
-                columns: new[] { "ReplyId", "Detail", "InsertDate", "ThreadId", "UserId" },
-                values: new object[] { 5, "You want to find this topic but HTTP404 Not Found...", new DateTime(2020, 11, 26, 17, 26, 43, 891, DateTimeKind.Local).AddTicks(9707), 3, 2 });
+                columns: new[] { "ReplyId", "Detail", "InsertDate", "ThreadId", "Upvote", "UserId" },
+                values: new object[] { 5, "You want to find this topic but HTTP404 Not Found...", new DateTime(2020, 11, 26, 19, 49, 26, 167, DateTimeKind.Local).AddTicks(9429), 3, 5, 2 });
 
             migrationBuilder.InsertData(
                 table: "Lessons",
                 columns: new[] { "LessonId", "Detail", "EndDateTime", "LessonGroupId", "Name", "StartDateTime", "ThumbnailUrl", "VideoUrl" },
-                values: new object[] { 1, "ini adalah lesson hello world in ts", new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(5583), 1, "Hello world in ts", new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(5535), "lesson1.jpg", "video1" });
+                values: new object[] { 1, "ini adalah lesson hello world in ts", new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(4093), 1, "Hello world in ts", new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(4039), "lesson1.jpg", "video1" });
 
             migrationBuilder.InsertData(
                 table: "Lessons",
                 columns: new[] { "LessonId", "Detail", "EndDateTime", "LessonGroupId", "Name", "StartDateTime", "ThumbnailUrl", "VideoUrl" },
-                values: new object[] { 2, "ini adlaah selection n loop control", new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6567), 1, "selection n loop control", new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6560), "lesson1.jpg", "video1" });
+                values: new object[] { 2, "ini adlaah selection n loop control", new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5200), 1, "selection n loop control", new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5195), "lesson1.jpg", "video1" });
 
             migrationBuilder.InsertData(
                 table: "Lessons",
                 columns: new[] { "LessonId", "Detail", "EndDateTime", "LessonGroupId", "Name", "StartDateTime", "ThumbnailUrl", "VideoUrl" },
-                values: new object[] { 3, "ini adlah creating a basic calculator", new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6587), 1, "creating a basic calculator", new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6586), "lesson1.jpg", "video1" });
+                values: new object[] { 3, "ini adlah creating a basic calculator", new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5223), 1, "creating a basic calculator", new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5222), "lesson1.jpg", "video1" });
 
             migrationBuilder.InsertData(
                 table: "Lessons",
                 columns: new[] { "LessonId", "Detail", "EndDateTime", "LessonGroupId", "Name", "StartDateTime", "ThumbnailUrl", "VideoUrl" },
-                values: new object[] { 4, "ini adalah definig a cufntioni", new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6589), 2, "Defining a function", new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6588), "lesson1.jpg", "video1" });
+                values: new object[] { 4, "ini adalah definig a cufntioni", new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5226), 2, "Defining a function", new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5225), "lesson1.jpg", "video1" });
 
             migrationBuilder.InsertData(
                 table: "Lessons",
                 columns: new[] { "LessonId", "Detail", "EndDateTime", "LessonGroupId", "Name", "StartDateTime", "ThumbnailUrl", "VideoUrl" },
-                values: new object[] { 5, "this is class n object ", new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6591), 2, "class n object ", new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6590), "lesson1.jpg", "video1" });
+                values: new object[] { 5, "this is class n object ", new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5228), 2, "class n object ", new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5227), "lesson1.jpg", "video1" });
 
             migrationBuilder.InsertData(
                 table: "Lessons",
                 columns: new[] { "LessonId", "Detail", "EndDateTime", "LessonGroupId", "Name", "StartDateTime", "ThumbnailUrl", "VideoUrl" },
-                values: new object[] { 6, "ini dalah detail darti making a basci tdiyr pogmra", new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6594), 2, "making a basci tdiyr pogmra", new DateTime(2020, 11, 26, 17, 26, 43, 887, DateTimeKind.Local).AddTicks(6593), "lesson1.jpg", "video1" });
+                values: new object[] { 6, "ini dalah detail darti making a basci tdiyr pogmra", new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5231), 2, "making a basci tdiyr pogmra", new DateTime(2020, 11, 26, 19, 49, 26, 162, DateTimeKind.Local).AddTicks(5230), "lesson1.jpg", "video1" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Courses_InstructorId",

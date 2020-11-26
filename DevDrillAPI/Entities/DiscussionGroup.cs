@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -20,8 +19,6 @@ namespace DevDrillAPI.Entities
         public void Configure(EntityTypeBuilder<DiscussionGroup> entity)
         {
             entity.HasKey(e => e.DiscussionGroupId);
-            entity.Property(e => e.Name).IsRequired().HasMaxLength(50);
-            entity.Property(e => e.PhotoUrl).IsRequired().HasMaxLength(50);
             entity.HasData(
                 new
                 {

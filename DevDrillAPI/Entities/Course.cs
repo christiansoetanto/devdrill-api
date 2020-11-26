@@ -26,9 +26,6 @@ namespace DevDrillAPI.Entities
         public void Configure(EntityTypeBuilder<Course> entity)
         {
             entity.HasKey(e => e.CourseId);
-            entity.Property(e => e.PhotoUrl).HasMaxLength(50);
-            entity.Property(e => e.Name).HasMaxLength(50);
-            entity.Property(e => e.Detail).HasMaxLength(4000);
             entity.Property(e => e.InsertDate).HasColumnType("datetime");
             entity.HasData(
                 new{

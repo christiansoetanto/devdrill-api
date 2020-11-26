@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -18,7 +17,7 @@ namespace DevDrillAPI.Entities
         public void Configure(EntityTypeBuilder<TrackGroup> entity)
         {
             entity.HasKey(e => e.TrackGroupId);
-            entity.Property(e => e.TrackGroupName).IsRequired().HasMaxLength(50).IsUnicode(false);
+            entity.Property(e => e.TrackGroupName).IsRequired();
             entity.HasData(new
             {
                 TrackGroupId = 1,

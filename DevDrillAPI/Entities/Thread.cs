@@ -26,7 +26,7 @@ namespace DevDrillAPI.Entities
         {
             entity.HasKey(e => e.ThreadId);
             entity.Property(e => e.InsertDate).HasColumnType("datetime");
-            entity.Property(e => e.Topic).HasMaxLength(50).IsRequired().IsUnicode(false);
+            entity.Property(e => e.Topic).IsRequired();
 
             entity.HasData(
                 new

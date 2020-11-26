@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -20,13 +19,6 @@ namespace DevDrillAPI.Entities
         public void Configure(EntityTypeBuilder<Instructor> entity)
         {
             entity.HasKey(e => e.InstructorId);
-            entity.Property(e => e.Title)
-                .HasMaxLength(50)
-                .IsUnicode(false);
-
-            entity.Property(e => e.CompanyName)
-                .HasMaxLength(50)
-                .IsUnicode(false);
 
             entity.HasData(
                 new {UserId = 2, InstructorId = 1, Title = "CEO and Boss", CompanyName = "Perusahaan Saya"}

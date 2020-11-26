@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,7 +7,6 @@ namespace DevDrillAPI.Entities
     public class User
     {
         public int UserId { get; set; }
-        public string Username { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
         public string PhotoUrl { get; set; }
@@ -30,20 +28,10 @@ namespace DevDrillAPI.Entities
 
             entity.Property(e => e.Password)
                 .IsRequired()
-                .HasMaxLength(255)
-                .IsUnicode(false);
-
-            entity.Property(e => e.Username)
-                .IsRequired()
-                .HasMaxLength(50)
                 .IsUnicode(false);
 
             entity.Property(e => e.Name)
                 .IsRequired()
-                .HasMaxLength(50)
-                .IsUnicode(false);
-            entity.Property(e => e.PhotoUrl)
-                .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.IsInstructor)
                 .IsRequired()
@@ -52,12 +40,12 @@ namespace DevDrillAPI.Entities
             entity.HasData(
                 new
                 {
-                    UserId = 1, Username = "user1", Password = "user1", Name = "user biasa", PhotoUrl = "photo1.jpg",
+                    UserId = 1, Password = "user1", Name = "user biasa", PhotoUrl = "photo1.jpg",
                     IsInstructor = false, Email = "user1@email.com", PhoneNumber = "0812121212112"
                 },
                 new
                 {
-                    UserId = 2, Username = "user2", Password = "user2", Name = "instructor", PhotoUrl = "photo2.jpg",
+                    UserId = 2,  Password = "user2", Name = "instructor", PhotoUrl = "photo2.jpg",
                     IsInstructor = true, Email = "user2@email.com", PhoneNumber = "08777777"
                 }
             );
