@@ -11,6 +11,8 @@ namespace DevDrillAPI.Dto
 
         public UserDto User { get; set; }
         public int Upvote { get; set; }
+        
+        public int ThreadId { get; set; }
         //Untuk ThreadStarter
         public string Topic { get; set; }
         

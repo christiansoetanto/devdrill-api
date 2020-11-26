@@ -1,9 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using DevDrillAPI.Dto;
 using DevDrillAPI.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 
 
 namespace DevDrillAPI.Services
@@ -46,7 +48,8 @@ namespace DevDrillAPI.Services
                     ThreadId = e.ThreadId,
                     Upvote = e.Upvote,
                     Author = e.User.Name,
-                    ReplyCount = e.Replies.Count
+                    ReplyCount = e.Replies.Count,
+                    DiscussionId = discussionId
                 })
                 .ToListAsync();
         }
@@ -72,6 +75,32 @@ namespace DevDrillAPI.Services
                     Topic = e.Thread.Topic
                 })
                 .ToListAsync();
+        }
+
+        public async Task InsertThread(int userId, int discussionId, string topic, string detail)
+        {
+            await dbContext.Threads.AddAsync(new Thread()
+            {
+                Topic = topic,
+                Upvote = 0,
+                DiscussionId = discussionId,
+                InsertDate = DateTime.Now,
+                UserId = userId,
+            });
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task InsertReply(int userId, int threadId, string detail)
+        {
+            await dbContext.Replies.AddAsync(new Reply()
+            {
+                Detail = detail,
+                Upvote = 0,
+                InsertDate = DateTime.Now,
+                ThreadId = threadId,
+                UserId = userId
+            });
+            await dbContext.SaveChangesAsync();
         }
     }
 }

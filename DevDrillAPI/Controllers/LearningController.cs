@@ -21,46 +21,22 @@ namespace DevDrillAPI.Controllers
 
         public async Task<IActionResult> GetCourses(int trackId)
         {
-            List<CourseDto> courseDtos = await learningService.GetCourses(trackId);
-            if (courseDtos == null)
-                return NotFound(new ProblemDetails()
-                {
-                    Detail = "Courses not found."
-                });
-
-            return Ok(courseDtos);
+            return Ok(await learningService.GetCourses(trackId) ?? new List<CourseDto>());
         }
 
         public async Task<IActionResult> GetLessons(int courseId)
         {
-            List<LessonGroupDto> lessonGroupDtos = await learningService.GetLessons(courseId);
-            if (lessonGroupDtos.Any())
-                return Ok(lessonGroupDtos);
-            return NotFound(new ProblemDetails()
-            {
-                Detail = "No Data Found."
-            });
+            return Ok(await learningService.GetLessons(courseId) ?? new List<LessonGroupDto>());
         }
 
         public async Task<IActionResult> GetLesson(int lessonId)
         {
-            LessonDto lessonDto = await learningService.GetLesson(lessonId);
-            if (lessonDto == null)
-                return NotFound(new ProblemDetails()
-                {
-                    Detail = "No Data Found."
-                });
-            return Ok(lessonDto);
+            return Ok(await learningService.GetLesson(lessonId) ?? new LessonDto());
         }
 
         public async Task<IActionResult> GetTracks()
         {
-            List<TrackGroupDto> trackGroupDtos = await learningService.GetTracks();
-            if (trackGroupDtos.Any()) return Ok(trackGroupDtos);
-            return NotFound(new ProblemDetails()
-            {
-                Detail = "No Data Found."
-            });
+            return Ok(await learningService.GetTracks() ?? new List<TrackGroupDto>());
         }
     }
 }
