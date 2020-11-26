@@ -12,6 +12,8 @@ namespace DevDrillAPI.Entities
         public string Password { get; set; }
         public string Name { get; set; }
         public string PhotoUrl { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
         public bool IsInstructor { get; set; }
         public Instructor Instructor { get; set; }
         public List<Thread> Threads { get; set; }
@@ -43,7 +45,6 @@ namespace DevDrillAPI.Entities
             entity.Property(e => e.PhotoUrl)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-
             entity.Property(e => e.IsInstructor)
                 .IsRequired()
                 .HasConversion<byte>();
@@ -52,14 +53,13 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     UserId = 1, Username = "user1", Password = "user1", Name = "user biasa", PhotoUrl = "photo1.jpg",
-                    IsInstructor = false
+                    IsInstructor = false, Email = "user1@email.com", PhoneNumber = "0812121212112"
                 },
                 new
                 {
                     UserId = 2, Username = "user2", Password = "user2", Name = "instructor", PhotoUrl = "photo2.jpg",
-                    IsInstructor = true
+                    IsInstructor = true, Email = "user2@email.com", PhoneNumber = "08777777"
                 }
-                
             );
         }
     }
