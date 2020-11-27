@@ -53,10 +53,40 @@ namespace DevDrillAPI.Migrations
                         {
                             CourseId = 1,
                             Detail = "Dalam kursus ini, kalian akan diajarkan Typescript dari dasar hingga fitur-fitur penting dari Typescript sampai di titik kalian dapa",
-                            InsertDate = new DateTime(2020, 11, 27, 1, 22, 58, 829, DateTimeKind.Local).AddTicks(324),
+                            InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
                             Name = "Introduction to TS",
-                            PhotoUrl = "course1.jpg",
+                            PhotoUrl = "typescript.png",
+                            TrackId = 1
+                        },
+                        new
+                        {
+                            CourseId = 2,
+                            Detail = "Dalam kursus ini, kalian akan diajarkan bahasa pemrograman C# dari dasar hingga fitur-fitur penting dari C# sampai di titik kalian dapat mengimplementasikan C# ke dalam proyek apapun yang kalian kerjakan. Kursus ini juga menjadi dasar bagi kalian yang ingin belajar tentang framework ASP.NET",
+                            InsertDate = new DateTime(2014, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            InstructorId = 1,
+                            Name = "Asynchronus Programming in C#",
+                            PhotoUrl = "csharp.png",
+                            TrackId = 1
+                        },
+                        new
+                        {
+                            CourseId = 3,
+                            Detail = "Dalam kursus ini, kalian akan diajarkan bahasa pemrograman PHP  dari dasar hingga fitur-fitur penting dari PHP sampai di titik kalian dapat mengimplementasikan PHP ke dalam proyek apapun yang kalian kerjakan.Kursus ini juga menjadi dasar bagi kalian yang ingin belajar tentang framework Laravel",
+                            InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            InstructorId = 1,
+                            Name = "Object-Oriented Programming with PHP",
+                            PhotoUrl = "php.png",
+                            TrackId = 1
+                        },
+                        new
+                        {
+                            CourseId = 4,
+                            Detail = "Python adalah bahasa pemrograman terkenal yang dibuat dengan fokus untuk mempermudah programmer untuk membaca kodingnya.Dalam kursus ini, kalian akan diajarkan Python dari dasar sampai kalian dapat mengimplementasikannya dalam aplikasi kalian.",
+                            InsertDate = new DateTime(2019, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            InstructorId = 1,
+                            Name = "Python Programming Language",
+                            PhotoUrl = "python.png",
                             TrackId = 1
                         });
                 });
@@ -103,6 +133,138 @@ namespace DevDrillAPI.Migrations
                             DiscussionId = 4,
                             DiscussionGroupId = 2,
                             Name = "Regarding Video"
+                        },
+                        new
+                        {
+                            DiscussionId = 5,
+                            DiscussionGroupId = 2,
+                            Name = "Development Advice"
+                        },
+                        new
+                        {
+                            DiscussionId = 6,
+                            DiscussionGroupId = 3,
+                            Name = "Installation"
+                        },
+                        new
+                        {
+                            DiscussionId = 7,
+                            DiscussionGroupId = 3,
+                            Name = "Regarding Video"
+                        },
+                        new
+                        {
+                            DiscussionId = 8,
+                            DiscussionGroupId = 3,
+                            Name = "Development Advice"
+                        },
+                        new
+                        {
+                            DiscussionId = 9,
+                            DiscussionGroupId = 4,
+                            Name = "Installation"
+                        },
+                        new
+                        {
+                            DiscussionId = 10,
+                            DiscussionGroupId = 4,
+                            Name = "Regarding Video"
+                        },
+                        new
+                        {
+                            DiscussionId = 11,
+                            DiscussionGroupId = 4,
+                            Name = "Development Advice"
+                        },
+                        new
+                        {
+                            DiscussionId = 12,
+                            DiscussionGroupId = 5,
+                            Name = "Installation"
+                        },
+                        new
+                        {
+                            DiscussionId = 13,
+                            DiscussionGroupId = 5,
+                            Name = "Regarding Video"
+                        },
+                        new
+                        {
+                            DiscussionId = 14,
+                            DiscussionGroupId = 5,
+                            Name = "Development Advice"
+                        },
+                        new
+                        {
+                            DiscussionId = 15,
+                            DiscussionGroupId = 6,
+                            Name = "Installation"
+                        },
+                        new
+                        {
+                            DiscussionId = 16,
+                            DiscussionGroupId = 6,
+                            Name = "Regarding Video"
+                        },
+                        new
+                        {
+                            DiscussionId = 17,
+                            DiscussionGroupId = 6,
+                            Name = "Development Advice"
+                        },
+                        new
+                        {
+                            DiscussionId = 18,
+                            DiscussionGroupId = 7,
+                            Name = "Installation"
+                        },
+                        new
+                        {
+                            DiscussionId = 19,
+                            DiscussionGroupId = 7,
+                            Name = "Regarding Video"
+                        },
+                        new
+                        {
+                            DiscussionId = 20,
+                            DiscussionGroupId = 7,
+                            Name = "Development Advice"
+                        },
+                        new
+                        {
+                            DiscussionId = 21,
+                            DiscussionGroupId = 8,
+                            Name = "Installation"
+                        },
+                        new
+                        {
+                            DiscussionId = 22,
+                            DiscussionGroupId = 8,
+                            Name = "Regarding Video"
+                        },
+                        new
+                        {
+                            DiscussionId = 23,
+                            DiscussionGroupId = 8,
+                            Name = "Development Advice"
+                        },
+                        new
+                        {
+                            DiscussionId = 24,
+                            DiscussionGroupId = 9,
+                            Name = "Installation"
+                        },
+                        new
+                        {
+                            DiscussionId = 25,
+                            DiscussionGroupId = 9,
+                            Name = "Regarding Video"
+                        },
+                        new
+                        {
+                            DiscussionId = 26,
+                            DiscussionGroupId = 9,
+                            Name = "Development Advice"
                         });
                 });
 
@@ -126,14 +288,56 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             DiscussionGroupId = 1,
-                            Name = "Public discussion",
-                            PhotoUrl = "dg1.jpg"
+                            Name = "Public Discussion",
+                            PhotoUrl = ""
                         },
                         new
                         {
                             DiscussionGroupId = 2,
-                            Name = "Angular discussion",
-                            PhotoUrl = "dg1.jpg"
+                            Name = "Angular Discussion",
+                            PhotoUrl = "angular.png"
+                        },
+                        new
+                        {
+                            DiscussionGroupId = 3,
+                            Name = "Node.js Discussion",
+                            PhotoUrl = "nodejs.png"
+                        },
+                        new
+                        {
+                            DiscussionGroupId = 4,
+                            Name = "ASP.NET Core Discussion",
+                            PhotoUrl = "netcore.png"
+                        },
+                        new
+                        {
+                            DiscussionGroupId = 5,
+                            Name = "Laravel discussion",
+                            PhotoUrl = "angular.png"
+                        },
+                        new
+                        {
+                            DiscussionGroupId = 6,
+                            Name = "React.js discussion",
+                            PhotoUrl = "react.png"
+                        },
+                        new
+                        {
+                            DiscussionGroupId = 7,
+                            Name = "Vue.js discussion",
+                            PhotoUrl = "vuejs.png"
+                        },
+                        new
+                        {
+                            DiscussionGroupId = 8,
+                            Name = "Django discussion",
+                            PhotoUrl = "django.png"
+                        },
+                        new
+                        {
+                            DiscussionGroupId = 9,
+                            Name = "Spring discussion",
+                            PhotoUrl = "spring.png"
                         });
                 });
 
@@ -208,10 +412,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 1,
                             Detail = "ini adalah lesson hello world in ts",
-                            EndDateTime = new DateTime(2020, 11, 27, 1, 22, 58, 836, DateTimeKind.Local).AddTicks(109),
+                            EndDateTime = new DateTime(2020, 11, 27, 12, 3, 36, 495, DateTimeKind.Local).AddTicks(4685),
                             LessonGroupId = 1,
                             Name = "Hello world in ts",
-                            StartDateTime = new DateTime(2020, 11, 27, 1, 22, 58, 836, DateTimeKind.Local).AddTicks(65),
+                            StartDateTime = new DateTime(2020, 11, 27, 12, 3, 36, 494, DateTimeKind.Local).AddTicks(127),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -219,10 +423,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 2,
                             Detail = "ini adlaah selection n loop control",
-                            EndDateTime = new DateTime(2020, 11, 27, 1, 22, 58, 836, DateTimeKind.Local).AddTicks(1385),
+                            EndDateTime = new DateTime(2020, 11, 27, 12, 3, 36, 495, DateTimeKind.Local).AddTicks(7709),
                             LessonGroupId = 1,
                             Name = "selection n loop control",
-                            StartDateTime = new DateTime(2020, 11, 27, 1, 22, 58, 836, DateTimeKind.Local).AddTicks(1378),
+                            StartDateTime = new DateTime(2020, 11, 27, 12, 3, 36, 495, DateTimeKind.Local).AddTicks(7699),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -230,10 +434,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 3,
                             Detail = "ini adlah creating a basic calculator",
-                            EndDateTime = new DateTime(2020, 11, 27, 1, 22, 58, 836, DateTimeKind.Local).AddTicks(1409),
+                            EndDateTime = new DateTime(2020, 11, 27, 12, 3, 36, 495, DateTimeKind.Local).AddTicks(7736),
                             LessonGroupId = 1,
                             Name = "creating a basic calculator",
-                            StartDateTime = new DateTime(2020, 11, 27, 1, 22, 58, 836, DateTimeKind.Local).AddTicks(1408),
+                            StartDateTime = new DateTime(2020, 11, 27, 12, 3, 36, 495, DateTimeKind.Local).AddTicks(7735),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -241,10 +445,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 4,
                             Detail = "ini adalah definig a cufntioni",
-                            EndDateTime = new DateTime(2020, 11, 27, 1, 22, 58, 836, DateTimeKind.Local).AddTicks(1412),
+                            EndDateTime = new DateTime(2020, 11, 27, 12, 3, 36, 495, DateTimeKind.Local).AddTicks(7739),
                             LessonGroupId = 2,
                             Name = "Defining a function",
-                            StartDateTime = new DateTime(2020, 11, 27, 1, 22, 58, 836, DateTimeKind.Local).AddTicks(1411),
+                            StartDateTime = new DateTime(2020, 11, 27, 12, 3, 36, 495, DateTimeKind.Local).AddTicks(7738),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -252,10 +456,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 5,
                             Detail = "this is class n object ",
-                            EndDateTime = new DateTime(2020, 11, 27, 1, 22, 58, 836, DateTimeKind.Local).AddTicks(1414),
+                            EndDateTime = new DateTime(2020, 11, 27, 12, 3, 36, 495, DateTimeKind.Local).AddTicks(7742),
                             LessonGroupId = 2,
                             Name = "class n object ",
-                            StartDateTime = new DateTime(2020, 11, 27, 1, 22, 58, 836, DateTimeKind.Local).AddTicks(1413),
+                            StartDateTime = new DateTime(2020, 11, 27, 12, 3, 36, 495, DateTimeKind.Local).AddTicks(7741),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -263,10 +467,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 6,
                             Detail = "ini dalah detail darti making a basci tdiyr pogmra",
-                            EndDateTime = new DateTime(2020, 11, 27, 1, 22, 58, 836, DateTimeKind.Local).AddTicks(1417),
+                            EndDateTime = new DateTime(2020, 11, 27, 12, 3, 36, 495, DateTimeKind.Local).AddTicks(7746),
                             LessonGroupId = 2,
                             Name = "making a basci tdiyr pogmra",
-                            StartDateTime = new DateTime(2020, 11, 27, 1, 22, 58, 836, DateTimeKind.Local).AddTicks(1416),
+                            StartDateTime = new DateTime(2020, 11, 27, 12, 3, 36, 495, DateTimeKind.Local).AddTicks(7744),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         });
@@ -332,7 +536,7 @@ namespace DevDrillAPI.Migrations
                         {
                             CourseId = 1,
                             UserId = 1,
-                            Progress = 4
+                            Progress = 1
                         });
                 });
 
@@ -362,7 +566,7 @@ namespace DevDrillAPI.Migrations
                         {
                             TrackId = 1,
                             UserId = 1,
-                            Progress = 3
+                            Progress = 7
                         });
                 });
 
@@ -400,45 +604,45 @@ namespace DevDrillAPI.Migrations
                         {
                             ReplyId = 1,
                             Detail = "how to make this into this i dont know pleaseeeee help meeeee",
-                            InsertDate = new DateTime(2020, 11, 27, 1, 22, 58, 840, DateTimeKind.Local).AddTicks(4690),
+                            InsertDate = new DateTime(2020, 11, 27, 12, 3, 36, 501, DateTimeKind.Local).AddTicks(2445),
                             ThreadId = 1,
-                            Upvote = 8,
+                            Upvote = 9,
                             UserId = 1
                         },
                         new
                         {
                             ReplyId = 2,
                             Detail = "okay so this is how you do this....",
-                            InsertDate = new DateTime(2020, 11, 27, 1, 22, 58, 840, DateTimeKind.Local).AddTicks(5829),
+                            InsertDate = new DateTime(2020, 11, 27, 12, 3, 36, 501, DateTimeKind.Local).AddTicks(3605),
                             ThreadId = 1,
-                            Upvote = 8,
+                            Upvote = 7,
                             UserId = 2
                         },
                         new
                         {
                             ReplyId = 3,
                             Detail = "hey guys i got error 500 cna somebody help me?",
-                            InsertDate = new DateTime(2020, 11, 27, 1, 22, 58, 840, DateTimeKind.Local).AddTicks(5886),
+                            InsertDate = new DateTime(2020, 11, 27, 12, 3, 36, 501, DateTimeKind.Local).AddTicks(3659),
                             ThreadId = 2,
-                            Upvote = 1,
+                            Upvote = 6,
                             UserId = 1
                         },
                         new
                         {
                             ReplyId = 4,
                             Detail = "no we cant",
-                            InsertDate = new DateTime(2020, 11, 27, 1, 22, 58, 840, DateTimeKind.Local).AddTicks(5909),
+                            InsertDate = new DateTime(2020, 11, 27, 12, 3, 36, 501, DateTimeKind.Local).AddTicks(3680),
                             ThreadId = 2,
-                            Upvote = 1,
+                            Upvote = 8,
                             UserId = 2
                         },
                         new
                         {
                             ReplyId = 5,
                             Detail = "You want to find this topic but HTTP404 Not Found...",
-                            InsertDate = new DateTime(2020, 11, 27, 1, 22, 58, 840, DateTimeKind.Local).AddTicks(5929),
+                            InsertDate = new DateTime(2020, 11, 27, 12, 3, 36, 501, DateTimeKind.Local).AddTicks(3701),
                             ThreadId = 3,
-                            Upvote = 3,
+                            Upvote = 2,
                             UserId = 2
                         });
                 });
@@ -478,27 +682,27 @@ namespace DevDrillAPI.Migrations
                         {
                             ThreadId = 1,
                             DiscussionId = 1,
-                            InsertDate = new DateTime(2020, 11, 27, 1, 22, 58, 842, DateTimeKind.Local).AddTicks(2603),
+                            InsertDate = new DateTime(2020, 11, 27, 12, 3, 36, 502, DateTimeKind.Local).AddTicks(3660),
                             Topic = "How to make this into",
-                            Upvote = 337,
+                            Upvote = 204,
                             UserId = 1
                         },
                         new
                         {
                             ThreadId = 2,
                             DiscussionId = 1,
-                            InsertDate = new DateTime(2020, 11, 27, 1, 22, 58, 842, DateTimeKind.Local).AddTicks(3854),
+                            InsertDate = new DateTime(2020, 11, 27, 12, 3, 36, 502, DateTimeKind.Local).AddTicks(4813),
                             Topic = "Error 500",
-                            Upvote = 63,
+                            Upvote = 236,
                             UserId = 1
                         },
                         new
                         {
                             ThreadId = 3,
                             DiscussionId = 3,
-                            InsertDate = new DateTime(2020, 11, 27, 1, 22, 58, 842, DateTimeKind.Local).AddTicks(3907),
+                            InsertDate = new DateTime(2020, 11, 27, 12, 3, 36, 502, DateTimeKind.Local).AddTicks(4866),
                             Topic = "HTTP404 Not Found",
-                            Upvote = 264,
+                            Upvote = 443,
                             UserId = 2
                         });
                 });
@@ -533,7 +737,7 @@ namespace DevDrillAPI.Migrations
                             TrackId = 1,
                             Detail = "Pada track ini, anda akan fokus pada pemakaian HTML sebagai bahasa markup yang sering digunakan dalam pembuatan struktur tampilan web. Ketika l",
                             Name = "HTML",
-                            PhotoUrl = "../../../assets/html.png",
+                            PhotoUrl = "html.png",
                             TrackGroupId = 1
                         },
                         new
@@ -541,7 +745,7 @@ namespace DevDrillAPI.Migrations
                             TrackId = 2,
                             Detail = "Pada track ini, anda akan fokus pada pemakaian CSS sebagai style yang sering digunakan untuk mempercantik tampilan web. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                             Name = "CSS",
-                            PhotoUrl = "../../../assets/css.png",
+                            PhotoUrl = "css.png",
                             TrackGroupId = 1
                         },
                         new
@@ -549,7 +753,7 @@ namespace DevDrillAPI.Migrations
                             TrackId = 3,
                             Detail = "Pada track ini, anda akan fokus pada pemakaian JS sebagai bahasa program yang sering digunakan dalam pembuatan logic dari web. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                             Name = "Javascript",
-                            PhotoUrl = "../../../assets/javascript.png",
+                            PhotoUrl = "javascript.png",
                             TrackGroupId = 1
                         },
                         new
@@ -557,7 +761,7 @@ namespace DevDrillAPI.Migrations
                             TrackId = 4,
                             Detail = "Pada track ini, anda akan fokus pada pemakaian React.js sebagai framework frontend yang sering digunakan dalam pembuatan web application. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                             Name = "React.js Developer",
-                            PhotoUrl = "../../../assets/react.png",
+                            PhotoUrl = "react.png",
                             TrackGroupId = 2
                         },
                         new
@@ -565,7 +769,7 @@ namespace DevDrillAPI.Migrations
                             TrackId = 5,
                             Detail = "Pada track ini, anda akan fokus pada pemakaian Angular sebagai framework frontend yang sering digunakan dalam pembuatan web application. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                             Name = "Angular Developer",
-                            PhotoUrl = "../../../assets/angular.png",
+                            PhotoUrl = "angular.png",
                             TrackGroupId = 2
                         },
                         new
@@ -573,7 +777,7 @@ namespace DevDrillAPI.Migrations
                             TrackId = 6,
                             Detail = "Pada track ini, anda akan fokus pada pemakaian Vue.js sebagai framework frontend yang sering digunakan dalam pembuatan web application. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                             Name = "Vue.js Developer",
-                            PhotoUrl = "../../../assets/vuejs.png",
+                            PhotoUrl = "vuejs.png",
                             TrackGroupId = 2
                         },
                         new
@@ -581,7 +785,7 @@ namespace DevDrillAPI.Migrations
                             TrackId = 7,
                             Detail = "Pada track ini, anda akan fokus pada pemakaian .NET Core sebagai framework backend yang sering digunakan dalam pembuatan web application. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                             Name = ".NET Core Developer",
-                            PhotoUrl = "../../../assets/netcore.png",
+                            PhotoUrl = "netcore.png",
                             TrackGroupId = 3
                         },
                         new
@@ -589,7 +793,7 @@ namespace DevDrillAPI.Migrations
                             TrackId = 8,
                             Detail = "Pada track ini, anda akan fokus pada pemakaian Laravel sebagai framework backend yang sering digunakan dalam pembuatan web application. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                             Name = "Laravel Developer",
-                            PhotoUrl = "../../../assets/laravel.png",
+                            PhotoUrl = "laravel.png",
                             TrackGroupId = 3
                         },
                         new
@@ -597,7 +801,7 @@ namespace DevDrillAPI.Migrations
                             TrackId = 9,
                             Detail = "Pada track ini, anda akan fokus pada pemakaian Django sebagai framework backend yang sering digunakan dalam pembuatan web application. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                             Name = "Django Developer",
-                            PhotoUrl = "../../../assets/django.png",
+                            PhotoUrl = "django.png",
                             TrackGroupId = 3
                         },
                         new
@@ -605,7 +809,7 @@ namespace DevDrillAPI.Migrations
                             TrackId = 10,
                             Detail = "Pada track ini, anda akan fokus pada pemakaian Node.js sebagai run-time environment yang sering digunakan dalam pembuatan web application. Disini kita akan menggunakan Express.js sebagai media frameworknya. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                             Name = "Node.js Developer",
-                            PhotoUrl = "../../../assets/nodejs.png",
+                            PhotoUrl = "nodejs.png",
                             TrackGroupId = 3
                         },
                         new
@@ -613,7 +817,7 @@ namespace DevDrillAPI.Migrations
                             TrackId = 11,
                             Detail = "Pada track ini, anda akan fokus pada pemakaian Spring sebagai framework backend yang sering digunakan dalam pembuatan web application. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                             Name = "Spring Developer",
-                            PhotoUrl = "../../../assets/spring.png",
+                            PhotoUrl = "spring.png",
                             TrackGroupId = 3
                         });
                 });
