@@ -112,5 +112,21 @@ namespace DevDrillAPI.Services
             });
             await dbContext.SaveChangesAsync();
         }
+
+        public async Task UpvoteReply(int replyId)
+        {
+            var x = await dbContext.Replies.FindAsync(replyId);
+            x.Upvote = x.Upvote + 1;
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task DownvoteReply(int replyId)
+        {
+            var x = await dbContext.Replies.FindAsync(replyId);
+            x.Upvote = x.Upvote - 1;
+            await dbContext.SaveChangesAsync();
+        }
+
+
     }
 }

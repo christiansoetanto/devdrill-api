@@ -22,6 +22,8 @@ namespace DevDrillAPI
 
         public DevDrillDbContext()
         {
+            Database.EnsureCreated();
+            Database.Migrate();
         }
 
         public DevDrillDbContext(DbContextOptions<DevDrillDbContext> options)
