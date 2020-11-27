@@ -24,7 +24,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     TrackId = 1,
-                    PhotoUrl = "../../../assets/html.png",
+                    PhotoUrl = "html.png",
                     Name = "HTML",
                     Detail = "Pada track ini, anda akan fokus pada pemakaian HTML sebagai bahasa markup yang sering digunakan dalam pembuatan struktur tampilan web. Ketika l",
                     TrackGroupId = 1
@@ -32,7 +32,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     TrackId = 2,
-                    PhotoUrl = "../../../assets/css.png",
+                    PhotoUrl = "css.png",
                     Name = "CSS",
                     Detail = "Pada track ini, anda akan fokus pada pemakaian CSS sebagai style yang sering digunakan untuk mempercantik tampilan web. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                     TrackGroupId = 1
@@ -40,7 +40,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     TrackId = 3,
-                    PhotoUrl = "../../../assets/javascript.png",
+                    PhotoUrl = "javascript.png",
                     Name = "Javascript",
                     Detail = "Pada track ini, anda akan fokus pada pemakaian JS sebagai bahasa program yang sering digunakan dalam pembuatan logic dari web. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                     TrackGroupId = 1
@@ -48,7 +48,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     TrackId = 4,
-                    PhotoUrl = "../../../assets/react.png",
+                    PhotoUrl = "react.png",
                     Name = "React.js Developer",
                     Detail = "Pada track ini, anda akan fokus pada pemakaian React.js sebagai framework frontend yang sering digunakan dalam pembuatan web application. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                     TrackGroupId = 2
@@ -56,7 +56,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     TrackId = 5,
-                    PhotoUrl = "../../../assets/angular.png",
+                    PhotoUrl = "angular.png",
                     Name = "Angular Developer",
                     Detail = "Pada track ini, anda akan fokus pada pemakaian Angular sebagai framework frontend yang sering digunakan dalam pembuatan web application. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                     TrackGroupId = 2
@@ -64,7 +64,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     TrackId = 6,
-                    PhotoUrl = "../../../assets/vuejs.png",
+                    PhotoUrl = "vuejs.png",
                     Name = "Vue.js Developer",
                     Detail = "Pada track ini, anda akan fokus pada pemakaian Vue.js sebagai framework frontend yang sering digunakan dalam pembuatan web application. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                     TrackGroupId = 2
@@ -72,7 +72,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     TrackId = 7,
-                    PhotoUrl = "../../../assets/netcore.png",
+                    PhotoUrl = "netcore.png",
                     Name = ".NET Core Developer",
                     Detail = "Pada track ini, anda akan fokus pada pemakaian .NET Core sebagai framework backend yang sering digunakan dalam pembuatan web application. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                     TrackGroupId = 3
@@ -80,7 +80,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     TrackId = 8,
-                    PhotoUrl = "../../../assets/laravel.png",
+                    PhotoUrl = "laravel.png",
                     Name = "Laravel Developer",
                     Detail = "Pada track ini, anda akan fokus pada pemakaian Laravel sebagai framework backend yang sering digunakan dalam pembuatan web application. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                     TrackGroupId = 3
@@ -88,7 +88,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     TrackId = 9,
-                    PhotoUrl = "../../../assets/django.png",
+                    PhotoUrl = "django.png",
                     Name = "Django Developer",
                     Detail = "Pada track ini, anda akan fokus pada pemakaian Django sebagai framework backend yang sering digunakan dalam pembuatan web application. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                     TrackGroupId = 3
@@ -96,7 +96,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     TrackId = 10,
-                    PhotoUrl = "../../../assets/nodejs.png",
+                    PhotoUrl = "nodejs.png",
                     Name = "Node.js Developer",
                     Detail = "Pada track ini, anda akan fokus pada pemakaian Node.js sebagai run-time environment yang sering digunakan dalam pembuatan web application. Disini kita akan menggunakan Express.js sebagai media frameworknya. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                     TrackGroupId = 3
@@ -104,7 +104,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     TrackId = 11,
-                    PhotoUrl = "../../../assets/spring.png",
+                    PhotoUrl = "spring.png",
                     Name = "Spring Developer",
                     Detail = "Pada track ini, anda akan fokus pada pemakaian Spring sebagai framework backend yang sering digunakan dalam pembuatan web application. Ketika lulus dari track ini, anda akan memahami lebih dalam sampai pada trik-triknya.",
                     TrackGroupId = 3

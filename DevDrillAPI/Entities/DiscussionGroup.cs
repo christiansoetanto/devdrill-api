@@ -30,49 +30,49 @@ namespace DevDrillAPI.Entities
                 {
                     DiscussionGroupId = 2,
                     Name = "Angular Discussion",
-                    PhotoUrl = "../../../assets/angular.png"
+                    PhotoUrl = "angular.png"
                 },
                 new
                 {
                     DiscussionGroupId = 3,
                     Name = "Node.js Discussion",
-                    PhotoUrl = "../../../assets/nodejs.png"
+                    PhotoUrl = "nodejs.png"
                 },
                 new
                 {
                     DiscussionGroupId = 4,
                     Name = "ASP.NET Core Discussion",
-                    PhotoUrl = "../../../assets/netcore.png"
+                    PhotoUrl = "netcore.png"
                 },
                 new
                 {
                     DiscussionGroupId = 5,
                     Name = "Laravel discussion",
-                    PhotoUrl = "../../../assets/angular.png"
+                    PhotoUrl = "angular.png"
                 },
                 new
                 {
                     DiscussionGroupId = 6,
                     Name = "React.js discussion",
-                    PhotoUrl = "../../../assets/react.png"
+                    PhotoUrl = "react.png"
                 },
                 new
                 {
                     DiscussionGroupId = 7,
                     Name = "Vue.js discussion",
-                    PhotoUrl = "../../../assets/vuejs.png"
+                    PhotoUrl = "vuejs.png"
                 },
                 new
                 {
                     DiscussionGroupId = 8,
                     Name = "Django discussion",
-                    PhotoUrl = "../../../assets/django.png"
+                    PhotoUrl = "django.png"
                 },
                 new
                 {
                     DiscussionGroupId = 9,
                     Name = "Spring discussion",
-                    PhotoUrl = "../../../assets/spring.png"
+                    PhotoUrl = "spring.png"
                 }
             );
         }

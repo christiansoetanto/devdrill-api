@@ -31,7 +31,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     CourseId = 1,
-                    PhotoUrl = "../../../../assets/typescript.png",
+                    PhotoUrl = "typescript.png",
                     Name = "Introduction to TS",
                     Detail = "Dalam kursus ini, kalian akan diajarkan Typescript dari dasar hingga fitur-fitur penting dari Typescript sampai di titik kalian dapa",
                     InsertDate = new DateTime(2012,9,12),
@@ -41,7 +41,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     CourseId = 2,
-                    PhotoUrl = "../../../../assets/csharp.png",
+                    PhotoUrl = "csharp.png",
                     Name = "Asynchronus Programming in C#", 
                     Detail = "Dalam kursus ini, kalian akan diajarkan bahasa pemrograman C# dari dasar hingga fitur-fitur penting dari C# sampai di titik kalian dapat mengimplementasikan C# ke dalam proyek apapun yang kalian kerjakan. Kursus ini juga menjadi dasar bagi kalian yang ingin belajar tentang framework ASP.NET",
                     InsertDate = new DateTime(2014, 9, 2),
@@ -51,7 +51,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     CourseId = 3,
-                    PhotoUrl = "../../../../assets/php.png",
+                    PhotoUrl = "php.png",
                     Name = "Object-Oriented Programming with PHP",
                     Detail = "Dalam kursus ini, kalian akan diajarkan bahasa pemrograman PHP  dari dasar hingga fitur-fitur penting dari PHP sampai di titik kalian dapat mengimplementasikan PHP ke dalam proyek apapun yang kalian kerjakan.Kursus ini juga menjadi dasar bagi kalian yang ingin belajar tentang framework Laravel",
                     InsertDate = new DateTime(2014, 12, 2),
@@ -61,7 +61,7 @@ namespace DevDrillAPI.Entities
                 new
                 {
                     CourseId = 4,
-                    PhotoUrl = "../../../../assets/python.png",
+                    PhotoUrl = "python.png",
                     Name = "Python Programming Language",
                     Detail = "Python adalah bahasa pemrograman terkenal yang dibuat dengan fokus untuk mempermudah programmer untuk membaca kodingnya.Dalam kursus ini, kalian akan diajarkan Python dari dasar sampai kalian dapat mengimplementasikannya dalam aplikasi kalian.",
                     InsertDate = new DateTime(2019, 3, 19),
