@@ -30,7 +30,7 @@ namespace DevDrillAPI
 
             services.AddDbContext<DevDrillDbContext>(opt =>
             {
-                opt.UseSqlite("Data Source=devdrilldb.db");
+                opt.UseSqlite(connectionString: Configuration["SQLiteConnectionString"]);
             });
         }
 
@@ -48,10 +48,7 @@ namespace DevDrillAPI
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }
