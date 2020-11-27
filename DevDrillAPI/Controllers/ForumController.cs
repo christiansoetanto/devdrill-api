@@ -9,7 +9,7 @@ using System;
 
 namespace DevDrillAPI.Controllers
 {
-    [Route("")]
+    [Route("forum")]
     [ApiController]
     public class ForumController : ControllerBase
     {
