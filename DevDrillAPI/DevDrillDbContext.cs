@@ -22,13 +22,13 @@ namespace DevDrillAPI
 
         public DevDrillDbContext()
         {
+            Database.EnsureCreated();
+            Database.Migrate();
         }
 
         public DevDrillDbContext(DbContextOptions<DevDrillDbContext> options)
             : base(options)
         {
-            Database.EnsureCreated();
-            Database.Migrate();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
