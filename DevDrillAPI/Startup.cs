@@ -49,6 +49,13 @@ namespace DevDrillAPI
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+
+            var serviceScopeFactory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
+            using (var serviceScope = serviceScopeFactory.CreateScope())
+            {
+                var dbContext = serviceScope.ServiceProvider.GetService<DevDrillDbContext>();
+                dbContext.Database.EnsureCreated();
+            }
         }
     }
 }
