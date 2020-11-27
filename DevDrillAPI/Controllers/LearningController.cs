@@ -18,22 +18,22 @@ namespace DevDrillAPI.Controllers
         {
             this.learningService = learningService;
         }
-
+        [HttpGet("tracks/{trackId}/courses")]
         public async Task<IActionResult> GetCourses(int trackId)
         {
             return Ok(await learningService.GetCourses(trackId) ?? new List<CourseDto>());
         }
-
+        [HttpGet("courses/{courseId}/lessons")]
         public async Task<IActionResult> GetLessons(int courseId)
         {
             return Ok(await learningService.GetLessons(courseId) ?? new List<LessonGroupDto>());
         }
-
+        [HttpGet("lessons/{lessonId}")]
         public async Task<IActionResult> GetLesson(int lessonId)
         {
             return Ok(await learningService.GetLesson(lessonId) ?? new LessonDto());
         }
-
+        [HttpGet("tracks")]
         public async Task<IActionResult> GetTracks()
         {
             return Ok(await learningService.GetTracks() ?? new List<TrackGroupDto>());
