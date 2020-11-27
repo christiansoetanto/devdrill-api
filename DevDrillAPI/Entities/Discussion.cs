@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace DevDrillAPI.Entities
 {
     public class Discussion
-
     {
         public int DiscussionId { get; set; }
         public string Name { get; set; }
@@ -20,31 +19,38 @@ namespace DevDrillAPI.Entities
         {
             entity.HasKey(e => e.DiscussionId);
             entity.HasData(
-                new
-                {
-                    DiscussionId = 1,
-                    Name = "General Advice",
-                    DiscussionGroupId = 1
-                },
-                new
-                {
-                    DiscussionId = 2,
-                    Name = "Other Frameworks",
-                    DiscussionGroupId = 1
-                },
-                new
-                {
-                    DiscussionId = 3,
-                    Name = "Installation",
-                    DiscussionGroupId = 2
-                },
-                new
-                {
-                    DiscussionId = 4,
-                    Name = "Regarding Video",
-                    DiscussionGroupId = 2
-                }
+                GenerateSeeds()
             );
+        }
+        private object[] GenerateSeeds()
+        {
+            List<object> list = new List<object>();
+            list.Add(new
+            {
+                DiscussionId = 1,
+                Name = "General Advice",
+                DiscussionGroupId = 1
+            });
+            list.Add(new
+            {
+                DiscussionId = 2,
+                Name = "Other Frameworks",
+                DiscussionGroupId = 1
+            });
+            string[] template = { "Installation", "Regarding Video", "Development Advice" };
+            for(int i = 2, ctr = 3; i <= 9; i++)
+            {
+                foreach(string name in template)
+                {
+                    list.Add(new
+                    {
+                        DiscussionId = ctr++,
+                        Name = name,
+                        DiscussionGroupId = i
+                    });
+                }
+            }
+            return list.ToArray();
         }
     }
 }

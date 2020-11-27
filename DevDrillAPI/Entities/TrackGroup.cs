@@ -18,11 +18,23 @@ namespace DevDrillAPI.Entities
         {
             entity.HasKey(e => e.TrackGroupId);
             entity.Property(e => e.TrackGroupName).IsRequired();
-            entity.HasData(new
-            {
-                TrackGroupId = 1,
-                TrackGroupName = "Fundamental Tracks"
-            });
+            entity.HasData(
+                new
+                {
+                    TrackGroupId = 1,
+                    TrackGroupName = "Fundamental Tracks"
+                },
+                new
+                {
+                    TrackGroupId = 2,
+                    TrackGroupName = "Frontend Developer Tracks"
+                },
+                new
+                {
+                    TrackGroupId = 3,
+                    TrackGroupName = "Backend Developer Tracks"
+                }
+            );
         }
     }
 }

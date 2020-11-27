@@ -3,14 +3,16 @@ using System;
 using DevDrillAPI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DevDrillAPI.Migrations
 {
     [DbContext(typeof(DevDrillDbContext))]
-    partial class DevDrillDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201126182259_seed_tracks")]
+    partial class seed_tracks
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
