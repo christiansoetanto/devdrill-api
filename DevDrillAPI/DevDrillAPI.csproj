@@ -2,6 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UserSecretsId>ac051f12-dcb1-4084-a31d-cf3c7bd6fc4c</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
@@ -11,7 +12,10 @@
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.9" />
+      
     </ItemGroup>
-
+  <Target Name="DBCopy" AfterTargets="Publish">
+    <Copy SourceFiles="devdrilldb.db" DestinationFolder="$(PublishDir)/" />
+  </Target>
 
 </Project>
