@@ -44,6 +44,8 @@ namespace DevDrillAPI
 
             app.UseHttpsRedirection();
 
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
             app.UseRouting();
 
             app.UseAuthorization();
