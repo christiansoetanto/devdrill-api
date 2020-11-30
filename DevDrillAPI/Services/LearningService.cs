@@ -35,6 +35,7 @@ namespace DevDrillAPI.Services
                         StartDateTime = l.StartDateTime
                     }).ToList()
                 })
+                .AsNoTracking()
                 .ToListAsync();
         }
 
@@ -52,6 +53,7 @@ namespace DevDrillAPI.Services
                     EndDateTime = e.EndDateTime,
                     StartDateTime = e.StartDateTime
                 })
+                .AsNoTracking()
                 .FirstOrDefaultAsync();
         }
 
@@ -76,12 +78,13 @@ namespace DevDrillAPI.Services
                         Name = e.Instructor.User.Name
                     }
                 })
+                .AsNoTracking()
                 .ToListAsync();
         }
 
         public async Task<List<TrackGroupDto>> GetTracks()
         {
-            return await dbContext.TrackGroups
+            var x = await dbContext.TrackGroups
                 .Include(e => e.Tracks)
                 .Select(e => new TrackGroupDto()
                 {
@@ -95,7 +98,86 @@ namespace DevDrillAPI.Services
                         PhotoUrl = t.PhotoUrl,
                         TrackId = t.TrackId
                     }).ToList()
-                }).ToListAsync();
+                })
+                .AsNoTracking()
+                .ToListAsync();
+
+            return x;
+        }
+
+        public async Task<List<CourseDto>> GetLatestCourses()
+        {
+            return await dbContext.Courses
+                .Include(e => e.Track)
+                .Include(e => e.Instructor)
+                .ThenInclude(e => e.User)
+                .OrderByDescending(e => e.InsertDate)
+                .Take(5)
+                .Select(e => new CourseDto()
+                {
+                    Name = e.Name,
+                    CourseId = e.CourseId,
+                    InsertDate = e.InsertDate,
+                    PhotoUrl = e.PhotoUrl,
+                    TrackId = e.TrackId,
+                    Instructor = new InstructorDto()
+                    {
+                        Name = e.Instructor.User.Name,
+                    },
+                    Track = new TrackDto()
+                    {
+                        Name = e.Track.Name,
+                    }
+                })
+                .AsNoTracking()
+                .ToListAsync();
+        }
+
+        public async Task UpsertMappingUserCourse(int userId, int courseId, int progress)
+        {
+            var find = await dbContext.MappingUserCourses
+                .Where(e => e.UserId == userId)
+                .Where(e => e.CourseId == courseId)
+                .FirstOrDefaultAsync();
+            if (find != null)
+            {
+                find.Progress = progress;
+            }
+            else
+            {
+                await dbContext.AddAsync(new MappingUserCourse()
+                {
+                    CourseId = courseId,
+                    UserId = userId,
+                    Progress = progress
+                });
+            }
+          
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task UpsertMappingUserTrack(int userId, int trackId, int progress)
+        {
+            var find = await dbContext.MappingUserTracks
+                .Where(e => e.UserId == userId)
+                .Where(e => e.TrackId == trackId)
+                .FirstOrDefaultAsync();
+            if (find != null)
+            {
+                find.Progress = progress;
+            }
+            else
+            {
+                await dbContext.AddAsync(new MappingUserTrack()
+                {
+                    TrackId = trackId,
+                    UserId = userId,
+                    Progress = progress
+                }); 
+            }
+
+           
+            await dbContext.SaveChangesAsync();
         }
     }
 }

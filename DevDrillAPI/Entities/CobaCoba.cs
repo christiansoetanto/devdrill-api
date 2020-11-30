@@ -6,6 +6,7 @@ namespace DevDrillAPI.Entities
     public class CobaCoba
     {
         public int Key { get; set; }
+        public string Test { get; set; }
     }
 
     public class CobaCobaModelBuilder : IEntityTypeConfiguration<CobaCoba>

@@ -12,6 +12,7 @@ namespace DevDrillAPI.Entities
         public int CourseId { get; set; }
         public Course Course { get; set; }
         public List<Lesson> Lessons { get; set; }
+        
     }
 
     public class LessonGroupModelBuilder : IEntityTypeConfiguration<LessonGroup>

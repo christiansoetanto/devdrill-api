@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using DevDrillAPI.Helper.Extensions;
 using System.Text.Json;
 using System;
+using System.Linq;
 
 namespace DevDrillAPI.Controllers
 {
@@ -27,6 +28,7 @@ namespace DevDrillAPI.Controllers
         [HttpGet("discussions/{discussionId}/threads")]
         public async Task<IActionResult> GetThreads(int discussionId)
         {
+          
             return Ok(await forumService.GetThreads(discussionId) ?? new List<ThreadDto>());
         }
         [HttpGet("threads/{threadId}/replies")]
@@ -50,6 +52,7 @@ namespace DevDrillAPI.Controllers
             await forumService.InsertReply(userId, replyDto.ThreadId, replyDto.Detail);
             return Ok();
         }
+        
 
     }
 }
