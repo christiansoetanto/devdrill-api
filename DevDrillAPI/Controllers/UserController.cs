@@ -23,7 +23,7 @@ namespace DevDrillAPI.Controllers
             UserDto res = await userService.Login(userDto.Email, userDto.Password);
             if (res == null)
             {
-                return NotFound(new ProblemDetails()
+                return Unauthorized(new ProblemDetails()
                 {
                     Detail = "User not found."
                 });
