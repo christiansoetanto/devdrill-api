@@ -110,6 +110,7 @@ namespace DevDrillAPI.Services
                 ThreadId = threadId,
                 UserId = userId
             });
+
             await dbContext.SaveChangesAsync();
         }
 

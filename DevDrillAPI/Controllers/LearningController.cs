@@ -18,25 +18,51 @@ namespace DevDrillAPI.Controllers
         {
             this.learningService = learningService;
         }
+
         [HttpGet("tracks/{trackId}/courses")]
         public async Task<IActionResult> GetCourses(int trackId)
         {
             return Ok(await learningService.GetCourses(trackId) ?? new List<CourseDto>());
         }
+
         [HttpGet("courses/{courseId}/lessons")]
         public async Task<IActionResult> GetLessons(int courseId)
         {
             return Ok(await learningService.GetLessons(courseId) ?? new List<LessonGroupDto>());
         }
+
         [HttpGet("lessons/{lessonId}")]
+        [HttpGet("lessons")]
         public async Task<IActionResult> GetLesson(int lessonId)
         {
             return Ok(await learningService.GetLesson(lessonId) ?? new LessonDto());
         }
+
         [HttpGet("tracks")]
         public async Task<IActionResult> GetTracks()
         {
             return Ok(await learningService.GetTracks() ?? new List<TrackGroupDto>());
         }
+
+        [HttpGet("latest-courses")]
+        public async Task<IActionResult> GetLatestCourses()
+        {
+            return Ok(await learningService.GetLatestCourses() ?? new List<CourseDto>());
+        }
+
+        [HttpGet("insert-course-mapping/{userId}/{courseId}/{progress?}")]
+        public async Task<IActionResult> UpsertMappingUserCourse(int userId, int courseId, int progress = 0)
+        {
+            await learningService.UpsertMappingUserCourse(userId, courseId, progress);
+            return Ok();
+        }
+
+        [HttpGet("insert-track-mapping/{userId}/{trackId}/{progress?}")]
+        public async Task<IActionResult> UpsertMappingUserTrack(int userId, int trackId, int progress = 0)
+        {
+            await learningService.UpsertMappingUserTrack(userId, trackId, progress);
+            return Ok();
+        }
+        
     }
 }

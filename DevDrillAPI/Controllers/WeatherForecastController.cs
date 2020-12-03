@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DevDrillAPI.Dto;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,7 +14,7 @@ namespace DevDrillAPI.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        IConfiguration configuration;
+        readonly IConfiguration configuration;
 
         private readonly DevDrillDbContext dbContext;
 
@@ -24,10 +25,12 @@ namespace DevDrillAPI.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IConfiguration configuration)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IConfiguration configuration,
+            DevDrillDbContext dbContext)
         {
             _logger = logger;
             this.configuration = configuration;
+            this.dbContext = dbContext;
         }
 
 
@@ -49,21 +52,8 @@ namespace DevDrillAPI.Controllers
         public async Task<IActionResult> Test()
         {
             var x = await dbContext.Users.ToListAsync();
-            return Ok(x);
-        }
-
-        [HttpGet("test2")]
-        public async Task<IActionResult> Test2()
-        {
-            return Ok(configuration["SQLiteConnectionString"]);
-        }
-
-        [HttpGet("coba")]
-        public async Task<IActionResult> Coba()
-        {
-            var x = await dbContext.Cobas.ToListAsync();
-            if (x.Any()) return Ok(x);
-            else return Ok("gk ada isi");
+            var y = await dbContext.Users.Include(e => e.Instructor).ToListAsync();
+            return Ok();
         }
     }
 }
