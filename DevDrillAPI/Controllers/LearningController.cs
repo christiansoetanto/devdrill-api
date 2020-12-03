@@ -43,6 +43,11 @@ namespace DevDrillAPI.Controllers
         {
             return Ok(await learningService.GetTracks() ?? new List<TrackGroupDto>());
         }
+        [HttpGet("tracks/{id}")]
+        public async Task<IActionResult> GetTrack(int id)
+        {
+            return Ok(await learningService.GetTrack(id) ?? new TrackDto());
+        }
 
         [HttpGet("latest-courses")]
         public async Task<IActionResult> GetLatestCourses()

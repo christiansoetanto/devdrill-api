@@ -17,6 +17,7 @@ namespace DevDrillAPI
         public DbSet<MappingUserTrack> MappingUserTracks { get; set; }
         public DbSet<Reply> Replies { get; set; }
         public DbSet<Thread> Threads { get; set; }
+        public DbSet<Track> Tracks { get; set; }
         public DbSet<TrackGroup> TrackGroups { get; set; }
         public DbSet<CobaCoba> Cobas { get; set; }
 

@@ -104,6 +104,23 @@ namespace DevDrillAPI.Services
 
             return x;
         }
+        public async Task<TrackDto> GetTrack(int id)
+        {
+            return await dbContext.Tracks
+                .Where(e => e.TrackId == id)
+                .Select(e => new TrackDto
+                {
+                    TrackId = e.TrackId,
+                    Name = e.Name,
+                    Detail = e.Detail,
+                    PhotoUrl = e.PhotoUrl,
+                    TrackGroupId = e.TrackGroupId,
+                    MappingUserTrack = null,
+                    TrackGroup = null
+                })
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
+        }
 
         public async Task<List<CourseDto>> GetLatestCourses()
         {
