@@ -59,20 +59,8 @@ namespace DevDrillAPI.Services
 
         public async Task<List<CourseDto>> GetCourses(int trackId = 0)
         {
-            if(trackId == 0)
-            {
-                return await dbContext.Courses.Select(e => new CourseDto
-                {
-                    Detail = e.Detail,
-                    Name = e.Name,
-                    CourseId = e.CourseId,
-                    PhotoUrl = e.PhotoUrl,
-                    InsertDate = e.InsertDate,
-                    Instructor = null,
-                }).AsNoTracking().ToListAsync();
-            }
             return await dbContext.Courses
-                .Where(e => e.TrackId == trackId)
+                .Where(e => e.TrackId == (trackId == 0? e.TrackId : trackId))
                 .Include(e => e.Instructor)
                 .ThenInclude(i => i.User)
                 .Select(e => new CourseDto()
