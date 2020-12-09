@@ -25,6 +25,11 @@ namespace DevDrillAPI.Controllers
         {
             return Ok(await forumService.GetDiscussionGroup() ?? new List<DiscussionGroupDto>());
         }
+        [HttpGet("discussions/{discussionId}")]
+        public async Task<IActionResult> GetDiscussion(int discussionId)
+        {
+            return Ok(await forumService.GetDiscussion(discussionId) ?? new DiscussionDto());
+        }
         [HttpGet("discussions/{discussionId}/threads")]
         public async Task<IActionResult> GetThreads(int discussionId)
         {

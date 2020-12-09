@@ -35,6 +35,27 @@ namespace DevDrillAPI.Services
                 })
                 .ToListAsync();
         }
+        public async Task<DiscussionDto> GetDiscussion(int discussionId)
+        {
+            return await dbContext.Discussions
+                .Where(x => x.DiscussionId == discussionId)
+                .Include(e => e.DiscussionGroup)
+                .Select(e => new DiscussionDto
+                {
+                    DiscussionId = e.DiscussionId,
+                    Name = e.Name,
+                    Threads = null,
+                    DiscussionGroup = new DiscussionGroupDto
+                    {
+                        DiscussionGroupId = e.DiscussionGroup.DiscussionGroupId,
+                        Name = e.DiscussionGroup.Name,
+                        PhotoUrl = e.DiscussionGroup.PhotoUrl
+                    },
+                    DiscussionGroupId = e.DiscussionGroupId
+                })
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
+        }
 
         public async Task<List<ThreadDto>> GetThreads(int discussionId)
         {

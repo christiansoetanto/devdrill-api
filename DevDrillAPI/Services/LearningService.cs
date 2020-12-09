@@ -81,6 +81,30 @@ namespace DevDrillAPI.Services
                 .AsNoTracking()
                 .ToListAsync();
         }
+        public async Task<CourseDto> GetCourse(int id)
+        {
+            return await dbContext.Courses
+                .Where(e => e.CourseId == id)
+                .Include(e => e.Instructor)
+                .ThenInclude(i => i.User)
+                .Select(e => new CourseDto()
+                {
+                    Detail = e.Detail,
+                    Name = e.Name,
+                    CourseId = e.CourseId,
+                    PhotoUrl = e.PhotoUrl,
+                    InsertDate = e.InsertDate,
+                    Instructor = new InstructorDto()
+                    {
+                        Title = e.Instructor.Title,
+                        CompanyName = e.Instructor.CompanyName,
+                        InstructorId = e.Instructor.InstructorId,
+                        Name = e.Instructor.User.Name
+                    }
+                })
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
+        }
 
         public async Task<List<TrackGroupDto>> GetTracks()
         {

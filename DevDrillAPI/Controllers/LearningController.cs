@@ -23,6 +23,11 @@ namespace DevDrillAPI.Controllers
         {
             return Ok(await learningService.GetCourses() ?? new List<CourseDto>());
         }
+        [HttpGet("courses/{id}")]
+        public async Task<IActionResult> GetCourse(int id)
+        {
+            return Ok(await learningService.GetCourse(id) ?? new CourseDto());
+        }
         [HttpGet("tracks/{trackId}/courses")]
         public async Task<IActionResult> GetCourses(int trackId)
         {
