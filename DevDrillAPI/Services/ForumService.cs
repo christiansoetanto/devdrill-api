@@ -35,6 +35,7 @@ namespace DevDrillAPI.Services
                 })
                 .ToListAsync();
         }
+
         public async Task<DiscussionDto> GetDiscussion(int discussionId)
         {
             return await dbContext.Discussions
@@ -106,6 +107,7 @@ namespace DevDrillAPI.Services
                 Upvote = 0,
                 DiscussionId = discussionId,
                 InsertDate = DateTime.Now,
+                Detail = detail,
                 UserId = userId
             });
 
@@ -148,7 +150,5 @@ namespace DevDrillAPI.Services
             x.Upvote = x.Upvote - 1;
             await dbContext.SaveChangesAsync();
         }
-
-
     }
 }

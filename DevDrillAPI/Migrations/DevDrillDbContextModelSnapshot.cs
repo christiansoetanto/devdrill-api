@@ -22,6 +22,9 @@ namespace DevDrillAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Test")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Key");
 
                     b.ToTable("Cobas");
@@ -423,10 +426,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 1,
                             Detail = "ini adalah lesson hello world in ts",
-                            EndDateTime = new DateTime(2020, 11, 27, 15, 47, 19, 494, DateTimeKind.Local).AddTicks(9171),
+                            EndDateTime = new DateTime(2020, 12, 10, 12, 43, 53, 324, DateTimeKind.Local).AddTicks(1731),
                             LessonGroupId = 1,
                             Name = "Hello world in ts",
-                            StartDateTime = new DateTime(2020, 11, 27, 15, 47, 19, 493, DateTimeKind.Local).AddTicks(3921),
+                            StartDateTime = new DateTime(2020, 12, 10, 12, 43, 53, 322, DateTimeKind.Local).AddTicks(9884),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -434,10 +437,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 2,
                             Detail = "ini adlaah selection n loop control",
-                            EndDateTime = new DateTime(2020, 11, 27, 15, 47, 19, 495, DateTimeKind.Local).AddTicks(3311),
+                            EndDateTime = new DateTime(2020, 12, 10, 12, 43, 53, 324, DateTimeKind.Local).AddTicks(2895),
                             LessonGroupId = 1,
                             Name = "selection n loop control",
-                            StartDateTime = new DateTime(2020, 11, 27, 15, 47, 19, 495, DateTimeKind.Local).AddTicks(3302),
+                            StartDateTime = new DateTime(2020, 12, 10, 12, 43, 53, 324, DateTimeKind.Local).AddTicks(2889),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -445,10 +448,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 3,
                             Detail = "ini adlah creating a basic calculator",
-                            EndDateTime = new DateTime(2020, 11, 27, 15, 47, 19, 495, DateTimeKind.Local).AddTicks(3335),
+                            EndDateTime = new DateTime(2020, 12, 10, 12, 43, 53, 324, DateTimeKind.Local).AddTicks(2918),
                             LessonGroupId = 1,
                             Name = "creating a basic calculator",
-                            StartDateTime = new DateTime(2020, 11, 27, 15, 47, 19, 495, DateTimeKind.Local).AddTicks(3334),
+                            StartDateTime = new DateTime(2020, 12, 10, 12, 43, 53, 324, DateTimeKind.Local).AddTicks(2917),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -456,10 +459,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 4,
                             Detail = "ini adalah definig a cufntioni",
-                            EndDateTime = new DateTime(2020, 11, 27, 15, 47, 19, 495, DateTimeKind.Local).AddTicks(3338),
+                            EndDateTime = new DateTime(2020, 12, 10, 12, 43, 53, 324, DateTimeKind.Local).AddTicks(2920),
                             LessonGroupId = 2,
                             Name = "Defining a function",
-                            StartDateTime = new DateTime(2020, 11, 27, 15, 47, 19, 495, DateTimeKind.Local).AddTicks(3337),
+                            StartDateTime = new DateTime(2020, 12, 10, 12, 43, 53, 324, DateTimeKind.Local).AddTicks(2919),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -467,10 +470,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 5,
                             Detail = "this is class n object ",
-                            EndDateTime = new DateTime(2020, 11, 27, 15, 47, 19, 495, DateTimeKind.Local).AddTicks(3341),
+                            EndDateTime = new DateTime(2020, 12, 10, 12, 43, 53, 324, DateTimeKind.Local).AddTicks(2922),
                             LessonGroupId = 2,
                             Name = "class n object ",
-                            StartDateTime = new DateTime(2020, 11, 27, 15, 47, 19, 495, DateTimeKind.Local).AddTicks(3340),
+                            StartDateTime = new DateTime(2020, 12, 10, 12, 43, 53, 324, DateTimeKind.Local).AddTicks(2921),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         },
@@ -478,10 +481,10 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 6,
                             Detail = "ini dalah detail darti making a basci tdiyr pogmra",
-                            EndDateTime = new DateTime(2020, 11, 27, 15, 47, 19, 495, DateTimeKind.Local).AddTicks(3343),
+                            EndDateTime = new DateTime(2020, 12, 10, 12, 43, 53, 324, DateTimeKind.Local).AddTicks(2925),
                             LessonGroupId = 2,
                             Name = "making a basci tdiyr pogmra",
-                            StartDateTime = new DateTime(2020, 11, 27, 15, 47, 19, 495, DateTimeKind.Local).AddTicks(3342),
+                            StartDateTime = new DateTime(2020, 12, 10, 12, 43, 53, 324, DateTimeKind.Local).AddTicks(2924),
                             ThumbnailUrl = "lesson1.jpg",
                             VideoUrl = "video1"
                         });
@@ -547,7 +550,7 @@ namespace DevDrillAPI.Migrations
                         {
                             CourseId = 1,
                             UserId = 1,
-                            Progress = 5
+                            Progress = 9
                         });
                 });
 
@@ -577,7 +580,7 @@ namespace DevDrillAPI.Migrations
                         {
                             TrackId = 1,
                             UserId = 1,
-                            Progress = 1
+                            Progress = 9
                         });
                 });
 
@@ -615,45 +618,45 @@ namespace DevDrillAPI.Migrations
                         {
                             ReplyId = 1,
                             Detail = "how to make this into this i dont know pleaseeeee help meeeee",
-                            InsertDate = new DateTime(2020, 11, 27, 15, 47, 19, 499, DateTimeKind.Local).AddTicks(8607),
+                            InsertDate = new DateTime(2020, 12, 10, 12, 43, 53, 328, DateTimeKind.Local).AddTicks(9761),
                             ThreadId = 1,
-                            Upvote = 1,
+                            Upvote = 2,
                             UserId = 1
                         },
                         new
                         {
                             ReplyId = 2,
                             Detail = "okay so this is how you do this....",
-                            InsertDate = new DateTime(2020, 11, 27, 15, 47, 19, 499, DateTimeKind.Local).AddTicks(9815),
+                            InsertDate = new DateTime(2020, 12, 10, 12, 43, 53, 329, DateTimeKind.Local).AddTicks(626),
                             ThreadId = 1,
-                            Upvote = 9,
+                            Upvote = 3,
                             UserId = 2
                         },
                         new
                         {
                             ReplyId = 3,
                             Detail = "hey guys i got error 500 cna somebody help me?",
-                            InsertDate = new DateTime(2020, 11, 27, 15, 47, 19, 500, DateTimeKind.Local).AddTicks(77),
+                            InsertDate = new DateTime(2020, 12, 10, 12, 43, 53, 329, DateTimeKind.Local).AddTicks(727),
                             ThreadId = 2,
-                            Upvote = 5,
+                            Upvote = 8,
                             UserId = 1
                         },
                         new
                         {
                             ReplyId = 4,
                             Detail = "no we cant",
-                            InsertDate = new DateTime(2020, 11, 27, 15, 47, 19, 500, DateTimeKind.Local).AddTicks(100),
+                            InsertDate = new DateTime(2020, 12, 10, 12, 43, 53, 329, DateTimeKind.Local).AddTicks(749),
                             ThreadId = 2,
-                            Upvote = 1,
+                            Upvote = 5,
                             UserId = 2
                         },
                         new
                         {
                             ReplyId = 5,
                             Detail = "You want to find this topic but HTTP404 Not Found...",
-                            InsertDate = new DateTime(2020, 11, 27, 15, 47, 19, 500, DateTimeKind.Local).AddTicks(120),
+                            InsertDate = new DateTime(2020, 12, 10, 12, 43, 53, 329, DateTimeKind.Local).AddTicks(769),
                             ThreadId = 3,
-                            Upvote = 4,
+                            Upvote = 8,
                             UserId = 2
                         });
                 });
@@ -663,6 +666,9 @@ namespace DevDrillAPI.Migrations
                     b.Property<int>("ThreadId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("Detail")
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("DiscussionId")
                         .HasColumnType("INTEGER");
@@ -692,28 +698,31 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             ThreadId = 1,
+                            Detail = "gk tau samain ama reply",
                             DiscussionId = 1,
-                            InsertDate = new DateTime(2020, 11, 27, 15, 47, 19, 500, DateTimeKind.Local).AddTicks(9569),
+                            InsertDate = new DateTime(2020, 12, 10, 12, 43, 53, 330, DateTimeKind.Local).AddTicks(3257),
                             Topic = "How to make this into",
-                            Upvote = 267,
+                            Upvote = 17,
                             UserId = 1
                         },
                         new
                         {
                             ThreadId = 2,
+                            Detail = "gk tau samain ama reply",
                             DiscussionId = 1,
-                            InsertDate = new DateTime(2020, 11, 27, 15, 47, 19, 501, DateTimeKind.Local).AddTicks(1635),
+                            InsertDate = new DateTime(2020, 12, 10, 12, 43, 53, 330, DateTimeKind.Local).AddTicks(5323),
                             Topic = "Error 500",
-                            Upvote = 159,
+                            Upvote = 212,
                             UserId = 1
                         },
                         new
                         {
                             ThreadId = 3,
+                            Detail = "gk tau samain ama reply",
                             DiscussionId = 3,
-                            InsertDate = new DateTime(2020, 11, 27, 15, 47, 19, 501, DateTimeKind.Local).AddTicks(1684),
+                            InsertDate = new DateTime(2020, 12, 10, 12, 43, 53, 330, DateTimeKind.Local).AddTicks(5382),
                             Topic = "HTTP404 Not Found",
-                            Upvote = 491,
+                            Upvote = 58,
                             UserId = 2
                         });
                 });
@@ -740,7 +749,7 @@ namespace DevDrillAPI.Migrations
 
                     b.HasIndex("TrackGroupId");
 
-                    b.ToTable("Track");
+                    b.ToTable("track");
 
                     b.HasData(
                         new

@@ -15,6 +15,7 @@ namespace DevDrillAPI.Entities
         public int UserId { get; set; }
         public User User { get; set; }
         public int Upvote { get; set; }
+        public string Detail { get; set; }
         public List<Reply> Replies { get; set; }
         public int DiscussionId { get; set; }
         public Discussion Discussion { get; set; }
@@ -36,7 +37,8 @@ namespace DevDrillAPI.Entities
                     Topic = "How to make this into",
                     UserId = 1,
                     Upvote = new Random().Next(1, 500),
-                    DiscussionId = 1
+                    DiscussionId = 1,
+                    Detail = "gk tau samain ama reply"
                 },
                 new
                 {
@@ -45,7 +47,8 @@ namespace DevDrillAPI.Entities
                     Topic = "Error 500",
                     UserId = 1,
                     Upvote = new Random().Next(1, 500),
-                    DiscussionId = 1
+                    DiscussionId = 1,
+                    Detail = "gk tau samain ama reply"
                 },
                 new
                 {
@@ -54,7 +57,8 @@ namespace DevDrillAPI.Entities
                     Topic = "HTTP404 Not Found",
                     UserId = 2,
                     Upvote = new Random().Next(1, 500),
-                    DiscussionId = 3
+                    DiscussionId = 3,
+                    Detail = "gk tau samain ama reply"
                 }
             );
         }
