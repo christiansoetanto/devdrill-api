@@ -71,7 +71,8 @@ namespace DevDrillAPI.Services
                     Upvote = e.Upvote,
                     Author = e.User.Name,
                     ReplyCount = e.Replies.Count,
-                    DiscussionId = discussionId
+                    DiscussionId = discussionId,
+                    Detail = e.Detail
                 })
                 .ToListAsync();
         }
