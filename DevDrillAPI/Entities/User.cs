@@ -40,14 +40,67 @@ namespace DevDrillAPI.Entities
             entity.HasData(
                 new
                 {
-                    UserId = 1, Password = "user1", Name = "user biasa", PhotoUrl = "photo1.jpg",
-                    IsInstructor = false, Email = "user1@email.com", PhoneNumber = "0812121212112"
+                    UserId = 1,
+                    Password = "user1",
+                    Name = "user biasa",
+                    PhotoUrl = "photo1.jpg",
+                    IsInstructor = false,
+                    Email = "user1@email.com",
+                    PhoneNumber = "0812121212112"
                 },
                 new
                 {
-                    UserId = 2,  Password = "user2", Name = "instructor", PhotoUrl = "photo2.jpg",
-                    IsInstructor = true, Email = "user2@email.com", PhoneNumber = "08777777"
+                    UserId = 2,
+                    Password = "instructor1",
+                    Name = "instructor 1",
+                    PhotoUrl = "photo2.jpg",
+                    IsInstructor = true,
+                    Email = "instructor1@email.com",
+                    PhoneNumber = "08777777"
                 }
+                ,
+                new
+                {
+                    UserId = 3,
+                    Password = "user2",
+                    Name = "user2",
+                    PhotoUrl = "photo3.jpg",
+                    IsInstructor = false,
+                    Email = "user2@email.com",
+                    PhoneNumber = "081945680235"
+                }
+                ,
+                 new
+                 {
+                     UserId = 4,
+                     Password = "instructor2",
+                     Name = "instructor 2",
+                     PhotoUrl = "photo4.png",
+                     IsInstructor = true,
+                     Email = "instructor2@email.com",
+                     PhoneNumber = "08130785690"
+                 }
+                ,
+                 new
+                 {
+                     UserId = 5,
+                     Password = "instructor 3",
+                     Name = "instructor 3",
+                     PhotoUrl = "photo5.jpg",
+                     IsInstructor = true,
+                     Email = "instructor3@email.com",
+                     PhoneNumber = "08123546778"
+                 },
+                 new
+                 {
+                     UserId = 6,
+                     Password = "user3",
+                     Name = "user3",
+                     PhotoUrl = "photo3.jpg",
+                     IsInstructor = false,
+                     Email = "user3@email.com",
+                     PhoneNumber = "081945670143"
+                 }
             );
         }
     }

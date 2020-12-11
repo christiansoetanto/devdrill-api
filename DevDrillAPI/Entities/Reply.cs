@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -25,56 +26,47 @@ namespace DevDrillAPI.Entities
             entity.Property(e => e.InsertDate).HasColumnType("datetime");
 
             entity.HasData(
-                new
-                {
-                    ReplyId = 1,
-                    InsertDate = DateTime.Now,
-                    Detail = "how to make this into this i dont know pleaseeeee help meeeee",
-                    ThreadId = 1,
-                    UserId = 1,
-                    Upvote = new Random().Next(1,10)
-                },
-                new
-                {
-                    ReplyId = 2,
-                    InsertDate = DateTime.Now,
-                    Detail = "okay so this is how you do this....",
-                    ThreadId = 1,
-                    UserId = 2,
-                    Upvote = new Random().Next(1, 10)
-
-                },
-                new
-                {
-                    ReplyId = 3,
-                    InsertDate = DateTime.Now,
-                    Detail = "hey guys i got error 500 cna somebody help me?",
-                    ThreadId = 2,
-                    UserId = 1,
-                    Upvote = new Random().Next(1, 10)
-
-                },
-                new
-                {
-                    ReplyId = 4,
-                    InsertDate = DateTime.Now,
-                    Detail = "no we cant",
-                    ThreadId = 2,
-                    UserId = 2,
-                    Upvote = new Random().Next(1, 10)
-
-                },
-                new
-                {
-                    ReplyId = 5,
-                    InsertDate = DateTime.Now,
-                    Detail = "You want to find this topic but HTTP404 Not Found...",
-                    ThreadId = 3,
-                    UserId = 2,
-                    Upvote = new Random().Next(1, 10)
-
-                }
+                GenerateSeeds()
             );
         }
+
+        private Reply[] GenerateSeeds()
+        {
+            List<Reply> list = new List<Reply>();
+            string[] reply = {
+                "Jadi yang harus di install duluan itu ada .......",
+                "Masalah itu solusi nya ada di internet, coba cek link berikut untuk penjelasan lebih detail nya",
+                "Saya juga pernah dapet error itu, coba pake codingan yang saya kirim ini...."
+            };
+
+            int threadId = 0;
+            int replyId = 0;
+            int[] userId = { 3, 6, 1 };
+
+            for (int i = 1; i <= 9; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    threadId++;
+                    replyId++;
+                    list.Add(
+                        new Reply
+                        {
+                            ReplyId = replyId,
+                            InsertDate = DateTime.Now,
+                            Detail = reply[j],
+                            ThreadId = threadId,
+                            UserId = userId[j],
+                            Upvote = new Random().Next(1, 10)
+                        }
+                    );
+                }
+            }
+
+
+            return list.ToArray();
+        }
+
+
     }
 }

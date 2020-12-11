@@ -21,7 +21,9 @@ namespace DevDrillAPI.Entities
             entity.HasKey(e => e.InstructorId);
 
             entity.HasData(
-                new {UserId = 2, InstructorId = 1, Title = "CEO and Boss", CompanyName = "Perusahaan Saya"}
+                new { UserId = 2, InstructorId = 1, Title = "CEO and Boss", CompanyName = "Perusahaan Saya" },
+                new { UserId = 4, InstructorId = 2, Title = "Instructor X", CompanyName = "X" },
+                new { UserId = 5, InstructorId = 3, Title = "Instructor Y", CompanyName = "Y" }
             );
         }
     }

@@ -38,9 +38,9 @@ namespace DevDrillAPI.Entities
                 DiscussionGroupId = 1
             });
             string[] template = { "Installation", "Regarding Video", "Development Advice" };
-            for(int i = 2, ctr = 3; i <= 9; i++)
+            for (int i = 2, ctr = 3; i <= 9; i++)
             {
-                foreach(string name in template)
+                foreach (string name in template)
                 {
                     list.Add(new
                     {
