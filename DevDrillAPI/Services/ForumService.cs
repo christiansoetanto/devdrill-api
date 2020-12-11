@@ -72,7 +72,8 @@ namespace DevDrillAPI.Services
                     Author = e.User.Name,
                     ReplyCount = e.Replies.Count,
                     DiscussionId = discussionId,
-                    Detail = e.Detail
+                    Detail = e.Detail,
+                    InsertDate = e.InsertDate
                 })
                 .ToListAsync();
         }
