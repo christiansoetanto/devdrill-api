@@ -12,7 +12,10 @@ namespace DevDrillAPI.Helper.Extensions
         public static T GetObject<T>(this JsonElement element)
         {
             var json = element.GetRawText();
-            return JsonSerializer.Deserialize<T>(json);
+            return JsonSerializer.Deserialize<T>(json,new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
         }
         public static T GetObject<T>(this JsonDocument document)
         {
