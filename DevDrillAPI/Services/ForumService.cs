@@ -77,6 +77,27 @@ namespace DevDrillAPI.Services
                 })
                 .ToListAsync();
         }
+        public async Task<ThreadDto> GetThread(int threadId)
+        {
+            return await dbContext.Threads
+                .Where(x => x.ThreadId == threadId)
+                .Include(e => e.User)
+                .Include(e => e.Replies)
+                .Select(e => new ThreadDto
+                {
+                    Topic = e.Topic,
+                    ThreadId = e.ThreadId,
+                    Upvote = e.Upvote,
+                    Author = e.User.Name,
+                    ReplyCount = e.Replies.Count,
+                    DiscussionId = e.DiscussionId,
+                    Detail = e.Detail,
+                    InsertDate = e.InsertDate,
+                    IsInstructor = e.User.IsInstructor
+                })
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
+        }
 
         public async Task<List<ReplyDto>> GetReplies(int threadId)
         {
@@ -96,7 +117,8 @@ namespace DevDrillAPI.Services
                         IsInstructor = e.User.Instructor != null,
                         Name = e.User.Name
                     },
-                    Topic = e.Thread.Topic
+                    Topic = e.Thread.Topic,
+                    ThreadId = e.ThreadId
                 })
                 .ToListAsync();
         }
@@ -124,6 +146,14 @@ namespace DevDrillAPI.Services
 
             await dbContext.SaveChangesAsync();
         }
+        public async Task UpdateThread(int threadId, string topic, string detail)
+        {
+            Thread x = await dbContext.Threads.FindAsync(threadId);
+            if (x == null) throw new KeyNotFoundException();
+            x.Topic = topic;
+            x.Detail = detail;
+            await dbContext.SaveChangesAsync();
+        }
 
         public async Task InsertReply(int userId, int threadId, string detail)
         {
@@ -138,19 +168,45 @@ namespace DevDrillAPI.Services
 
             await dbContext.SaveChangesAsync();
         }
-
-        public async Task UpvoteReply(int replyId)
+        public async Task UpdateReply(int replyId, string detail)
+        {
+            Reply x = await dbContext.Replies.FindAsync(replyId);
+            if(x == null) throw new KeyNotFoundException();
+            x.Detail = detail;
+            await dbContext.SaveChangesAsync();
+        }
+        public async Task DeleteReply(int replyId)
         {
             var x = await dbContext.Replies.FindAsync(replyId);
-            x.Upvote = x.Upvote + 1;
+            if (x == null) throw new KeyNotFoundException();
+            dbContext.Replies.Remove(x);
             await dbContext.SaveChangesAsync();
         }
 
-        public async Task DownvoteReply(int replyId)
+        public async Task<int> UpDownVoteReply(int replyId, int ctr)
         {
             var x = await dbContext.Replies.FindAsync(replyId);
-            x.Upvote = x.Upvote - 1;
-            await dbContext.SaveChangesAsync();
+            if (x == null) throw new KeyNotFoundException();
+            if (ctr != -1 && ctr != 1) return x.Upvote;
+            if(x.Upvote > int.MinValue && x.Upvote < int.MaxValue)
+            {
+                x.Upvote = x.Upvote + ctr;
+                await dbContext.SaveChangesAsync();
+            }
+            return x.Upvote;
+        }
+
+        public async Task<int> UpDownVoteThread(int threadId, int ctr)
+        {
+            var x = await dbContext.Threads.FindAsync(threadId);
+            if (x == null) throw new KeyNotFoundException();
+            if (ctr != -1 && ctr != 1) return x.Upvote;
+            if (x.Upvote > int.MinValue && x.Upvote < int.MaxValue)
+            {
+                x.Upvote = x.Upvote + ctr;
+                await dbContext.SaveChangesAsync();
+            }
+            return x.Upvote;
         }
     }
 }

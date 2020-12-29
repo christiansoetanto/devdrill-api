@@ -36,6 +36,11 @@ namespace DevDrillAPI.Controllers
           
             return Ok(await forumService.GetThreads(discussionId) ?? new List<ThreadDto>());
         }
+        [HttpGet("threads/{threadId}")]
+        public async Task<IActionResult> GetThread(int threadId)
+        {
+            return Ok(await forumService.GetThread(threadId) ?? new ThreadDto());
+        }
         [HttpGet("threads/{threadId}/replies")]
         public async Task<IActionResult> GetReplies(int threadId)
         {
@@ -44,20 +49,127 @@ namespace DevDrillAPI.Controllers
         [HttpPost("threads")]
         public async Task<IActionResult> InsertThread([FromBody]JsonElement body)
         {
-            int userId = body.GetProperty("userId").GetInt32();
-            ThreadDto threadDto = body.GetProperty("threadDto").GetObject<ThreadDto>();
-            await forumService.InsertThread(userId, threadDto.DiscussionId, threadDto.Topic, threadDto.Detail);
-            return Ok();
+            try
+            {
+                int userId = body.GetProperty("userId").GetInt32();
+                ThreadDto threadDto = body.GetProperty("threadDto").GetObject<ThreadDto>();
+                await forumService.InsertThread(userId, threadDto.DiscussionId, threadDto.Topic, threadDto.Detail);
+                return Ok();
+            }
+            catch(Exception e)
+            {
+                return StatusCode(500);
+            }
+        }
+        [HttpPut("threads")]
+        public async Task<IActionResult> UpdateThread([FromBody] JsonElement body)
+        {
+            try
+            {
+                int threadId = body.GetProperty("threadId").GetInt32();
+                string topic = body.GetProperty("topic").GetString();
+                string detail = body.GetProperty("detail").GetString();
+                ThreadDto threadDto = body.GetProperty("threadDto").GetObject<ThreadDto>();
+                await forumService.UpdateThread(threadId, topic, detail);
+                return Ok();
+            }
+            catch (KeyNotFoundException e)
+            {
+                return NotFound();
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500);
+            }
         }
         [HttpPost("replies")]
         public async Task<IActionResult> InsertReply([FromBody]JsonElement body)
         {
-            int userId = body.GetProperty("userId").GetInt32();
-            ReplyDto replyDto = body.GetProperty("replyDto").GetObject<ReplyDto>();
-            await forumService.InsertReply(userId, replyDto.ThreadId, replyDto.Detail);
-            return Ok();
+            try
+            {
+                int userId = body.GetProperty("userId").GetInt32();
+                ReplyDto replyDto = body.GetProperty("replyDto").GetObject<ReplyDto>();
+                await forumService.InsertReply(userId, replyDto.ThreadId, replyDto.Detail);
+                return Ok();
+            }
+            catch(Exception e)
+            {
+                return StatusCode(500);
+            }
         }
-        
-
+        [HttpPut("replies")]
+        public async Task<IActionResult> UpdateReply([FromBody] JsonElement body)
+        {
+            try
+            {
+                int replyId = body.GetProperty("replyId").GetInt32();
+                string detail = body.GetProperty("detail").GetString();
+                await forumService.UpdateReply(replyId, detail);
+                return Ok();
+            }
+            catch (KeyNotFoundException e)
+            {
+                return NotFound();
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500);
+            }
+        }
+        [HttpDelete("replies/{replyId}")]
+        public async Task<IActionResult> DeleteReply(int replyId)
+        {
+            try
+            {
+                await forumService.DeleteReply(replyId);
+                return Ok();
+            }
+            catch (KeyNotFoundException e)
+            {
+                return NotFound();
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500);
+            }
+        }
+        [HttpPost("threads/vote")]
+        public async Task<IActionResult> UpDownVoteThread([FromBody] JsonElement body)
+        {
+            try
+            {
+                int threadId = body.GetProperty("threadId").GetInt32();
+                int counter = body.GetProperty("counter").GetInt32();
+                int result = await forumService.UpDownVoteThread(threadId, counter);
+                return Ok(result);
+            }
+            catch(KeyNotFoundException e)
+            {
+                return NotFound();
+            }
+            catch(Exception e)
+            {
+                return StatusCode(500);
+            }
+        }
+        [HttpPost("replies/vote")]
+        public async Task<IActionResult> UpDownVoteReply([FromBody] JsonElement body)
+        {
+            try
+            {
+                int replyId = body.GetProperty("replyId").GetInt32();
+                int counter = body.GetProperty("counter").GetInt32();
+                int result = await forumService.UpDownVoteReply(replyId, counter);
+                return Ok(result);
+            }
+            catch (KeyNotFoundException e)
+            {
+                return NotFound();
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500);
+            }
+        }
     }
-}
+ }

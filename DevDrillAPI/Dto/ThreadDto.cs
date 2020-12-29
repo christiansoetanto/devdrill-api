@@ -12,6 +12,7 @@ namespace DevDrillAPI.Dto
         public int Upvote { get; set; }
         public int ReplyCount { get; set; }
         public string Author { get; set; }
+        public bool IsInstructor { get; set; }
         public int DiscussionId { get; set; }
         public string Detail { get; set; }
         
