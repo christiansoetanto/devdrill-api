@@ -11,6 +11,5 @@ namespace DevDrillAPI.Dto
         public int DiscussionGroupId { get; set; }
         public DiscussionGroupDto DiscussionGroup { get; set; }
     }
-
     
 }

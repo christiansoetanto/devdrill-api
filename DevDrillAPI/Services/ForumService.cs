@@ -22,6 +22,9 @@ namespace DevDrillAPI.Services
         public async Task<List<DiscussionGroupDto>> GetDiscussionGroup()
         {
             return await dbContext.DiscussionGroups
+                .Include(x => x.Discussions)
+                .ThenInclude(x => x.Threads)
+                .ThenInclude(x => x.Replies)
                 .Select(e => new DiscussionGroupDto()
                 {
                     Name = e.Name,
@@ -30,7 +33,12 @@ namespace DevDrillAPI.Services
                     Discussions = e.Discussions.Select(d => new DiscussionDto()
                     {
                         Name = d.Name,
-                        DiscussionId = d.DiscussionId
+                        DiscussionId = d.DiscussionId,
+                        Threads = d.Threads.Select(g => new ThreadDto
+                        {
+                            ThreadId = g.ThreadId,
+                            ReplyCount = g.Replies.Count
+                        }).ToList()
                     }).ToList()
                 })
                 .ToListAsync();
@@ -69,7 +77,12 @@ namespace DevDrillAPI.Services
                     Topic = e.Topic,
                     ThreadId = e.ThreadId,
                     Upvote = e.Upvote,
-                    Author = e.User.Name,
+                    User = new UserDto
+                    {
+                        UserId = e.User.UserId,
+                        Name = e.User.Name,
+                        IsInstructor = e.User.IsInstructor
+                    },
                     ReplyCount = e.Replies.Count,
                     DiscussionId = discussionId,
                     Detail = e.Detail,
@@ -88,12 +101,16 @@ namespace DevDrillAPI.Services
                     Topic = e.Topic,
                     ThreadId = e.ThreadId,
                     Upvote = e.Upvote,
-                    Author = e.User.Name,
+                    User = new UserDto
+                    {
+                        UserId = e.User.UserId,
+                        Name = e.User.Name,
+                        IsInstructor = e.User.IsInstructor
+                    },
                     ReplyCount = e.Replies.Count,
                     DiscussionId = e.DiscussionId,
                     Detail = e.Detail,
-                    InsertDate = e.InsertDate,
-                    IsInstructor = e.User.IsInstructor
+                    InsertDate = e.InsertDate
                 })
                 .AsNoTracking()
                 .FirstOrDefaultAsync();

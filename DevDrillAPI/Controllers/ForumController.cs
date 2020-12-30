@@ -33,7 +33,6 @@ namespace DevDrillAPI.Controllers
         [HttpGet("discussions/{discussionId}/threads")]
         public async Task<IActionResult> GetThreads(int discussionId)
         {
-          
             return Ok(await forumService.GetThreads(discussionId) ?? new List<ThreadDto>());
         }
         [HttpGet("threads/{threadId}")]
@@ -69,7 +68,6 @@ namespace DevDrillAPI.Controllers
                 int threadId = body.GetProperty("threadId").GetInt32();
                 string topic = body.GetProperty("topic").GetString();
                 string detail = body.GetProperty("detail").GetString();
-                ThreadDto threadDto = body.GetProperty("threadDto").GetObject<ThreadDto>();
                 await forumService.UpdateThread(threadId, topic, detail);
                 return Ok();
             }
