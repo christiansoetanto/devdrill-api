@@ -9,6 +9,7 @@ namespace DevDrillAPI.Entities
 
     {
         public int CourseId { get; set; }
+        public string CoverUrl { get; set; }
         public string PhotoUrl { get; set; }
         public string Name { get; set; }
         public string Detail { get; set; }
@@ -18,7 +19,7 @@ namespace DevDrillAPI.Entities
         public Track Track { get; set; }
         public int InstructorId { get; set; }
         public Instructor Instructor { get; set; }
-        public MappingUserCourse MappingUserCourse { get; set; }
+        public double? Progress { get; set; }
     }
 
     public class CourseModelBuilder : IEntityTypeConfiguration<Course>
@@ -36,6 +37,7 @@ namespace DevDrillAPI.Entities
                     Name = "Pengenalan Bahasa Pemrograman HTML",
                     Detail = "Dalam kursus ini, kalian akan diajarkan dasar-dasar markup language HTML",
                     InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                     TrackId = 1,
                     InstructorId = 1
                 },
@@ -46,6 +48,7 @@ namespace DevDrillAPI.Entities
                     Name = "HTML untuk pembuatan dan desain website",
                     Detail = "Dalam kursus ini, kalian akan diajarkan HTML sebagai dasar dalam membuat website",
                     InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                     TrackId = 1,
                     InstructorId = 1
                 },
@@ -56,6 +59,7 @@ namespace DevDrillAPI.Entities
                     Name = "Mulai belajar website dengan HTML",
                     Detail = "Mempelajari tentang HTML dasar",
                     InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                     TrackId = 1,
                     InstructorId = 1
                 },
@@ -66,6 +70,7 @@ namespace DevDrillAPI.Entities
                     Name = "Mengenal HTML",
                     Detail = "Pengenalan bahasa markup HTML",
                     InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                     TrackId = 1,
                     InstructorId = 1
                 },
@@ -76,6 +81,7 @@ namespace DevDrillAPI.Entities
                     Name = "Kursus HTML untuk semua orang",
                     Detail = "Tutorial HTML dasar",
                     InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                     TrackId = 1,
                     InstructorId = 1
                 },
@@ -88,6 +94,7 @@ namespace DevDrillAPI.Entities
                     Name = "Tutorial dasar CSS untuk desain website",
                     Detail = "Dalam kursus ini, akan diperkenalkan CSS untuk mempercantik tampilan website",
                     InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                     TrackId = 2,
                     InstructorId = 1
                 },
@@ -98,6 +105,7 @@ namespace DevDrillAPI.Entities
                     Name = "Panduan lengkap CSS 2020",
                     Detail = "Panduan lengkap CSS terbaru",
                     InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                     TrackId = 2,
                     InstructorId = 1
                 },
@@ -108,6 +116,7 @@ namespace DevDrillAPI.Entities
                     Name = "Kupas Tuntas CSS dari Nol",
                     Detail = "Khusus pemula yang ingin membuat website dengan CSS dan HTML",
                     InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                     TrackId = 2,
                     InstructorId = 1
                 },
@@ -118,6 +127,7 @@ namespace DevDrillAPI.Entities
                      Name = "CSS untuk pemula",
                      Detail = "Belajar CSS bagi pemula",
                      InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                      TrackId = 2,
                      InstructorId = 1
                  },
@@ -128,6 +138,7 @@ namespace DevDrillAPI.Entities
                       Name = "Mempercantik tampilan website dengan CSS",
                       Detail = "Mempelajari tentang CSS untuk mempercantik website",
                       InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                       TrackId = 2,
                       InstructorId = 1
                   },
@@ -140,6 +151,7 @@ namespace DevDrillAPI.Entities
                      Name = "Pemograman dasar dengan Javascript",
                      Detail = "Cara mudah memahami Javascript dengan mudah",
                      InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                      TrackId = 3,
                      InstructorId = 1
                  },
@@ -150,6 +162,7 @@ namespace DevDrillAPI.Entities
                       Name = "Panduan lengkap Javascript 2020",
                       Detail = "Tutorial lengkap mengenai Javascript terbaru",
                       InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                       TrackId = 3,
                       InstructorId = 1
                   },
@@ -160,6 +173,7 @@ namespace DevDrillAPI.Entities
                       Name = "Mengenal pemrograman Javascript untuk pemula",
                       Detail = "Belajar Javascript untuk pemula",
                       InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                       TrackId = 3,
                       InstructorId = 1
                   },
@@ -170,6 +184,7 @@ namespace DevDrillAPI.Entities
                        Name = "Belajar Javascript untuk pemrograman web",
                        Detail = "Belajar Javascript untuk membuat web lebih interaktif",
                        InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                        TrackId = 3,
                        InstructorId = 1
                    },
@@ -180,6 +195,7 @@ namespace DevDrillAPI.Entities
                        Name = "Lancar membuat program dalam Javascript",
                        Detail = "Belajar dari nol sampai lancar Javascript",
                        InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                        TrackId = 3,
                        InstructorId = 1
                    },
@@ -192,6 +208,7 @@ namespace DevDrillAPI.Entities
                        Name = "React Masterclass untuk semua",
                        Detail = "Belajar framework javascript React dari dasar sampai topik yang advanced",
                        InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                        TrackId = 4,
                        InstructorId = 2
                    },
@@ -202,6 +219,7 @@ namespace DevDrillAPI.Entities
                        Name = "ReactJS Bahasa Indonesia",
                        Detail = "Belajar ReactJS dasar hingga upload ke hosting",
                        InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                        TrackId = 4,
                        InstructorId = 3
                    },
@@ -212,6 +230,7 @@ namespace DevDrillAPI.Entities
                        Name = "Panduan lengkap React 2020",
                        Detail = "Tutorial paling lengkap tahun 2020 mengenai framework React",
                        InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                        TrackId = 4,
                        InstructorId = 2
                    },
@@ -222,6 +241,7 @@ namespace DevDrillAPI.Entities
                        Name = "Belajar Framework React",
                        Detail = "Goal dari kursus ini adalah menguasai framework React",
                        InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                        TrackId = 4,
                        InstructorId = 3
                    },
@@ -232,6 +252,7 @@ namespace DevDrillAPI.Entities
                        Name = "Tutorial React bagi pemula",
                        Detail = "Belajar React dari Nol",
                        InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                        TrackId = 4,
                        InstructorId = 2
                    },
@@ -244,6 +265,7 @@ namespace DevDrillAPI.Entities
                         Name = "Introduction to TS",
                         Detail = "Dalam kursus ini, kalian akan diajarkan Typescript dari dasar hingga fitur-fitur penting dari Typescript sampai di titik kalian dapat mengimplementasikan Typescript ke dalam proyek apapun yang kalian kerjakan. Kursus ini juga akan menjadi dasar bagi kalian yang ingin belajar tentang framework Angular",
                         InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                         TrackId = 5,
                         InstructorId = 3
                     },
@@ -254,6 +276,7 @@ namespace DevDrillAPI.Entities
                         Name = "Panduan lengkap Typescript 2020",
                         Detail = "Belajar Typescript dari Nol sebagai persiapan untuk mempelajari framework Angular",
                         InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                         TrackId = 5,
                         InstructorId = 2
                     },
@@ -264,6 +287,7 @@ namespace DevDrillAPI.Entities
                         Name = "Panduan lengkap Angular 2020",
                         Detail = "Belajar topik dasar hingga topik advanced dari framework Angular",
                         InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                         TrackId = 5,
                         InstructorId = 3
                     },
@@ -274,6 +298,7 @@ namespace DevDrillAPI.Entities
                         Name = "Belajar Angular dari Nol",
                         Detail = "Belajar framework javascript React dari dasar sampai topik yang advanced",
                         InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                         TrackId = 5,
                         InstructorId = 2
                     },
@@ -284,6 +309,7 @@ namespace DevDrillAPI.Entities
                          Name = "Tutorial Angular bagi pemula",
                          Detail = "Kursus ini ditujukan untuk pemula yang belum pernah menyentuh framework angular",
                          InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                          TrackId = 5,
                          InstructorId = 3
                      },
@@ -296,6 +322,7 @@ namespace DevDrillAPI.Entities
                          Name = "Tutorial Vue bagi pemula",
                          Detail = "Kursus ini ditujukan untuk pemula yang belum pernah menyentuh framework Vue",
                          InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                          TrackId = 6,
                          InstructorId = 2
                      },
@@ -306,6 +333,7 @@ namespace DevDrillAPI.Entities
                           Name = "Belajar Vue dari Nol",
                           Detail = "Belajar framework Vue dari Nol. Tujuan dari course ini adalah untuk dapat mengimplementasi Vue kepada project peserta course.",
                           InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                           TrackId = 6,
                           InstructorId = 3
                       },
@@ -316,6 +344,7 @@ namespace DevDrillAPI.Entities
                           Name = "Panduan Lengkap Vue 2020",
                           Detail = "Panduan paling up-to-date tentang framework Vue",
                           InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                           TrackId = 6,
                           InstructorId = 2
                       },
@@ -326,6 +355,7 @@ namespace DevDrillAPI.Entities
                           Name = "Vue Masterclass untuk semua",
                           Detail = "Belajar framework javascript Vue dari dasar sampai topik yang advanced.",
                           InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                           TrackId = 6,
                           InstructorId = 3
                       },
@@ -336,6 +366,7 @@ namespace DevDrillAPI.Entities
                            Name = "Dasar - dasar pemrograman Vue yang cocok untuk pemula",
                            Detail = "Cocok untuk yang sedang ingin mempelajari front-end framework",
                            InsertDate = new DateTime(2012, 9, 12),
+					CoverUrl = "cover2.png",
                            TrackId = 6,
                            InstructorId = 2
                        },
@@ -348,6 +379,7 @@ namespace DevDrillAPI.Entities
                            Name = "Asynchronus Programming in C#",
                            Detail = "Dalam kursus ini, kalian akan diajarkan bahasa pemrograman C# dari dasar hingga fitur-fitur penting dari C# sampai di titik kalian dapat mengimplementasikan C# ke dalam proyek apapun yang kalian kerjakan. Kursus ini juga menjadi dasar bagi kalian yang ingin belajar tentang framework ASP.NET",
                            InsertDate = new DateTime(2014, 9, 2),
+					CoverUrl = "cover3.png",
                            TrackId = 7,
                            InstructorId = 3
                        },
@@ -358,6 +390,7 @@ namespace DevDrillAPI.Entities
                            Name = "Belajar framework .NET dari Nol",
                            Detail = "Kursus ini ditargetkan bagi pemula yang tidak memiliki pengalaman sama sekali dengan framework .NET core",
                            InsertDate = new DateTime(2014, 9, 2),
+					CoverUrl = "cover2.png",
                            TrackId = 7,
                            InstructorId = 2
                        },
@@ -368,6 +401,7 @@ namespace DevDrillAPI.Entities
                            Name = "Buat REST API dengan framework .NET core",
                            Detail = "Belajar .NET core untuk membuat REST API",
                            InsertDate = new DateTime(2014, 9, 2),
+					CoverUrl = "cover2.png",
                            TrackId = 7,
                            InstructorId = 3
                        },
@@ -378,6 +412,7 @@ namespace DevDrillAPI.Entities
                             Name = "Panduan lengkap .NET core 2020",
                             Detail = "Belajar framework .NET Core dengan panduan paling up-to-date",
                             InsertDate = new DateTime(2014, 9, 2),
+					CoverUrl = "cover2.png",
                             TrackId = 7,
                             InstructorId = 2
                         },
@@ -388,6 +423,7 @@ namespace DevDrillAPI.Entities
                             Name = ".NET core masterclass untuk semua",
                             Detail = "Kuasai .NET core dengan cepat dengan mengikuti course ini",
                             InsertDate = new DateTime(2014, 9, 2),
+					CoverUrl = "cover2.png",
                             TrackId = 7,
                             InstructorId = 3
                         },
@@ -400,6 +436,7 @@ namespace DevDrillAPI.Entities
                             Name = "Object-Oriented Programming with PHP",
                             Detail = "Dalam kursus ini, kalian akan diajarkan bahasa pemrograman PHP  dari dasar hingga fitur-fitur penting dari PHP sampai di titik kalian dapat mengimplementasikan PHP ke dalam proyek apapun yang kalian kerjakan.Kursus ini juga menjadi dasar bagi kalian yang ingin belajar tentang framework Laravel",
                             InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover1.png",
                             TrackId = 8,
                             InstructorId = 2
                         },
@@ -410,6 +447,7 @@ namespace DevDrillAPI.Entities
                             Name = "Belajar pemrograman website dengan framework Laravel",
                             Detail = "Dalam kursus ini, kalian akan diajarkan cara membuat website dengan framework Laravel",
                             InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                             TrackId = 8,
                             InstructorId = 3
                         },
@@ -420,6 +458,7 @@ namespace DevDrillAPI.Entities
                              Name = "Belajar framework Laravel dari Nol",
                              Detail = "Dalam kursus ini, kalian akan diajarkan Laravel dari dasar hingga topik-topik yang advanced",
                              InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                              TrackId = 8,
                              InstructorId = 2
                          },
@@ -430,6 +469,7 @@ namespace DevDrillAPI.Entities
                               Name = "Panduan Lengkap Laravel 2020",
                               Detail = "Ikuti panduan paling up to date mengenai framework Laravel",
                               InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                               TrackId = 8,
                               InstructorId = 3
                           },
@@ -440,6 +480,7 @@ namespace DevDrillAPI.Entities
                               Name = "Laravel Masterclass untuk semua",
                               Detail = "Kuasai Laravel dengan cepat dengan mengikuti course ini, cocok untuk pemula",
                               InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                               TrackId = 8,
                               InstructorId = 2
                           },
@@ -452,6 +493,7 @@ namespace DevDrillAPI.Entities
                                 Name = "Python Programming Language",
                                 Detail = "Python adalah bahasa pemrograman terkenal yang dibuat dengan fokus untuk mempermudah programmer untuk membaca kodingnya.Dalam kursus ini, kalian akan diajarkan Python dari dasar sampai kalian dapat mengimplementasikannya dalam aplikasi kalian. Kursus ini juga disarankan bagi yang berminat untuk mempelajari framework Django, karena Django menggunakan bahasa pemrograman Python.",
                                 InsertDate = new DateTime(2019, 3, 19),
+					CoverUrl = "cover4.png",
                                 TrackId = 9,
                                 InstructorId = 3
                             },
@@ -462,6 +504,7 @@ namespace DevDrillAPI.Entities
                                 Name = "Belajar pemrograman website dengan framework Django",
                                 Detail = "Dalam kursus ini, kalian akan diajarkan cara membuat website dengan framework Django",
                                 InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                                 TrackId = 9,
                                 InstructorId = 2
                             },
@@ -472,6 +515,7 @@ namespace DevDrillAPI.Entities
                                 Name = "Belajar framework Django dari Nol",
                                 Detail = "Dalam kursus ini, kalian akan diajarkan Django dari dasar hingga topik-topik yang advanced",
                                 InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                                 TrackId = 9,
                                 InstructorId = 3
                             },
@@ -482,6 +526,7 @@ namespace DevDrillAPI.Entities
                                 Name = "Panduan Lengkap Django 2020",
                                 Detail = "Ikuti panduan paling up to date mengenai framework Django",
                                 InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                                 TrackId = 9,
                                 InstructorId = 2
                             },
@@ -492,6 +537,7 @@ namespace DevDrillAPI.Entities
                                 Name = "Django Masterclass untuk semua",
                                 Detail = "Kuasai Django dengan cepat dengan mengikuti course ini, cocok untuk pemula",
                                 InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                                 TrackId = 9,
                                 InstructorId = 3
                             },
@@ -504,6 +550,7 @@ namespace DevDrillAPI.Entities
                                 Name = "Tutorial lengkap NodeJS untuk membuat REST API",
                                 Detail = "Belajar Node JS dari dasar-dasarnya hingga dapat membuat REST API untuk website",
                                 InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                                 TrackId = 10,
                                 InstructorId = 2
                             },
@@ -514,6 +561,7 @@ namespace DevDrillAPI.Entities
                                  Name = "Belajar pemrograman website dengan framework NodeJS",
                                  Detail = "Dalam kursus ini, kalian akan diajarkan cara membuat API website dengan framework NodeJS",
                                  InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                                  TrackId = 10,
                                  InstructorId = 3
                              },
@@ -524,6 +572,7 @@ namespace DevDrillAPI.Entities
                                 Name = "Belajar framework NodeJS dari Nol",
                                 Detail = "Dalam kursus ini, kalian akan diajarkan NodeJS dari dasar hingga topik-topik yang advanced",
                                 InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                                 TrackId = 10,
                                 InstructorId = 2
                             },
@@ -534,6 +583,7 @@ namespace DevDrillAPI.Entities
                                 Name = "Panduan Lengkap NodeJS 2020",
                                 Detail = "Ikuti panduan paling up to date mengenai framework NodeJS",
                                 InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                                 TrackId = 10,
                                 InstructorId = 3
                             },
@@ -544,6 +594,7 @@ namespace DevDrillAPI.Entities
                                 Name = "NodeJS Masterclass untuk semua",
                                 Detail = "Kuasai NodeJS dengan cepat dengan mengikuti course ini, cocok untuk pemula",
                                 InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                                 TrackId = 10,
                                 InstructorId = 2
                             },
@@ -556,6 +607,7 @@ namespace DevDrillAPI.Entities
                                 Name = "Tutorial lengkap Spring untuk membuat REST API",
                                 Detail = "Belajar framework Spring dari dasar-dasarnya hingga dapat membuat REST API untuk website",
                                 InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                                 TrackId = 11,
                                 InstructorId = 3
                             },
@@ -566,6 +618,7 @@ namespace DevDrillAPI.Entities
                                  Name = "Belajar pemrograman website dengan framework Spring",
                                  Detail = "Dalam kursus ini, kalian akan diajarkan cara membuat website dengan framework Spring",
                                  InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                                  TrackId = 11,
                                  InstructorId = 2
                              },
@@ -576,6 +629,7 @@ namespace DevDrillAPI.Entities
                                 Name = "Belajar framework Spring dari Nol",
                                 Detail = "Dalam kursus ini, kalian akan diajarkan Spring dari dasar hingga topik-topik yang advanced",
                                 InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                                 TrackId = 11,
                                 InstructorId = 3
                             },
@@ -586,6 +640,7 @@ namespace DevDrillAPI.Entities
                                 Name = "Panduan Lengkap Spring 2020",
                                 Detail = "Ikuti panduan paling up to date mengenai framework Spring",
                                 InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                                 TrackId = 11,
                                 InstructorId = 3
                             },
@@ -596,6 +651,7 @@ namespace DevDrillAPI.Entities
                                 Name = "Spring Masterclass untuk semua",
                                 Detail = "Kuasai Spring dengan cepat dengan mengikuti course ini, cocok untuk pemula",
                                 InsertDate = new DateTime(2014, 12, 2),
+					CoverUrl = "cover2.png",
                                 TrackId = 11,
                                 InstructorId = 2
                             }

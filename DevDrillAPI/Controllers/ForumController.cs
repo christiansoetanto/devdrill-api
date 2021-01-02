@@ -21,29 +21,29 @@ namespace DevDrillAPI.Controllers
             this.forumService = forumService;
         }
         [HttpGet("discussions")]
-        public async Task<IActionResult> GetDiscussionGroup()
+        public async Task<IActionResult> GetDiscussionGroups()
         {
-            return Ok(await forumService.GetDiscussionGroup() ?? new List<DiscussionGroupDto>());
+            return Ok(await forumService.GetDiscussionGroups() ?? new List<DiscussionGroupDto>());
         }
-        [HttpGet("discussions/{discussionId}")]
-        public async Task<IActionResult> GetDiscussion(int discussionId)
+        [HttpGet("discussions/{id}")]
+        public async Task<IActionResult> GetDiscussion(int id)
         {
-            return Ok(await forumService.GetDiscussion(discussionId) ?? new DiscussionDto());
+            return Ok(await forumService.GetDiscussion(id) ?? new DiscussionDto());
         }
         [HttpGet("discussions/{discussionId}/threads")]
-        public async Task<IActionResult> GetThreads(int discussionId)
+        public async Task<IActionResult> GetThreadsByDiscussionId(int discussionId)
         {
-            return Ok(await forumService.GetThreads(discussionId) ?? new List<ThreadDto>());
+            return Ok(await forumService.GetThreadsByDiscussionId(discussionId) ?? new List<ThreadDto>());
         }
-        [HttpGet("threads/{threadId}")]
-        public async Task<IActionResult> GetThread(int threadId)
+        [HttpGet("threads/{id}")]
+        public async Task<IActionResult> GetThread(int id)
         {
-            return Ok(await forumService.GetThread(threadId) ?? new ThreadDto());
+            return Ok(await forumService.GetThread(id) ?? new ThreadDto());
         }
         [HttpGet("threads/{threadId}/replies")]
-        public async Task<IActionResult> GetReplies(int threadId)
+        public async Task<IActionResult> GetRepliesByThreadId(int threadId)
         {
-            return Ok(await forumService.GetReplies(threadId) ?? new List<ReplyDto>());
+            return Ok(await forumService.GetRepliesByThreadId(threadId) ?? new List<ReplyDto>());
         }
         [HttpPost("threads")]
         public async Task<IActionResult> InsertThread([FromBody]JsonElement body)
@@ -65,10 +65,10 @@ namespace DevDrillAPI.Controllers
         {
             try
             {
-                int threadId = body.GetProperty("threadId").GetInt32();
+                int id = body.GetProperty("threadId").GetInt32();
                 string topic = body.GetProperty("topic").GetString();
                 string detail = body.GetProperty("detail").GetString();
-                await forumService.UpdateThread(threadId, topic, detail);
+                await forumService.UpdateThread(id, topic, detail);
                 return Ok();
             }
             catch (KeyNotFoundException e)
@@ -100,9 +100,9 @@ namespace DevDrillAPI.Controllers
         {
             try
             {
-                int replyId = body.GetProperty("replyId").GetInt32();
+                int id = body.GetProperty("replyId").GetInt32();
                 string detail = body.GetProperty("detail").GetString();
-                await forumService.UpdateReply(replyId, detail);
+                await forumService.UpdateReply(id, detail);
                 return Ok();
             }
             catch (KeyNotFoundException e)
@@ -114,12 +114,12 @@ namespace DevDrillAPI.Controllers
                 return StatusCode(500);
             }
         }
-        [HttpDelete("replies/{replyId}")]
-        public async Task<IActionResult> DeleteReply(int replyId)
+        [HttpDelete("replies/{id}")]
+        public async Task<IActionResult> DeleteReply(int id)
         {
             try
             {
-                await forumService.DeleteReply(replyId);
+                await forumService.DeleteReply(id);
                 return Ok();
             }
             catch (KeyNotFoundException e)

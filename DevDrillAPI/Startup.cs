@@ -29,6 +29,7 @@ namespace DevDrillAPI
                 .Where(type => type.FullName != null && type.FullName.EndsWith("Service")).ToList();
             serviceTypes.ForEach(type => { services.AddScoped(type); });
 
+
             services.AddDbContext<DevDrillDbContext>(opt =>
             {
                 opt.UseSqlite(connectionString: Configuration["SQLiteConnectionString"]);

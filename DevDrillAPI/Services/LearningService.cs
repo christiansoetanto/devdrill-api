@@ -17,7 +17,7 @@ namespace DevDrillAPI.Services
             this.dbContext = dbContext;
         }
 
-        public async Task<List<LessonGroupDto>> GetLessons(int courseId)
+        public async Task<List<LessonGroupDto>> GetLessonGroupsByCourseId(int courseId)
         {
             return await dbContext.LessonGroups
                 .Where(e => e.CourseId == courseId)
@@ -32,23 +32,51 @@ namespace DevDrillAPI.Services
                         LessonId = l.LessonId,
                         ThumbnailUrl = l.ThumbnailUrl,
                         EndDateTime = l.EndDateTime,
-                        StartDateTime = l.StartDateTime
+                        StartDateTime = l.StartDateTime,
+                        VideoUrl = l.VideoUrl,
+                        VideoType = l.VideoType,
+                        Detail = l.Detail
                     }).ToList()
                 })
                 .AsNoTracking()
                 .ToListAsync();
         }
+        public async Task<LessonGroupDto> GetLessonGroup(int id)
+        {
+            return await dbContext.LessonGroups
+                .Where(e => e.LessonGroupId == id)
+                .Include(e => e.Lessons)
+                .Select(e => new LessonGroupDto()
+                {
+                    LessonGroupId = e.LessonGroupId,
+                    LessonGroupName = e.LessonGroupName,
+                    Lessons = e.Lessons.Select(l => new LessonDto()
+                    {
+                        Name = l.Name,
+                        LessonId = l.LessonId,
+                        ThumbnailUrl = l.ThumbnailUrl,
+                        EndDateTime = l.EndDateTime,
+                        StartDateTime = l.StartDateTime,
+                        VideoUrl = l.VideoUrl,
+                        VideoType = l.VideoType,
+                        Detail = l.Detail
+                    }).ToList()
+                })
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
+        }
 
-        public async Task<LessonDto> GetLesson(int lessonId)
+        public async Task<LessonDto> GetLesson(int id)
         {
             return await dbContext.Lessons
-                .Where(e => e.LessonId == lessonId)
+                .Where(e => e.LessonId == id)
                 .Select(e => new LessonDto()
                 {
                     Name = e.Name,
                     LessonId = e.LessonId,
                     Detail = e.Detail,
                     VideoUrl = e.VideoUrl,
+                    VideoType = e.VideoType,
                     ThumbnailUrl = e.ThumbnailUrl,
                     EndDateTime = e.EndDateTime,
                     StartDateTime = e.StartDateTime
@@ -56,11 +84,9 @@ namespace DevDrillAPI.Services
                 .AsNoTracking()
                 .FirstOrDefaultAsync();
         }
-
-        public async Task<List<CourseDto>> GetCourses(int trackId = 0)
+        public async Task<List<CourseDto>> GetCourses()
         {
             return await dbContext.Courses
-                .Where(e => e.TrackId == (trackId == 0? e.TrackId : trackId))
                 .Include(e => e.Instructor)
                 .ThenInclude(i => i.User)
                 .Select(e => new CourseDto()
@@ -69,13 +95,47 @@ namespace DevDrillAPI.Services
                     Name = e.Name,
                     CourseId = e.CourseId,
                     PhotoUrl = e.PhotoUrl,
+                    CoverUrl = e.CoverUrl,
                     InsertDate = e.InsertDate,
-                    Instructor = new InstructorDto()
+                    User = new UserDto()
                     {
-                        Title = e.Instructor.Title,
-                        CompanyName = e.Instructor.CompanyName,
-                        InstructorId = e.Instructor.InstructorId,
-                        Name = e.Instructor.User.Name
+                        UserId = e.Instructor.User.UserId,
+                        Name = e.Instructor.User.Name,
+                        Instructor = new InstructorDto
+                        {
+                            CompanyName = e.Instructor.CompanyName,
+                            InstructorId = e.Instructor.InstructorId,
+                            Title = e.Instructor.Title
+                        }
+                    }
+                })
+                .AsNoTracking()
+                .ToListAsync();
+        }
+        public async Task<List<CourseDto>> GetCoursesByTrackId(int trackId)
+        {
+            return await dbContext.Courses
+                .Where(e => e.TrackId == trackId)
+                .Include(e => e.Instructor)
+                .ThenInclude(i => i.User)
+                .Select(e => new CourseDto()
+                {
+                    Detail = e.Detail,
+                    Name = e.Name,
+                    CourseId = e.CourseId,
+                    PhotoUrl = e.PhotoUrl,
+                    CoverUrl = e.CoverUrl,
+                    InsertDate = e.InsertDate,
+                    User = new UserDto()
+                    {
+                        UserId = e.Instructor.User.UserId,
+                        Name = e.Instructor.User.Name,
+                        Instructor = new InstructorDto
+                        {
+                            CompanyName = e.Instructor.CompanyName,
+                            InstructorId = e.Instructor.InstructorId,
+                            Title = e.Instructor.Title
+                        }
                     }
                 })
                 .AsNoTracking()
@@ -93,13 +153,18 @@ namespace DevDrillAPI.Services
                     Name = e.Name,
                     CourseId = e.CourseId,
                     PhotoUrl = e.PhotoUrl,
+                    CoverUrl = e.CoverUrl,
                     InsertDate = e.InsertDate,
-                    Instructor = new InstructorDto()
+                    User = new UserDto()
                     {
-                        Title = e.Instructor.Title,
-                        CompanyName = e.Instructor.CompanyName,
-                        InstructorId = e.Instructor.InstructorId,
-                        Name = e.Instructor.User.Name
+                        UserId = e.Instructor.User.UserId,
+                        Name = e.Instructor.User.Name,
+                        Instructor = new InstructorDto
+                        {
+                            CompanyName = e.Instructor.CompanyName,
+                            InstructorId = e.Instructor.InstructorId,
+                            Title = e.Instructor.Title
+                        }
                     }
                 })
                 .AsNoTracking()
@@ -139,7 +204,6 @@ namespace DevDrillAPI.Services
                     Detail = e.Detail,
                     PhotoUrl = e.PhotoUrl,
                     TrackGroupId = e.TrackGroupId,
-                    MappingUserTrack = null,
                     TrackGroup = null
                 })
                 .AsNoTracking()
@@ -153,17 +217,25 @@ namespace DevDrillAPI.Services
                 .Include(e => e.Instructor)
                 .ThenInclude(e => e.User)
                 .OrderByDescending(e => e.InsertDate)
-                .Take(5)
+                .Take(10)
                 .Select(e => new CourseDto()
                 {
                     Name = e.Name,
                     CourseId = e.CourseId,
                     InsertDate = e.InsertDate,
                     PhotoUrl = e.PhotoUrl,
+                    CoverUrl = e.CoverUrl,
                     TrackId = e.TrackId,
-                    Instructor = new InstructorDto()
+                    User = new UserDto()
                     {
+                        UserId = e.Instructor.User.UserId,
                         Name = e.Instructor.User.Name,
+                        Instructor = new InstructorDto
+                        {
+                            CompanyName = e.Instructor.CompanyName,
+                            InstructorId = e.Instructor.InstructorId,
+                            Title = e.Instructor.Title
+                        }
                     },
                     Track = new TrackDto()
                     {
@@ -174,51 +246,5 @@ namespace DevDrillAPI.Services
                 .ToListAsync();
         }
 
-        public async Task UpsertMappingUserCourse(int userId, int courseId, int progress)
-        {
-            var find = await dbContext.MappingUserCourses
-                .Where(e => e.UserId == userId)
-                .Where(e => e.CourseId == courseId)
-                .FirstOrDefaultAsync();
-            if (find != null)
-            {
-                find.Progress = progress;
-            }
-            else
-            {
-                await dbContext.AddAsync(new MappingUserCourse()
-                {
-                    CourseId = courseId,
-                    UserId = userId,
-                    Progress = progress
-                });
-            }
-          
-            await dbContext.SaveChangesAsync();
-        }
-
-        public async Task UpsertMappingUserTrack(int userId, int trackId, int progress)
-        {
-            var find = await dbContext.MappingUserTracks
-                .Where(e => e.UserId == userId)
-                .Where(e => e.TrackId == trackId)
-                .FirstOrDefaultAsync();
-            if (find != null)
-            {
-                find.Progress = progress;
-            }
-            else
-            {
-                await dbContext.AddAsync(new MappingUserTrack()
-                {
-                    TrackId = trackId,
-                    UserId = userId,
-                    Progress = progress
-                }); 
-            }
-
-           
-            await dbContext.SaveChangesAsync();
-        }
     }
 }

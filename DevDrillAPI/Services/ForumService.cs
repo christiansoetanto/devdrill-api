@@ -19,7 +19,7 @@ namespace DevDrillAPI.Services
             this.dbContext = dbContext;
         }
 
-        public async Task<List<DiscussionGroupDto>> GetDiscussionGroup()
+        public async Task<List<DiscussionGroupDto>> GetDiscussionGroups()
         {
             return await dbContext.DiscussionGroups
                 .Include(x => x.Discussions)
@@ -44,10 +44,10 @@ namespace DevDrillAPI.Services
                 .ToListAsync();
         }
 
-        public async Task<DiscussionDto> GetDiscussion(int discussionId)
+        public async Task<DiscussionDto> GetDiscussion(int id)
         {
             return await dbContext.Discussions
-                .Where(x => x.DiscussionId == discussionId)
+                .Where(x => x.DiscussionId == id)
                 .Include(e => e.DiscussionGroup)
                 .Select(e => new DiscussionDto
                 {
@@ -66,7 +66,7 @@ namespace DevDrillAPI.Services
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<List<ThreadDto>> GetThreads(int discussionId)
+        public async Task<List<ThreadDto>> GetThreadsByDiscussionId(int discussionId)
         {
             return await dbContext.Threads
                 .Where(e => e.DiscussionId == discussionId)
@@ -90,10 +90,10 @@ namespace DevDrillAPI.Services
                 })
                 .ToListAsync();
         }
-        public async Task<ThreadDto> GetThread(int threadId)
+        public async Task<ThreadDto> GetThread(int id)
         {
             return await dbContext.Threads
-                .Where(x => x.ThreadId == threadId)
+                .Where(x => x.ThreadId == id)
                 .Include(e => e.User)
                 .Include(e => e.Replies)
                 .Select(e => new ThreadDto
@@ -116,7 +116,7 @@ namespace DevDrillAPI.Services
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<List<ReplyDto>> GetReplies(int threadId)
+        public async Task<List<ReplyDto>> GetRepliesByThreadId(int threadId)
         {
             return await dbContext.Replies
                 .Where(e => e.ThreadId == threadId)
@@ -163,9 +163,9 @@ namespace DevDrillAPI.Services
 
             await dbContext.SaveChangesAsync();
         }
-        public async Task UpdateThread(int threadId, string topic, string detail)
+        public async Task UpdateThread(int id, string topic, string detail)
         {
-            Thread x = await dbContext.Threads.FindAsync(threadId);
+            Thread x = await dbContext.Threads.FindAsync(id);
             if (x == null) throw new KeyNotFoundException();
             x.Topic = topic;
             x.Detail = detail;
@@ -185,16 +185,16 @@ namespace DevDrillAPI.Services
 
             await dbContext.SaveChangesAsync();
         }
-        public async Task UpdateReply(int replyId, string detail)
+        public async Task UpdateReply(int id, string detail)
         {
-            Reply x = await dbContext.Replies.FindAsync(replyId);
+            Reply x = await dbContext.Replies.FindAsync(id);
             if(x == null) throw new KeyNotFoundException();
             x.Detail = detail;
             await dbContext.SaveChangesAsync();
         }
-        public async Task DeleteReply(int replyId)
+        public async Task DeleteReply(int id)
         {
-            var x = await dbContext.Replies.FindAsync(replyId);
+            var x = await dbContext.Replies.FindAsync(id);
             if (x == null) throw new KeyNotFoundException();
             dbContext.Replies.Remove(x);
             await dbContext.SaveChangesAsync();

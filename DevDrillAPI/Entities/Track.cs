@@ -14,7 +14,7 @@ namespace DevDrillAPI.Entities
         public string Detail { get; set; }
         public int TrackGroupId { get; set; }
         public TrackGroup TrackGroup { get; set; }
-        public MappingUserTrack MappingUserTrack { get; set; }
+        public double? Progress { get; set; }
     }
 
     public class TrackModelBuilder : IEntityTypeConfiguration<Track>

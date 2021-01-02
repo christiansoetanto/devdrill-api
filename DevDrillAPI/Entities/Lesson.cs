@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -13,9 +14,11 @@ namespace DevDrillAPI.Entities
         public DateTime StartDateTime { get; set; }
         public DateTime EndDateTime { get; set; }
         public string VideoUrl { get; set; }
+        public string VideoType { get; set; }
         public string ThumbnailUrl { get; set; }
         public int LessonGroupId { get; set; }
         public LessonGroup LessonGroup { get; set; }
+        public List<MappingUserLessonDone> MappingUserLessonDones { get; set; }
     }
 
     public class LessonModelBuilder : IEntityTypeConfiguration<Lesson>
@@ -36,7 +39,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan HTML Elements",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 1
                 },
@@ -47,7 +51,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan HTML Headings",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 1
                 },
@@ -59,7 +64,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan bagaimana membuat table pada HTML",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 2
                 },
@@ -70,7 +76,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan HTML table secara lebih rinci",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 2
                 },
@@ -82,7 +89,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diajarkan HTML Elements",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 3
                  },
@@ -93,7 +101,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan HTML Headings",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 3
                 },
@@ -105,7 +114,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan bagaimana membuat table pada HTML",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 4
                 },
@@ -116,7 +126,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan HTML table secara lebih rinci",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 4
                 },
@@ -128,7 +139,8 @@ namespace DevDrillAPI.Entities
                       Detail = "Pada lesson kali ini, akan diajarkan HTML Elements",
                       StartDateTime = DateTime.Now,
                       EndDateTime = DateTime.Now,
-                      VideoUrl = "video1",
+                      VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                       ThumbnailUrl = "lesson1.jpg",
                       LessonGroupId = 5
                   },
@@ -139,7 +151,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan HTML Headings",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 5
                 },
@@ -151,7 +164,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan bagaimana membuat table pada HTML",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 6
                 },
@@ -162,22 +176,24 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan HTML table secara lebih rinci",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 6
                 },
 
-                  new
-                  {
-                      LessonId = 13,
-                      Name = "HTML Elements",
-                      Detail = "Pada lesson kali ini, akan diajarkan HTML Elements",
-                      StartDateTime = DateTime.Now,
-                      EndDateTime = DateTime.Now,
-                      VideoUrl = "video1",
-                      ThumbnailUrl = "lesson1.jpg",
-                      LessonGroupId = 7
-                  },
+                new
+                {
+                    LessonId = 13,
+                    Name = "HTML Elements",
+                    Detail = "Pada lesson kali ini, akan diajarkan HTML Elements",
+                    StartDateTime = DateTime.Now,
+                    EndDateTime = DateTime.Now,
+                    VideoUrl = "sample.mp4",
+				    VideoType = "video/mp4",
+                    ThumbnailUrl = "lesson1.jpg",
+                    LessonGroupId = 7
+                },
                 new
                 {
                     LessonId = 14,
@@ -185,7 +201,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan HTML Headings",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 7
                 },
@@ -197,7 +214,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan bagaimana membuat table pada HTML",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 8
                 },
@@ -208,22 +226,24 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan HTML table secara lebih rinci",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 8
                 },
 
-                 new
-                 {
-                     LessonId = 17,
-                     Name = "HTML Elements",
-                     Detail = "Pada lesson kali ini, akan diajarkan HTML Elements",
-                     StartDateTime = DateTime.Now,
-                     EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
-                     ThumbnailUrl = "lesson1.jpg",
-                     LessonGroupId = 9
-                 },
+                new
+                {
+                    LessonId = 17,
+                    Name = "HTML Elements",
+                    Detail = "Pada lesson kali ini, akan diajarkan HTML Elements",
+                    StartDateTime = DateTime.Now,
+                    EndDateTime = DateTime.Now,
+                    VideoUrl = "sample.mp4",
+				    VideoType = "video/mp4",
+                    ThumbnailUrl = "lesson1.jpg",
+                    LessonGroupId = 9
+                },
                 new
                 {
                     LessonId = 18,
@@ -231,7 +251,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan HTML Headings",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 9
                 },
@@ -243,7 +264,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan bagaimana membuat table pada HTML",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 10
                 },
@@ -254,7 +276,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan HTML table secara lebih rinci",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 10
                 },
@@ -268,7 +291,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan syntax pada CSS",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 11
                 },
@@ -280,7 +304,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diajarkan struktur dari Box Model pada CSS",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 12
                  },
@@ -291,7 +316,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diajarkan cara mengkustomisasi Box Model pada CSS",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 12
                  },
@@ -303,7 +329,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diajarkan syntax pada CSS",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 13
                  },
@@ -315,7 +342,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diajarkan struktur dari Box Model pada CSS",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 14
                  },
@@ -326,7 +354,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diajarkan cara mengkustomisasi Box Model pada CSS",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 14
                  },
@@ -338,7 +367,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan syntax pada CSS",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 15
                 },
@@ -350,7 +380,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diajarkan struktur dari Box Model pada CSS",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 16
                  },
@@ -361,7 +392,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diajarkan cara mengkustomisasi Box Model pada CSS",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 16
                  },
@@ -373,7 +405,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diajarkan syntax pada CSS",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 17
                  },
@@ -385,7 +418,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diajarkan struktur dari Box Model pada CSS",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 18
                  },
@@ -396,7 +430,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diajarkan cara mengkustomisasi Box Model pada CSS",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 18
                  },
@@ -409,7 +444,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diajarkan syntax pada CSS",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 19
                  },
@@ -421,7 +457,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diajarkan struktur dari Box Model pada CSS",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 20
                  },
@@ -432,7 +469,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diajarkan cara mengkustomisasi Box Model pada CSS",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 20
                  },
@@ -445,7 +483,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diperkenalkan bahasa pemrograman Javascript",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 21
                  },
@@ -456,7 +495,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan dijelaskan apa saja kegunaan dari Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 21
                 },
@@ -468,7 +508,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan bagaimana cara mendefinisikan sebuah variabel pada Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 22
                 },
@@ -479,7 +520,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan apa saja tipe data yang ada di Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 22
                 },
@@ -491,7 +533,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diperkenalkan bahasa pemrograman Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 23
                 },
@@ -502,7 +545,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan dijelaskan apa saja kegunaan dari Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 23
                 },
@@ -514,7 +558,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan bagaimana cara mendefinisikan sebuah variabel pada Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 24
                 },
@@ -525,7 +570,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan apa saja tipe data yang ada di Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 24
                 },
@@ -537,7 +583,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diperkenalkan bahasa pemrograman Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 25
                 },
@@ -548,7 +595,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan dijelaskan apa saja kegunaan dari Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 25
                 },
@@ -560,7 +608,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan bagaimana cara mendefinisikan sebuah variabel pada Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 26
                 },
@@ -571,7 +620,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan apa saja tipe data yang ada di Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 26
                 },
@@ -583,7 +633,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diperkenalkan bahasa pemrograman Javascript",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 27
                  },
@@ -594,7 +645,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan dijelaskan apa saja kegunaan dari Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 27
                 },
@@ -606,7 +658,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan bagaimana cara mendefinisikan sebuah variabel pada Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 28
                 },
@@ -617,7 +670,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan apa saja tipe data yang ada di Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 28
                 },
@@ -629,7 +683,8 @@ namespace DevDrillAPI.Entities
                      Detail = "Pada lesson kali ini, akan diperkenalkan bahasa pemrograman Javascript",
                      StartDateTime = DateTime.Now,
                      EndDateTime = DateTime.Now,
-                     VideoUrl = "video1",
+                     VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                      ThumbnailUrl = "lesson1.jpg",
                      LessonGroupId = 29
                  },
@@ -640,7 +695,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan dijelaskan apa saja kegunaan dari Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 29
                 },
@@ -652,7 +708,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan bagaimana cara mendefinisikan sebuah variabel pada Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 30
                 },
@@ -663,7 +720,8 @@ namespace DevDrillAPI.Entities
                     Detail = "Pada lesson kali ini, akan diajarkan apa saja tipe data yang ada di Javascript",
                     StartDateTime = DateTime.Now,
                     EndDateTime = DateTime.Now,
-                    VideoUrl = "video1",
+                    VideoUrl = "sample.mp4",
+					VideoType = "video/mp4",
                     ThumbnailUrl = "lesson1.jpg",
                     LessonGroupId = 30
                 }

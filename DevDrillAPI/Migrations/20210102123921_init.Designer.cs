@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DevDrillAPI.Migrations
 {
     [DbContext(typeof(DevDrillDbContext))]
-    [Migration("20201211160241_seed_data")]
-    partial class seed_data
+    [Migration("20210102123921_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,6 +38,9 @@ namespace DevDrillAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("CoverUrl")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Detail")
                         .HasColumnType("TEXT");
 
@@ -52,6 +55,9 @@ namespace DevDrillAPI.Migrations
 
                     b.Property<string>("PhotoUrl")
                         .HasColumnType("TEXT");
+
+                    b.Property<double?>("Progress")
+                        .HasColumnType("REAL");
 
                     b.Property<int>("TrackId")
                         .HasColumnType("INTEGER");
@@ -68,6 +74,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 1,
+                            CoverUrl = "cover2.png",
                             Detail = "Dalam kursus ini, kalian akan diajarkan dasar-dasar markup language HTML",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -78,6 +85,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 2,
+                            CoverUrl = "cover2.png",
                             Detail = "Dalam kursus ini, kalian akan diajarkan HTML sebagai dasar dalam membuat website",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -88,6 +96,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 3,
+                            CoverUrl = "cover2.png",
                             Detail = "Mempelajari tentang HTML dasar",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -98,6 +107,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 4,
+                            CoverUrl = "cover2.png",
                             Detail = "Pengenalan bahasa markup HTML",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -108,6 +118,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 5,
+                            CoverUrl = "cover2.png",
                             Detail = "Tutorial HTML dasar",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -118,6 +129,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 6,
+                            CoverUrl = "cover2.png",
                             Detail = "Dalam kursus ini, akan diperkenalkan CSS untuk mempercantik tampilan website",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -128,6 +140,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 7,
+                            CoverUrl = "cover2.png",
                             Detail = "Panduan lengkap CSS terbaru",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -138,6 +151,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 8,
+                            CoverUrl = "cover2.png",
                             Detail = "Khusus pemula yang ingin membuat website dengan CSS dan HTML",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -148,6 +162,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 9,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar CSS bagi pemula",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -158,6 +173,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 10,
+                            CoverUrl = "cover2.png",
                             Detail = "Mempelajari tentang CSS untuk mempercantik website",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -168,6 +184,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 11,
+                            CoverUrl = "cover2.png",
                             Detail = "Cara mudah memahami Javascript dengan mudah",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -178,6 +195,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 12,
+                            CoverUrl = "cover2.png",
                             Detail = "Tutorial lengkap mengenai Javascript terbaru",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -188,6 +206,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 13,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar Javascript untuk pemula",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -198,6 +217,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 14,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar Javascript untuk membuat web lebih interaktif",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -208,6 +228,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 15,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar dari nol sampai lancar Javascript",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 1,
@@ -218,6 +239,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 16,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar framework javascript React dari dasar sampai topik yang advanced",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -228,6 +250,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 17,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar ReactJS dasar hingga upload ke hosting",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -238,6 +261,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 18,
+                            CoverUrl = "cover2.png",
                             Detail = "Tutorial paling lengkap tahun 2020 mengenai framework React",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -248,6 +272,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 19,
+                            CoverUrl = "cover2.png",
                             Detail = "Goal dari kursus ini adalah menguasai framework React",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -258,6 +283,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 20,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar React dari Nol",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -268,6 +294,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 21,
+                            CoverUrl = "cover2.png",
                             Detail = "Dalam kursus ini, kalian akan diajarkan Typescript dari dasar hingga fitur-fitur penting dari Typescript sampai di titik kalian dapat mengimplementasikan Typescript ke dalam proyek apapun yang kalian kerjakan. Kursus ini juga akan menjadi dasar bagi kalian yang ingin belajar tentang framework Angular",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -278,6 +305,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 22,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar Typescript dari Nol sebagai persiapan untuk mempelajari framework Angular",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -288,6 +316,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 23,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar topik dasar hingga topik advanced dari framework Angular",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -298,6 +327,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 24,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar framework javascript React dari dasar sampai topik yang advanced",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -308,6 +338,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 25,
+                            CoverUrl = "cover2.png",
                             Detail = "Kursus ini ditujukan untuk pemula yang belum pernah menyentuh framework angular",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -318,6 +349,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 26,
+                            CoverUrl = "cover2.png",
                             Detail = "Kursus ini ditujukan untuk pemula yang belum pernah menyentuh framework Vue",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -328,6 +360,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 27,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar framework Vue dari Nol. Tujuan dari course ini adalah untuk dapat mengimplementasi Vue kepada project peserta course.",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -338,6 +371,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 28,
+                            CoverUrl = "cover2.png",
                             Detail = "Panduan paling up-to-date tentang framework Vue",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -348,6 +382,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 29,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar framework javascript Vue dari dasar sampai topik yang advanced.",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -358,6 +393,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 30,
+                            CoverUrl = "cover2.png",
                             Detail = "Cocok untuk yang sedang ingin mempelajari front-end framework",
                             InsertDate = new DateTime(2012, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -368,6 +404,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 31,
+                            CoverUrl = "cover3.png",
                             Detail = "Dalam kursus ini, kalian akan diajarkan bahasa pemrograman C# dari dasar hingga fitur-fitur penting dari C# sampai di titik kalian dapat mengimplementasikan C# ke dalam proyek apapun yang kalian kerjakan. Kursus ini juga menjadi dasar bagi kalian yang ingin belajar tentang framework ASP.NET",
                             InsertDate = new DateTime(2014, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -378,6 +415,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 32,
+                            CoverUrl = "cover2.png",
                             Detail = "Kursus ini ditargetkan bagi pemula yang tidak memiliki pengalaman sama sekali dengan framework .NET core",
                             InsertDate = new DateTime(2014, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -388,6 +426,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 33,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar .NET core untuk membuat REST API",
                             InsertDate = new DateTime(2014, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -398,6 +437,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 34,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar framework .NET Core dengan panduan paling up-to-date",
                             InsertDate = new DateTime(2014, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -408,6 +448,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 35,
+                            CoverUrl = "cover2.png",
                             Detail = "Kuasai .NET core dengan cepat dengan mengikuti course ini",
                             InsertDate = new DateTime(2014, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -418,6 +459,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 36,
+                            CoverUrl = "cover1.png",
                             Detail = "Dalam kursus ini, kalian akan diajarkan bahasa pemrograman PHP  dari dasar hingga fitur-fitur penting dari PHP sampai di titik kalian dapat mengimplementasikan PHP ke dalam proyek apapun yang kalian kerjakan.Kursus ini juga menjadi dasar bagi kalian yang ingin belajar tentang framework Laravel",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -428,6 +470,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 37,
+                            CoverUrl = "cover2.png",
                             Detail = "Dalam kursus ini, kalian akan diajarkan cara membuat website dengan framework Laravel",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -438,6 +481,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 38,
+                            CoverUrl = "cover2.png",
                             Detail = "Dalam kursus ini, kalian akan diajarkan Laravel dari dasar hingga topik-topik yang advanced",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -448,6 +492,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 39,
+                            CoverUrl = "cover2.png",
                             Detail = "Ikuti panduan paling up to date mengenai framework Laravel",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -458,6 +503,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 40,
+                            CoverUrl = "cover2.png",
                             Detail = "Kuasai Laravel dengan cepat dengan mengikuti course ini, cocok untuk pemula",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -468,6 +514,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 41,
+                            CoverUrl = "cover4.png",
                             Detail = "Python adalah bahasa pemrograman terkenal yang dibuat dengan fokus untuk mempermudah programmer untuk membaca kodingnya.Dalam kursus ini, kalian akan diajarkan Python dari dasar sampai kalian dapat mengimplementasikannya dalam aplikasi kalian. Kursus ini juga disarankan bagi yang berminat untuk mempelajari framework Django, karena Django menggunakan bahasa pemrograman Python.",
                             InsertDate = new DateTime(2019, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -478,6 +525,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 42,
+                            CoverUrl = "cover2.png",
                             Detail = "Dalam kursus ini, kalian akan diajarkan cara membuat website dengan framework Django",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -488,6 +536,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 43,
+                            CoverUrl = "cover2.png",
                             Detail = "Dalam kursus ini, kalian akan diajarkan Django dari dasar hingga topik-topik yang advanced",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -498,6 +547,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 44,
+                            CoverUrl = "cover2.png",
                             Detail = "Ikuti panduan paling up to date mengenai framework Django",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -508,6 +558,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 45,
+                            CoverUrl = "cover2.png",
                             Detail = "Kuasai Django dengan cepat dengan mengikuti course ini, cocok untuk pemula",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -518,6 +569,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 46,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar Node JS dari dasar-dasarnya hingga dapat membuat REST API untuk website",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -528,6 +580,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 47,
+                            CoverUrl = "cover2.png",
                             Detail = "Dalam kursus ini, kalian akan diajarkan cara membuat API website dengan framework NodeJS",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -538,6 +591,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 48,
+                            CoverUrl = "cover2.png",
                             Detail = "Dalam kursus ini, kalian akan diajarkan NodeJS dari dasar hingga topik-topik yang advanced",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -548,6 +602,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 49,
+                            CoverUrl = "cover2.png",
                             Detail = "Ikuti panduan paling up to date mengenai framework NodeJS",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -558,6 +613,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 50,
+                            CoverUrl = "cover2.png",
                             Detail = "Kuasai NodeJS dengan cepat dengan mengikuti course ini, cocok untuk pemula",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -568,6 +624,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 51,
+                            CoverUrl = "cover2.png",
                             Detail = "Belajar framework Spring dari dasar-dasarnya hingga dapat membuat REST API untuk website",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -578,6 +635,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 52,
+                            CoverUrl = "cover2.png",
                             Detail = "Dalam kursus ini, kalian akan diajarkan cara membuat website dengan framework Spring",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -588,6 +646,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 53,
+                            CoverUrl = "cover2.png",
                             Detail = "Dalam kursus ini, kalian akan diajarkan Spring dari dasar hingga topik-topik yang advanced",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -598,6 +657,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 54,
+                            CoverUrl = "cover2.png",
                             Detail = "Ikuti panduan paling up to date mengenai framework Spring",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 3,
@@ -608,6 +668,7 @@ namespace DevDrillAPI.Migrations
                         new
                         {
                             CourseId = 55,
+                            CoverUrl = "cover2.png",
                             Detail = "Kuasai Spring dengan cepat dengan mengikuti course ini, cocok untuk pemula",
                             InsertDate = new DateTime(2014, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InstructorId = 2,
@@ -938,6 +999,9 @@ namespace DevDrillAPI.Migrations
                     b.Property<string>("ThumbnailUrl")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("VideoType")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("VideoUrl")
                         .HasColumnType("TEXT");
 
@@ -952,606 +1016,661 @@ namespace DevDrillAPI.Migrations
                         {
                             LessonId = 1,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML Elements",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(5556),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(5924),
                             LessonGroupId = 1,
                             Name = "HTML Elements",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 745, DateTimeKind.Local).AddTicks(3666),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 405, DateTimeKind.Local).AddTicks(8589),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 2,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML Headings",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6751),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7477),
                             LessonGroupId = 1,
                             Name = "HTML Headings",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6745),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7470),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 3,
                             Detail = "Pada lesson kali ini, akan diajarkan bagaimana membuat table pada HTML",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6779),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7509),
                             LessonGroupId = 2,
                             Name = "Membuat table pada HTML",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6778),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7508),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 4,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML table secara lebih rinci",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6782),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7512),
                             LessonGroupId = 2,
                             Name = "Pelajaran lebih lanjut mengenai table pada HTML",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6781),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7511),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 5,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML Elements",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6784),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7514),
                             LessonGroupId = 3,
                             Name = "HTML Elements",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6783),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7513),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 6,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML Headings",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6787),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7517),
                             LessonGroupId = 3,
                             Name = "HTML Headings",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6786),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7516),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 7,
                             Detail = "Pada lesson kali ini, akan diajarkan bagaimana membuat table pada HTML",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6789),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7519),
                             LessonGroupId = 4,
                             Name = "Membuat table pada HTML",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6788),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7518),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 8,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML table secara lebih rinci",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6791),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7522),
                             LessonGroupId = 4,
                             Name = "Pelajaran lebih lanjut mengenai table pada HTML",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6790),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7521),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 9,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML Elements",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6793),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7524),
                             LessonGroupId = 5,
                             Name = "HTML Elements",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6792),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7523),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 10,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML Headings",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6795),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7527),
                             LessonGroupId = 5,
                             Name = "HTML Headings",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6794),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7526),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 11,
                             Detail = "Pada lesson kali ini, akan diajarkan bagaimana membuat table pada HTML",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6798),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7529),
                             LessonGroupId = 6,
                             Name = "Membuat table pada HTML",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6797),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7528),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 12,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML table secara lebih rinci",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6800),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7532),
                             LessonGroupId = 6,
                             Name = "Pelajaran lebih lanjut mengenai table pada HTML",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6799),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7531),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 13,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML Elements",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6802),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7535),
                             LessonGroupId = 7,
                             Name = "HTML Elements",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6801),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7533),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 14,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML Headings",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6804),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7537),
                             LessonGroupId = 7,
                             Name = "HTML Headings",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6803),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7536),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 15,
                             Detail = "Pada lesson kali ini, akan diajarkan bagaimana membuat table pada HTML",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6806),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7540),
                             LessonGroupId = 8,
                             Name = "Membuat table pada HTML",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6805),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7539),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 16,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML table secara lebih rinci",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6809),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7542),
                             LessonGroupId = 8,
                             Name = "Pelajaran lebih lanjut mengenai table pada HTML",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6808),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7541),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 17,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML Elements",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6811),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7545),
                             LessonGroupId = 9,
                             Name = "HTML Elements",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6810),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7543),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 18,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML Headings",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6813),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7547),
                             LessonGroupId = 9,
                             Name = "HTML Headings",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6812),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7546),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 19,
                             Detail = "Pada lesson kali ini, akan diajarkan bagaimana membuat table pada HTML",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6815),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7550),
                             LessonGroupId = 10,
                             Name = "Membuat table pada HTML",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6814),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7548),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 20,
                             Detail = "Pada lesson kali ini, akan diajarkan HTML table secara lebih rinci",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6817),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7552),
                             LessonGroupId = 10,
                             Name = "Pelajaran lebih lanjut mengenai table pada HTML",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6816),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7551),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 21,
                             Detail = "Pada lesson kali ini, akan diajarkan syntax pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6820),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7554),
                             LessonGroupId = 11,
                             Name = "CSS Syntax",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6819),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7553),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 22,
                             Detail = "Pada lesson kali ini, akan diajarkan struktur dari Box Model pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6822),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7558),
                             LessonGroupId = 12,
                             Name = "Struktur dari CSS Box Model",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6822),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7556),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 23,
                             Detail = "Pada lesson kali ini, akan diajarkan cara mengkustomisasi Box Model pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6825),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7560),
                             LessonGroupId = 12,
                             Name = "Kustomisasi Box Model CSS",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6824),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7559),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 24,
                             Detail = "Pada lesson kali ini, akan diajarkan syntax pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6827),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7562),
                             LessonGroupId = 13,
                             Name = "CSS Syntax",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6826),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7561),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 25,
                             Detail = "Pada lesson kali ini, akan diajarkan struktur dari Box Model pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6829),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7565),
                             LessonGroupId = 14,
                             Name = "Struktur dari CSS Box Model",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6828),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7564),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 26,
                             Detail = "Pada lesson kali ini, akan diajarkan cara mengkustomisasi Box Model pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6882),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7567),
                             LessonGroupId = 14,
                             Name = "Kustomisasi Box Model CSS",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6881),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7566),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 27,
                             Detail = "Pada lesson kali ini, akan diajarkan syntax pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6884),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7570),
                             LessonGroupId = 15,
                             Name = "CSS Syntax",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6883),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7569),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 28,
                             Detail = "Pada lesson kali ini, akan diajarkan struktur dari Box Model pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6887),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7572),
                             LessonGroupId = 16,
                             Name = "Struktur dari CSS Box Model",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6886),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7571),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 29,
                             Detail = "Pada lesson kali ini, akan diajarkan cara mengkustomisasi Box Model pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6889),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7575),
                             LessonGroupId = 16,
                             Name = "Kustomisasi Box Model CSS",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6888),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7574),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 30,
                             Detail = "Pada lesson kali ini, akan diajarkan syntax pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6891),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7577),
                             LessonGroupId = 17,
                             Name = "CSS Syntax",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6890),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7576),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 31,
                             Detail = "Pada lesson kali ini, akan diajarkan struktur dari Box Model pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6893),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7580),
                             LessonGroupId = 18,
                             Name = "Struktur dari CSS Box Model",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6892),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7579),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 32,
                             Detail = "Pada lesson kali ini, akan diajarkan cara mengkustomisasi Box Model pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6895),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7582),
                             LessonGroupId = 18,
                             Name = "Kustomisasi Box Model CSS",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6894),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7581),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 33,
                             Detail = "Pada lesson kali ini, akan diajarkan syntax pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6897),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7585),
                             LessonGroupId = 19,
                             Name = "CSS Syntax",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6896),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7583),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 34,
                             Detail = "Pada lesson kali ini, akan diajarkan struktur dari Box Model pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6900),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7587),
                             LessonGroupId = 20,
                             Name = "Struktur dari CSS Box Model",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6899),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7586),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 35,
                             Detail = "Pada lesson kali ini, akan diajarkan cara mengkustomisasi Box Model pada CSS",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6902),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7590),
                             LessonGroupId = 20,
                             Name = "Kustomisasi Box Model CSS",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6901),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7588),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 36,
                             Detail = "Pada lesson kali ini, akan diperkenalkan bahasa pemrograman Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6904),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7592),
                             LessonGroupId = 21,
                             Name = "Apa itu bahasa pemrograman Javascript?",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6903),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7591),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 37,
                             Detail = "Pada lesson kali ini, akan dijelaskan apa saja kegunaan dari Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6906),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7594),
                             LessonGroupId = 21,
                             Name = "Apa saja yang bisa dilakukan Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6905),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7593),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 38,
                             Detail = "Pada lesson kali ini, akan diajarkan bagaimana cara mendefinisikan sebuah variabel pada Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6909),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7597),
                             LessonGroupId = 22,
                             Name = "Mendefinisikan Variabel pada Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6908),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7596),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 39,
                             Detail = "Pada lesson kali ini, akan diajarkan apa saja tipe data yang ada di Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6911),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7600),
                             LessonGroupId = 22,
                             Name = "Tipe Data pada Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6910),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7599),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 40,
                             Detail = "Pada lesson kali ini, akan diperkenalkan bahasa pemrograman Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6914),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7603),
                             LessonGroupId = 23,
                             Name = "Apa itu bahasa pemrograman Javascript?",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6913),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7602),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 41,
                             Detail = "Pada lesson kali ini, akan dijelaskan apa saja kegunaan dari Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6916),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7605),
                             LessonGroupId = 23,
                             Name = "Apa saja yang bisa dilakukan Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6915),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7604),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 42,
                             Detail = "Pada lesson kali ini, akan diajarkan bagaimana cara mendefinisikan sebuah variabel pada Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6918),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7608),
                             LessonGroupId = 24,
                             Name = "Mendefinisikan Variabel pada Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6917),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7607),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 43,
                             Detail = "Pada lesson kali ini, akan diajarkan apa saja tipe data yang ada di Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6920),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7610),
                             LessonGroupId = 24,
                             Name = "Tipe Data pada Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6919),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7609),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 44,
                             Detail = "Pada lesson kali ini, akan diperkenalkan bahasa pemrograman Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6922),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7613),
                             LessonGroupId = 25,
                             Name = "Apa itu bahasa pemrograman Javascript?",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6921),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7612),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 45,
                             Detail = "Pada lesson kali ini, akan dijelaskan apa saja kegunaan dari Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6924),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7615),
                             LessonGroupId = 25,
                             Name = "Apa saja yang bisa dilakukan Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6923),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7614),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 46,
                             Detail = "Pada lesson kali ini, akan diajarkan bagaimana cara mendefinisikan sebuah variabel pada Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6926),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7618),
                             LessonGroupId = 26,
                             Name = "Mendefinisikan Variabel pada Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6925),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7617),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 47,
                             Detail = "Pada lesson kali ini, akan diajarkan apa saja tipe data yang ada di Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6929),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7620),
                             LessonGroupId = 26,
                             Name = "Tipe Data pada Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6928),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7619),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 48,
                             Detail = "Pada lesson kali ini, akan diperkenalkan bahasa pemrograman Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6931),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7622),
                             LessonGroupId = 27,
                             Name = "Apa itu bahasa pemrograman Javascript?",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6930),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7621),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 49,
                             Detail = "Pada lesson kali ini, akan dijelaskan apa saja kegunaan dari Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6933),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7625),
                             LessonGroupId = 27,
                             Name = "Apa saja yang bisa dilakukan Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6932),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7624),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 50,
                             Detail = "Pada lesson kali ini, akan diajarkan bagaimana cara mendefinisikan sebuah variabel pada Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6935),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7627),
                             LessonGroupId = 28,
                             Name = "Mendefinisikan Variabel pada Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6934),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7626),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 51,
                             Detail = "Pada lesson kali ini, akan diajarkan apa saja tipe data yang ada di Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6937),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7630),
                             LessonGroupId = 28,
                             Name = "Tipe Data pada Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6936),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7629),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 52,
                             Detail = "Pada lesson kali ini, akan diperkenalkan bahasa pemrograman Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6939),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7632),
                             LessonGroupId = 29,
                             Name = "Apa itu bahasa pemrograman Javascript?",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6938),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7631),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 53,
                             Detail = "Pada lesson kali ini, akan dijelaskan apa saja kegunaan dari Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6942),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7635),
                             LessonGroupId = 29,
                             Name = "Apa saja yang bisa dilakukan Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6941),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7634),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 54,
                             Detail = "Pada lesson kali ini, akan diajarkan bagaimana cara mendefinisikan sebuah variabel pada Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6944),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7637),
                             LessonGroupId = 30,
                             Name = "Mendefinisikan Variabel pada Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6943),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7636),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         },
                         new
                         {
                             LessonId = 55,
                             Detail = "Pada lesson kali ini, akan diajarkan apa saja tipe data yang ada di Javascript",
-                            EndDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6946),
+                            EndDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7640),
                             LessonGroupId = 30,
                             Name = "Tipe Data pada Javascript",
-                            StartDateTime = new DateTime(2020, 12, 11, 23, 2, 40, 746, DateTimeKind.Local).AddTicks(6945),
+                            StartDateTime = new DateTime(2021, 1, 2, 19, 39, 21, 406, DateTimeKind.Local).AddTicks(7638),
                             ThumbnailUrl = "lesson1.jpg",
-                            VideoUrl = "video1"
+                            VideoType = "video/mp4",
+                            VideoUrl = "sample.mp4"
                         });
                 });
 
@@ -2237,63 +2356,29 @@ namespace DevDrillAPI.Migrations
                         });
                 });
 
-            modelBuilder.Entity("DevDrillAPI.Entities.MappingUserCourse", b =>
+            modelBuilder.Entity("DevDrillAPI.Entities.MappingUserLessonDone", b =>
                 {
-                    b.Property<int>("CourseId")
+                    b.Property<int>("LessonId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("UserId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Progress")
-                        .HasColumnType("INTEGER");
+                    b.Property<DateTime>("LastActive")
+                        .HasColumnType("TEXT");
 
-                    b.HasKey("CourseId", "UserId");
+                    b.HasKey("LessonId", "UserId");
 
-                    b.HasIndex("CourseId")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("MappingUserCourses");
+                    b.ToTable("MappingUserLessonDones");
 
                     b.HasData(
                         new
                         {
-                            CourseId = 1,
+                            LessonId = 1,
                             UserId = 1,
-                            Progress = 8
-                        });
-                });
-
-            modelBuilder.Entity("DevDrillAPI.Entities.MappingUserTrack", b =>
-                {
-                    b.Property<int>("TrackId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Progress")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("TrackId", "UserId");
-
-                    b.HasIndex("TrackId")
-                        .IsUnique();
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("MappingUserTracks");
-
-                    b.HasData(
-                        new
-                        {
-                            TrackId = 1,
-                            UserId = 1,
-                            Progress = 5
+                            LastActive = new DateTime(2021, 1, 2, 19, 39, 21, 418, DateTimeKind.Local).AddTicks(6600)
                         });
                 });
 
@@ -2331,43 +2416,43 @@ namespace DevDrillAPI.Migrations
                         {
                             ReplyId = 1,
                             Detail = "Jadi yang harus di install duluan itu ada .......",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(4821),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 419, DateTimeKind.Local).AddTicks(9241),
                             ThreadId = 1,
-                            Upvote = 9,
+                            Upvote = 1,
                             UserId = 3
                         },
                         new
                         {
                             ReplyId = 2,
                             Detail = "Masalah itu solusi nya ada di internet, coba cek link berikut untuk penjelasan lebih detail nya",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6151),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1512),
                             ThreadId = 2,
-                            Upvote = 8,
+                            Upvote = 5,
                             UserId = 6
                         },
                         new
                         {
                             ReplyId = 3,
                             Detail = "Saya juga pernah dapet error itu, coba pake codingan yang saya kirim ini....",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6233),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1595),
                             ThreadId = 3,
-                            Upvote = 9,
+                            Upvote = 7,
                             UserId = 1
                         },
                         new
                         {
                             ReplyId = 4,
                             Detail = "Jadi yang harus di install duluan itu ada .......",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6255),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1617),
                             ThreadId = 4,
-                            Upvote = 7,
+                            Upvote = 4,
                             UserId = 3
                         },
                         new
                         {
                             ReplyId = 5,
                             Detail = "Masalah itu solusi nya ada di internet, coba cek link berikut untuk penjelasan lebih detail nya",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6273),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1637),
                             ThreadId = 5,
                             Upvote = 5,
                             UserId = 6
@@ -2376,61 +2461,61 @@ namespace DevDrillAPI.Migrations
                         {
                             ReplyId = 6,
                             Detail = "Saya juga pernah dapet error itu, coba pake codingan yang saya kirim ini....",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6295),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1661),
                             ThreadId = 6,
-                            Upvote = 6,
+                            Upvote = 8,
                             UserId = 1
                         },
                         new
                         {
                             ReplyId = 7,
                             Detail = "Jadi yang harus di install duluan itu ada .......",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6369),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1722),
                             ThreadId = 7,
-                            Upvote = 2,
+                            Upvote = 4,
                             UserId = 3
                         },
                         new
                         {
                             ReplyId = 8,
                             Detail = "Masalah itu solusi nya ada di internet, coba cek link berikut untuk penjelasan lebih detail nya",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6390),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1743),
                             ThreadId = 8,
-                            Upvote = 6,
+                            Upvote = 5,
                             UserId = 6
                         },
                         new
                         {
                             ReplyId = 9,
                             Detail = "Saya juga pernah dapet error itu, coba pake codingan yang saya kirim ini....",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6409),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1762),
                             ThreadId = 9,
-                            Upvote = 5,
+                            Upvote = 1,
                             UserId = 1
                         },
                         new
                         {
                             ReplyId = 10,
                             Detail = "Jadi yang harus di install duluan itu ada .......",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6431),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1785),
                             ThreadId = 10,
-                            Upvote = 8,
+                            Upvote = 1,
                             UserId = 3
                         },
                         new
                         {
                             ReplyId = 11,
                             Detail = "Masalah itu solusi nya ada di internet, coba cek link berikut untuk penjelasan lebih detail nya",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6451),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1805),
                             ThreadId = 11,
-                            Upvote = 2,
+                            Upvote = 7,
                             UserId = 6
                         },
                         new
                         {
                             ReplyId = 12,
                             Detail = "Saya juga pernah dapet error itu, coba pake codingan yang saya kirim ini....",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6469),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1825),
                             ThreadId = 12,
                             Upvote = 8,
                             UserId = 1
@@ -2439,25 +2524,25 @@ namespace DevDrillAPI.Migrations
                         {
                             ReplyId = 13,
                             Detail = "Jadi yang harus di install duluan itu ada .......",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6489),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1846),
                             ThreadId = 13,
-                            Upvote = 2,
+                            Upvote = 1,
                             UserId = 3
                         },
                         new
                         {
                             ReplyId = 14,
                             Detail = "Masalah itu solusi nya ada di internet, coba cek link berikut untuk penjelasan lebih detail nya",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6508),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1866),
                             ThreadId = 14,
-                            Upvote = 8,
+                            Upvote = 4,
                             UserId = 6
                         },
                         new
                         {
                             ReplyId = 15,
                             Detail = "Saya juga pernah dapet error itu, coba pake codingan yang saya kirim ini....",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6527),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1888),
                             ThreadId = 15,
                             Upvote = 3,
                             UserId = 1
@@ -2466,108 +2551,108 @@ namespace DevDrillAPI.Migrations
                         {
                             ReplyId = 16,
                             Detail = "Jadi yang harus di install duluan itu ada .......",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6545),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1920),
                             ThreadId = 16,
-                            Upvote = 8,
+                            Upvote = 6,
                             UserId = 3
                         },
                         new
                         {
                             ReplyId = 17,
                             Detail = "Masalah itu solusi nya ada di internet, coba cek link berikut untuk penjelasan lebih detail nya",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6565),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1943),
                             ThreadId = 17,
-                            Upvote = 3,
+                            Upvote = 5,
                             UserId = 6
                         },
                         new
                         {
                             ReplyId = 18,
                             Detail = "Saya juga pernah dapet error itu, coba pake codingan yang saya kirim ini....",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6586),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1967),
                             ThreadId = 18,
-                            Upvote = 6,
+                            Upvote = 1,
                             UserId = 1
                         },
                         new
                         {
                             ReplyId = 19,
                             Detail = "Jadi yang harus di install duluan itu ada .......",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6605),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(1988),
                             ThreadId = 19,
-                            Upvote = 8,
+                            Upvote = 2,
                             UserId = 3
                         },
                         new
                         {
                             ReplyId = 20,
                             Detail = "Masalah itu solusi nya ada di internet, coba cek link berikut untuk penjelasan lebih detail nya",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6623),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(2009),
                             ThreadId = 20,
-                            Upvote = 8,
+                            Upvote = 5,
                             UserId = 6
                         },
                         new
                         {
                             ReplyId = 21,
                             Detail = "Saya juga pernah dapet error itu, coba pake codingan yang saya kirim ini....",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6643),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(2030),
                             ThreadId = 21,
-                            Upvote = 6,
+                            Upvote = 9,
                             UserId = 1
                         },
                         new
                         {
                             ReplyId = 22,
                             Detail = "Jadi yang harus di install duluan itu ada .......",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6663),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(2050),
                             ThreadId = 22,
-                            Upvote = 9,
+                            Upvote = 3,
                             UserId = 3
                         },
                         new
                         {
                             ReplyId = 23,
                             Detail = "Masalah itu solusi nya ada di internet, coba cek link berikut untuk penjelasan lebih detail nya",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6682),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(2069),
                             ThreadId = 23,
-                            Upvote = 4,
+                            Upvote = 8,
                             UserId = 6
                         },
                         new
                         {
                             ReplyId = 24,
                             Detail = "Saya juga pernah dapet error itu, coba pake codingan yang saya kirim ini....",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6700),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(2091),
                             ThreadId = 24,
-                            Upvote = 3,
+                            Upvote = 1,
                             UserId = 1
                         },
                         new
                         {
                             ReplyId = 25,
                             Detail = "Jadi yang harus di install duluan itu ada .......",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6720),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(2112),
                             ThreadId = 25,
-                            Upvote = 7,
+                            Upvote = 5,
                             UserId = 3
                         },
                         new
                         {
                             ReplyId = 26,
                             Detail = "Masalah itu solusi nya ada di internet, coba cek link berikut untuk penjelasan lebih detail nya",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6737),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(2133),
                             ThreadId = 26,
-                            Upvote = 1,
+                            Upvote = 6,
                             UserId = 6
                         },
                         new
                         {
                             ReplyId = 27,
                             Detail = "Saya juga pernah dapet error itu, coba pake codingan yang saya kirim ini....",
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 753, DateTimeKind.Local).AddTicks(6756),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 420, DateTimeKind.Local).AddTicks(2153),
                             ThreadId = 27,
-                            Upvote = 8,
+                            Upvote = 5,
                             UserId = 1
                         });
                 });
@@ -2611,9 +2696,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 1,
                             Detail = "Apa saja hal penting yang harus di install?",
                             DiscussionId = 1,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 754, DateTimeKind.Local).AddTicks(8973),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(4543),
                             Topic = "Bagaimana konfigurasi setup?",
-                            Upvote = 68,
+                            Upvote = 167,
                             UserId = 1
                         },
                         new
@@ -2621,9 +2706,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 2,
                             Detail = "Dapet Error 500 tapi saya ga ngerti cara debug nya. Ad yang tau caranya?",
                             DiscussionId = 1,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 754, DateTimeKind.Local).AddTicks(9912),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(5685),
                             Topic = "Error 500",
-                            Upvote = 83,
+                            Upvote = 194,
                             UserId = 3
                         },
                         new
@@ -2631,9 +2716,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 3,
                             Detail = "Udah cek code nya tapi tetep muncul Not Found",
                             DiscussionId = 1,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 754, DateTimeKind.Local).AddTicks(9964),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(5736),
                             Topic = "HTTP:404 Not Found",
-                            Upvote = 467,
+                            Upvote = 276,
                             UserId = 6
                         },
                         new
@@ -2641,9 +2726,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 4,
                             Detail = "Apa saja hal penting yang harus di install?",
                             DiscussionId = 2,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 754, DateTimeKind.Local).AddTicks(9984),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(5757),
                             Topic = "Bagaimana konfigurasi setup?",
-                            Upvote = 84,
+                            Upvote = 234,
                             UserId = 1
                         },
                         new
@@ -2651,9 +2736,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 5,
                             Detail = "Dapet Error 500 tapi saya ga ngerti cara debug nya. Ad yang tau caranya?",
                             DiscussionId = 2,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(3),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(5779),
                             Topic = "Error 500",
-                            Upvote = 286,
+                            Upvote = 54,
                             UserId = 3
                         },
                         new
@@ -2661,9 +2746,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 6,
                             Detail = "Udah cek code nya tapi tetep muncul Not Found",
                             DiscussionId = 2,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(25),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(5802),
                             Topic = "HTTP:404 Not Found",
-                            Upvote = 213,
+                            Upvote = 67,
                             UserId = 6
                         },
                         new
@@ -2671,9 +2756,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 7,
                             Detail = "Apa saja hal penting yang harus di install?",
                             DiscussionId = 3,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(44),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(5823),
                             Topic = "Bagaimana konfigurasi setup?",
-                            Upvote = 492,
+                            Upvote = 320,
                             UserId = 1
                         },
                         new
@@ -2681,9 +2766,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 8,
                             Detail = "Dapet Error 500 tapi saya ga ngerti cara debug nya. Ad yang tau caranya?",
                             DiscussionId = 3,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(64),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(5880),
                             Topic = "Error 500",
-                            Upvote = 37,
+                            Upvote = 473,
                             UserId = 3
                         },
                         new
@@ -2691,9 +2776,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 9,
                             Detail = "Udah cek code nya tapi tetep muncul Not Found",
                             DiscussionId = 3,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(83),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(5901),
                             Topic = "HTTP:404 Not Found",
-                            Upvote = 349,
+                            Upvote = 493,
                             UserId = 6
                         },
                         new
@@ -2701,9 +2786,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 10,
                             Detail = "Apa saja hal penting yang harus di install?",
                             DiscussionId = 4,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(103),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(5922),
                             Topic = "Bagaimana konfigurasi setup?",
-                            Upvote = 101,
+                            Upvote = 152,
                             UserId = 1
                         },
                         new
@@ -2711,9 +2796,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 11,
                             Detail = "Dapet Error 500 tapi saya ga ngerti cara debug nya. Ad yang tau caranya?",
                             DiscussionId = 4,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(121),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(5943),
                             Topic = "Error 500",
-                            Upvote = 25,
+                            Upvote = 50,
                             UserId = 3
                         },
                         new
@@ -2721,9 +2806,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 12,
                             Detail = "Udah cek code nya tapi tetep muncul Not Found",
                             DiscussionId = 4,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(141),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(5964),
                             Topic = "HTTP:404 Not Found",
-                            Upvote = 187,
+                            Upvote = 357,
                             UserId = 6
                         },
                         new
@@ -2731,9 +2816,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 13,
                             Detail = "Apa saja hal penting yang harus di install?",
                             DiscussionId = 5,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(159),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(5983),
                             Topic = "Bagaimana konfigurasi setup?",
-                            Upvote = 199,
+                            Upvote = 87,
                             UserId = 1
                         },
                         new
@@ -2741,9 +2826,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 14,
                             Detail = "Dapet Error 500 tapi saya ga ngerti cara debug nya. Ad yang tau caranya?",
                             DiscussionId = 5,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(230),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(6004),
                             Topic = "Error 500",
-                            Upvote = 475,
+                            Upvote = 373,
                             UserId = 3
                         },
                         new
@@ -2751,9 +2836,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 15,
                             Detail = "Udah cek code nya tapi tetep muncul Not Found",
                             DiscussionId = 5,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(247),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(6024),
                             Topic = "HTTP:404 Not Found",
-                            Upvote = 413,
+                            Upvote = 392,
                             UserId = 6
                         },
                         new
@@ -2761,9 +2846,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 16,
                             Detail = "Apa saja hal penting yang harus di install?",
                             DiscussionId = 6,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(266),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(6043),
                             Topic = "Bagaimana konfigurasi setup?",
-                            Upvote = 56,
+                            Upvote = 243,
                             UserId = 1
                         },
                         new
@@ -2771,9 +2856,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 17,
                             Detail = "Dapet Error 500 tapi saya ga ngerti cara debug nya. Ad yang tau caranya?",
                             DiscussionId = 6,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(285),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(6062),
                             Topic = "Error 500",
-                            Upvote = 304,
+                            Upvote = 154,
                             UserId = 3
                         },
                         new
@@ -2781,9 +2866,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 18,
                             Detail = "Udah cek code nya tapi tetep muncul Not Found",
                             DiscussionId = 6,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(306),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(6084),
                             Topic = "HTTP:404 Not Found",
-                            Upvote = 377,
+                            Upvote = 432,
                             UserId = 6
                         },
                         new
@@ -2791,9 +2876,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 19,
                             Detail = "Apa saja hal penting yang harus di install?",
                             DiscussionId = 7,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(323),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(6103),
                             Topic = "Bagaimana konfigurasi setup?",
-                            Upvote = 177,
+                            Upvote = 88,
                             UserId = 1
                         },
                         new
@@ -2801,9 +2886,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 20,
                             Detail = "Dapet Error 500 tapi saya ga ngerti cara debug nya. Ad yang tau caranya?",
                             DiscussionId = 7,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(342),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(6124),
                             Topic = "Error 500",
-                            Upvote = 168,
+                            Upvote = 242,
                             UserId = 3
                         },
                         new
@@ -2811,9 +2896,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 21,
                             Detail = "Udah cek code nya tapi tetep muncul Not Found",
                             DiscussionId = 7,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(361),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(6144),
                             Topic = "HTTP:404 Not Found",
-                            Upvote = 374,
+                            Upvote = 299,
                             UserId = 6
                         },
                         new
@@ -2821,9 +2906,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 22,
                             Detail = "Apa saja hal penting yang harus di install?",
                             DiscussionId = 8,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(379),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(6165),
                             Topic = "Bagaimana konfigurasi setup?",
-                            Upvote = 54,
+                            Upvote = 107,
                             UserId = 1
                         },
                         new
@@ -2831,9 +2916,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 23,
                             Detail = "Dapet Error 500 tapi saya ga ngerti cara debug nya. Ad yang tau caranya?",
                             DiscussionId = 8,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(397),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(6186),
                             Topic = "Error 500",
-                            Upvote = 286,
+                            Upvote = 255,
                             UserId = 3
                         },
                         new
@@ -2841,9 +2926,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 24,
                             Detail = "Udah cek code nya tapi tetep muncul Not Found",
                             DiscussionId = 8,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(414),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(6206),
                             Topic = "HTTP:404 Not Found",
-                            Upvote = 149,
+                            Upvote = 419,
                             UserId = 6
                         },
                         new
@@ -2851,9 +2936,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 25,
                             Detail = "Apa saja hal penting yang harus di install?",
                             DiscussionId = 9,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(433),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(6227),
                             Topic = "Bagaimana konfigurasi setup?",
-                            Upvote = 377,
+                            Upvote = 312,
                             UserId = 1
                         },
                         new
@@ -2861,9 +2946,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 26,
                             Detail = "Dapet Error 500 tapi saya ga ngerti cara debug nya. Ad yang tau caranya?",
                             DiscussionId = 9,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(451),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(6245),
                             Topic = "Error 500",
-                            Upvote = 289,
+                            Upvote = 375,
                             UserId = 3
                         },
                         new
@@ -2871,9 +2956,9 @@ namespace DevDrillAPI.Migrations
                             ThreadId = 27,
                             Detail = "Udah cek code nya tapi tetep muncul Not Found",
                             DiscussionId = 9,
-                            InsertDate = new DateTime(2020, 12, 11, 23, 2, 40, 755, DateTimeKind.Local).AddTicks(470),
+                            InsertDate = new DateTime(2021, 1, 2, 19, 39, 21, 421, DateTimeKind.Local).AddTicks(6266),
                             Topic = "HTTP:404 Not Found",
-                            Upvote = 366,
+                            Upvote = 249,
                             UserId = 6
                         });
                 });
@@ -2892,6 +2977,9 @@ namespace DevDrillAPI.Migrations
 
                     b.Property<string>("PhotoUrl")
                         .HasColumnType("TEXT");
+
+                    b.Property<double?>("Progress")
+                        .HasColumnType("REAL");
 
                     b.Property<int>("TrackGroupId")
                         .HasColumnType("INTEGER");
@@ -3066,7 +3154,7 @@ namespace DevDrillAPI.Migrations
                             Name = "user biasa",
                             Password = "user1",
                             PhoneNumber = "0812121212112",
-                            PhotoUrl = "photo1.jpg"
+                            PhotoUrl = ""
                         },
                         new
                         {
@@ -3076,7 +3164,7 @@ namespace DevDrillAPI.Migrations
                             Name = "instructor 1",
                             Password = "instructor1",
                             PhoneNumber = "08777777",
-                            PhotoUrl = "photo2.jpg"
+                            PhotoUrl = ""
                         },
                         new
                         {
@@ -3086,7 +3174,7 @@ namespace DevDrillAPI.Migrations
                             Name = "user2",
                             Password = "user2",
                             PhoneNumber = "081945680235",
-                            PhotoUrl = "photo3.jpg"
+                            PhotoUrl = ""
                         },
                         new
                         {
@@ -3096,7 +3184,7 @@ namespace DevDrillAPI.Migrations
                             Name = "instructor 2",
                             Password = "instructor2",
                             PhoneNumber = "08130785690",
-                            PhotoUrl = "photo4.png"
+                            PhotoUrl = ""
                         },
                         new
                         {
@@ -3106,7 +3194,7 @@ namespace DevDrillAPI.Migrations
                             Name = "instructor 3",
                             Password = "instructor 3",
                             PhoneNumber = "08123546778",
-                            PhotoUrl = "photo5.jpg"
+                            PhotoUrl = ""
                         },
                         new
                         {
@@ -3116,7 +3204,7 @@ namespace DevDrillAPI.Migrations
                             Name = "user3",
                             Password = "user3",
                             PhoneNumber = "081945670143",
-                            PhotoUrl = "photo3.jpg"
+                            PhotoUrl = ""
                         });
                 });
 
@@ -3171,32 +3259,17 @@ namespace DevDrillAPI.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DevDrillAPI.Entities.MappingUserCourse", b =>
+            modelBuilder.Entity("DevDrillAPI.Entities.MappingUserLessonDone", b =>
                 {
-                    b.HasOne("DevDrillAPI.Entities.Course", "Course")
-                        .WithOne("MappingUserCourse")
-                        .HasForeignKey("DevDrillAPI.Entities.MappingUserCourse", "CourseId")
+                    b.HasOne("DevDrillAPI.Entities.Lesson", "Lesson")
+                        .WithMany("MappingUserLessonDones")
+                        .HasForeignKey("LessonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DevDrillAPI.Entities.User", "User")
-                        .WithOne("MappingUserCourse")
-                        .HasForeignKey("DevDrillAPI.Entities.MappingUserCourse", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("DevDrillAPI.Entities.MappingUserTrack", b =>
-                {
-                    b.HasOne("DevDrillAPI.Entities.Track", "Track")
-                        .WithOne("MappingUserTrack")
-                        .HasForeignKey("DevDrillAPI.Entities.MappingUserTrack", "TrackId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DevDrillAPI.Entities.User", "User")
-                        .WithOne("MappingUserTrack")
-                        .HasForeignKey("DevDrillAPI.Entities.MappingUserTrack", "UserId")
+                        .WithMany("MappingUserLessonDones")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

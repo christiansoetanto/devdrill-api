@@ -4,7 +4,8 @@ using DevDrillAPI.Dto;
 using DevDrillAPI.Services;
 using System.Collections.Generic;
 using System.Linq;
-
+using System;
+using System.Text.Json;
 
 namespace DevDrillAPI.Controllers
 {
@@ -29,22 +30,27 @@ namespace DevDrillAPI.Controllers
             return Ok(await learningService.GetCourse(id) ?? new CourseDto());
         }
         [HttpGet("tracks/{trackId}/courses")]
-        public async Task<IActionResult> GetCourses(int trackId)
+        public async Task<IActionResult> GetCoursesByTrackId(int trackId)
         {
-            return Ok(await learningService.GetCourses(trackId) ?? new List<CourseDto>());
+            return Ok(await learningService.GetCoursesByTrackId(trackId) ?? new List<CourseDto>());
         }
 
-        [HttpGet("courses/{courseId}/lessons")]
-        public async Task<IActionResult> GetLessons(int courseId)
+        [HttpGet("courses/{courseId}/lesson-groups")]
+        public async Task<IActionResult> GetLessonGroupsByCourseId(int courseId)
         {
-            return Ok(await learningService.GetLessons(courseId) ?? new List<LessonGroupDto>());
+            return Ok(await learningService.GetLessonGroupsByCourseId(courseId) ?? new List<LessonGroupDto>());
         }
 
-        [HttpGet("lessons/{lessonId}")]
-        [HttpGet("lessons")]
-        public async Task<IActionResult> GetLesson(int lessonId)
+        [HttpGet("lesson-groups/{id}")]
+        public async Task<IActionResult> GetLessonGroup(int id)
         {
-            return Ok(await learningService.GetLesson(lessonId) ?? new LessonDto());
+            return Ok(await learningService.GetLessonGroup(id) ?? new LessonGroupDto());
+        }
+
+        [HttpGet("lessons/{id}")]
+        public async Task<IActionResult> GetLesson(int id)
+        {
+            return Ok(await learningService.GetLesson(id) ?? new LessonDto());
         }
 
         [HttpGet("tracks")]
@@ -64,19 +70,5 @@ namespace DevDrillAPI.Controllers
             return Ok(await learningService.GetLatestCourses() ?? new List<CourseDto>());
         }
 
-        [HttpGet("insert-course-mapping/{userId}/{courseId}/{progress?}")]
-        public async Task<IActionResult> UpsertMappingUserCourse(int userId, int courseId, int progress = 0)
-        {
-            await learningService.UpsertMappingUserCourse(userId, courseId, progress);
-            return Ok();
-        }
-
-        [HttpGet("insert-track-mapping/{userId}/{trackId}/{progress?}")]
-        public async Task<IActionResult> UpsertMappingUserTrack(int userId, int trackId, int progress = 0)
-        {
-            await learningService.UpsertMappingUserTrack(userId, trackId, progress);
-            return Ok();
-        }
-        
     }
 }

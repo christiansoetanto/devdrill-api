@@ -13,8 +13,7 @@ namespace DevDrillAPI
         public DbSet<DiscussionGroup> DiscussionGroups { get; set; }
         public DbSet<Lesson> Lessons { get; set; }
         public DbSet<LessonGroup> LessonGroups { get; set; }
-        public DbSet<MappingUserCourse> MappingUserCourses { get; set; }
-        public DbSet<MappingUserTrack> MappingUserTracks { get; set; }
+        public DbSet<MappingUserLessonDone> MappingUserLessonDones { get; set; }
         public DbSet<Reply> Replies { get; set; }
         public DbSet<Thread> Threads { get; set; }
         public DbSet<Track> Tracks { get; set; }

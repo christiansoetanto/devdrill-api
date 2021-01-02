@@ -14,8 +14,7 @@ namespace DevDrillAPI.Dto
         public InstructorDto Instructor { get; set; }
         public List<ThreadDto> Threads { get; set; }
         public List<ReplyDto> Replies { get; set; }
-        public MappingUserCourseDto MappingUserCourse { get; set; }
-        public MappingUserTrackDto MappingUserTrack { get; set; }
+        public MappingUserLessonDoneDto MappingUserLessonDone { get; set; }
     }
 
   

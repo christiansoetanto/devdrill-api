@@ -9,8 +9,7 @@
         public string Detail { get; set; }
         public int TrackGroupId { get; set; }
         public TrackGroupDto TrackGroup { get; set; }
-        public MappingUserTrackDto MappingUserTrack { get; set; }
-        
+        public double? Progress { get; set; }
     }
 
     
