@@ -78,36 +78,56 @@ namespace DevDrillAPI.Controllers
         [HttpPost("{userId}/avatar/upload")]
         public async Task<IActionResult> UploadProfilePicture(int userId)
         {
-            IFormFile image = Request.Form.Files[0];
-            List<string> allowedExts = new List<string>{ ".png", ".jpg", ".jpeg" };
-
-            if (image.Length > 0)
+            try
             {
-                if (!allowedExts.Contains(Path.GetExtension(image.FileName))) 
-                    return BadRequest("Invalid Extension");
-                string uploadPath = Path.Combine(environment.ContentRootPath, "Upload", "ProfilePicture");
-                string fileName = $"{userId}{Path.GetExtension(image.FileName)}";
-                string filePath = Path.Combine(uploadPath, fileName);
-                var fileStream = new FileStream(filePath, FileMode.Create);
-                await image.CopyToAsync(fileStream); fileStream.Close(); fileStream.Dispose();
-                await userService.UpdatePhoto(fileName, userId);
+                IFormFile image = Request.Form.Files[0];
+                List<string> allowedExts = new List<string> { ".png", ".jpg", ".jpeg" };
+
+                if (image.Length > 0)
+                {
+                    if (!allowedExts.Contains(Path.GetExtension(image.FileName)))
+                        return BadRequest("Invalid Extension");
+                    string uploadPath = Path.Combine(environment.ContentRootPath, "Upload", "ProfilePicture");
+                    string fileName = $"{userId}{Path.GetExtension(image.FileName)}";
+                    string filePath = Path.Combine(uploadPath, fileName);
+                    var fileStream = new FileStream(filePath, FileMode.Create);
+                    await image.CopyToAsync(fileStream); fileStream.Close(); fileStream.Dispose();
+                    await userService.UpdatePhoto(fileName, userId);
+                }
+                return Ok();
             }
-            return Ok();
+            catch(Exception e)
+            {
+                return StatusCode(500, new
+                {
+                    Detail = e.Message
+                });
+            }
         }
         [HttpGet("{userId}/avatar")]
         public async Task<IActionResult> GetProfilePicture(int userId)
         {
-            UserDto user = await userService.GetUser(userId);
-            string uploadPath = Path.Combine(environment.ContentRootPath, "Upload", "ProfilePicture");
-            string fileName = String.IsNullOrEmpty(user.PhotoUrl)? DEFAULT_PROFILE_PICTURE : user.PhotoUrl;
-            string filePath = Path.Combine(uploadPath, fileName);
-
-            if (System.IO.File.Exists(filePath))
+            try
             {
-                FileStream image = System.IO.File.OpenRead(filePath);
-                return File(image, $"image/{Path.GetExtension(fileName).Replace(".", "")}");
+                UserDto user = await userService.GetUser(userId);
+                string uploadPath = Path.Combine(environment.ContentRootPath, "Upload", "ProfilePicture");
+                string fileName = String.IsNullOrEmpty(user.PhotoUrl) ? DEFAULT_PROFILE_PICTURE : user.PhotoUrl;
+                string filePath = Path.Combine(uploadPath, fileName);
+
+                if (System.IO.File.Exists(filePath))
+                {
+                    FileStream image = System.IO.File.OpenRead(filePath);
+                    return File(image, $"image/{Path.GetExtension(fileName).Replace(".", "")}");
+                }
+                return NotFound();
             }
-            return NotFound();
+            catch(Exception e)
+            {
+                return StatusCode(500, new
+                {
+                    Detail = e.Message
+                });
+            }
         }
 
         [HttpPost("progress")]
@@ -122,7 +142,9 @@ namespace DevDrillAPI.Controllers
             }
             catch (Exception e)
             {
-                return StatusCode(500);
+                return StatusCode(500,new { 
+                    Detail = e.Message
+                });
             }
         }
         [HttpGet("{userId}/progress/lessons/{lessonId}")]
