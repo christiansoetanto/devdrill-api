@@ -152,15 +152,6 @@ namespace DevDrillAPI.Services
                 UserId = userId
             });
 
-            await dbContext.Replies.AddAsync(new Reply()
-            {
-                Detail = detail,
-                Upvote = 0,
-                InsertDate = add.Entity.InsertDate,
-                ThreadId = add.Entity.ThreadId,
-                UserId = userId
-            });
-
             await dbContext.SaveChangesAsync();
         }
         public async Task UpdateThread(int id, string topic, string detail)
